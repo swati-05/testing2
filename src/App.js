@@ -21,6 +21,7 @@ import Downloads from './components/Downloads';
 import Trade_NewApply from './components/Trade_NewApply';
 import ContentCard from './components/ContentCard';
 import Graph from './components/Graph';
+import Citizen_RegisterForm from './Citizen_RegisterForm';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         {/* <ContentCard /> */}
 
         <UserSidebar />
+        {/* <Citizen_RegisterForm /> */}
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/form" element={<About />} />
