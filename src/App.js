@@ -22,17 +22,21 @@ import Trade_NewApply from './components/Trade_NewApply';
 import ContentCard from './components/ContentCard';
 import Graph from './components/Graph';
 import Citizen_RegisterForm from './Citizen_RegisterForm';
+import Landing_Navbar from './Pages/Landing/Landing_Navbar';
+import CardNotify from './Pages/Landing/CardNotify';
 
 function App() {
   return (
     <>
       <div >
-        <Navbar /><br/>
+        <Landing_Navbar />
+
+        {/* <Navbar /><br/> */}
         {/* <ContentArea /> */}
         {/* <Sidebar /> */}
         {/* <ContentCard /> */}
 
-        <UserSidebar />
+        {/* <UserSidebar /> */}
         {/* <Citizen_RegisterForm /> */}
         <Routes>
           <Route path="/home" element={<Home />} />
