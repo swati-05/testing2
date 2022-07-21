@@ -24,13 +24,15 @@ import Graph from './components/Graph';
 import Citizen_RegisterForm from './Citizen_RegisterForm';
 import Landing_Navbar from './Pages/Landing/Landing_Navbar';
 import CardNotify from './Pages/Landing/CardNotify';
+import NotFound from './Pages/Landing/NotFound';
+import TestingFile from './Pages/TestingFile';
 
 function App() {
   return (
     <>
       <div >
         <Landing_Navbar />
-
+        {/* <TestingFile /> */}
         {/* <Navbar /><br/> */}
         {/* <ContentArea /> */}
         {/* <Sidebar /> */}
@@ -53,6 +55,7 @@ function App() {
           <Route path="/ownerDetail" element={<OwnerDetails/>} />
           <Route path="/downloads" element={<Downloads/>} />
           <Route path="/newapply" element={<Trade_NewApply />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
       </div>

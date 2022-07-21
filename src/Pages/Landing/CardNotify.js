@@ -1,4 +1,6 @@
 import React from 'react'
+import OurDomain from '../OurDomain'
+import TestingFile from '../OurDomain'
 
 function CardNotify() {
 
@@ -7,7 +9,7 @@ function CardNotify() {
     return (
         <>
 
-            <div class="bg-white drop-shadow-md flex justify-center items-center">
+            <div class="bg-slate-50 drop-shadow-lg flex justify-center items-center">
                 {/* <!-- Card 1 --> */}
                 <div class="grid col-span-4 relative">
                     <div class="bg-white relative shadow  w-5/6 md:w-4/6  lg:w-3/6 xl:w-96 h-2/5 mx-auto ">
@@ -49,26 +51,7 @@ function CardNotify() {
                 {/* <!-- Card 2 --> */}
               
                 <div class="grid col-span-4 ml-4 relative">
-                <div class=" rounded  border mx-3 md:mx-0 lg:mx-0 drop-shadow-lg">
-                    <img class="w-full bg-cover" src="https://assets.telegraphindia.com/telegraph/d7a05ddd-7e16-4641-ac1e-47242b86b4a6.jpg"/>
-                        <div class="px-3 pb-2">
-                            <div class="pt-2">
-                                <i class="far fa-heart cursor-pointer"></i>
-                                <span class="text-sm text-gray-400 font-medium"></span>
-                            </div>
-                            <div class="pt-1">
-                                <div class="mb-2 text-sm">
-                                    <span class="font-medium mr-2">JUIDCO</span> Jharkhand Urban Infrastructure Development Company (JUIDCO) is dedicated to Public works, Government projects of all kinds and all other works of Urban Development and conveniences or other public or private liability.
-                                </div>
-                            </div>
-                            <div class="text-sm mb-2 text-gray-400 cursor-pointer font-medium"></div>
-                            {/* <div class="mb-2">
-                                <div class="mb-2 text-sm">
-                                    <span class="font-medium mr-2">razzle_dazzle</span> JUIDCO organization was formed on 19-11-2013 under The Companies Act, 1956 with its aims to Administer, Manage or Control works and conveniences of all kinds whether for any Government, Public Body, Local Authority, or any other company by itself or through any other agency or its individual.
-                                </div>
-                            </div> */}
-                        </div>
-                </div>
+                  <OurDomain />
                 </div>
 
                 {/* <!-- Card 3 --> */}
