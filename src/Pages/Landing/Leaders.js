@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Peoples() {
+function Leaders() {
     return (
         <>
 
@@ -70,4 +70,4 @@ function Peoples() {
     )
 }
 
-export default Peoples
+export default Leaders

@@ -154,5 +154,32 @@
       "header": "Jamshedpur",
       "ulbid": 4
     }
+  ],
+  "licenseTable":[
+    {
+      "id":"1",
+      "licensedFor": "trade",
+      "appliedDate" : "22/07/2022",
+      "status" : "Approved"
+     
+    },
+    {
+      "id":"2",
+      "licensedFor": "water",
+      "appliedDate" : "22/07/2022",
+      "status" : "Rejected"
+    },
+    {
+      "id":"3",
+      "licensedFor": "property",
+      "appliedDate" : "22/07/2022",
+      "status" : "Pending.."
+    },
+    {
+      "id":"4",
+      "licensedFor": "trade",
+      "appliedDate" : "22/07/2022",
+      "status" : "Process.."
+    }
   ]
 }

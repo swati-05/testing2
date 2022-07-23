@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OurDomain() {
+function OurDomainContent() {
     return (
         <>
             <div class="flex justify-center items-center">
@@ -77,4 +77,4 @@ function OurDomain() {
     )
 }
 
-export default OurDomain
+export default OurDomainContent

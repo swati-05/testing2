@@ -1,8 +1,9 @@
 import React from 'react'
-import OurDomain from '../OurDomain'
-import TestingFile from '../OurDomain'
+import OurDomainContent from './OurDomainContent'
+import OurDomain from './OurDomainContent'
+import TestingFile from './OurDomainContent'
 
-function CardNotify() {
+function SectionOurDomain() {
 
  
 
@@ -51,7 +52,7 @@ function CardNotify() {
                 {/* <!-- Card 2 --> */}
               
                 <div class="grid col-span-4 ml-4 relative">
-                  <OurDomain />
+                  <OurDomainContent />
                 </div>
 
                 {/* <!-- Card 3 --> */}
@@ -102,4 +103,4 @@ function CardNotify() {
     )
 }
 
-export default CardNotify
+export default SectionOurDomain

@@ -1,16 +1,15 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
-import { People } from '@mui/icons-material'
-import CardNotify from './CardNotify'
-import Peoples from './Peoples'
-import axios from 'axios'
+import { useState } from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import SendIcon from '@mui/icons-material/Send';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import TestingFile from '../TestingFile'
+import { Link, useNavigate } from "react-router-dom";
+import JuidcoContentHead from './JuidcoContentHead';
+
+
 
 const style = {
     position: 'absolute',
@@ -25,6 +24,8 @@ const style = {
 };
 
 function Landing_Navbar() {
+    let navigate = useNavigate();
+
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -34,41 +35,35 @@ function Landing_Navbar() {
     const [showForm2, setshowForm2] = useState('hidden')
     const [InputOtp, setInputOtp] = useState()
 
-   
+
     const confirmSubmit = () => {
         // alert(InputOtp +" "+ otpText)
-            if (InputOtp == otpText) {
-                alert('Mobile number verified')
-            } else {
-                alert('Fraud Alert : kya consumer banega re tu !')
-            }
-            setOpen(false);
+
+        if (InputOtp == otpText) {
+            alert('Mobile number verified');
+            setshowForm2('hidden');
+            setshowFormOne('');
+            navigate(`/grivancePage`);
+            // <Link to="/grivancePage">{GrevanshesPage}</Link>;
+        } else {
+            alert('check OTP')
+        }
+
+        setOpen(false);
+        // setotpText();
     }
 
 
-    const handleSubmit = () => {
-        alert("submit");
+    const handleSubmit = (e) => {
+        // alert("submit");
+
         setotpText(Math.floor(Math.random() * (9999 - 1000 + 1)));
         setshowForm2('');
         setshowFormOne('hidden');
+        e.preventDefault();
 
     }
 
-    const [ulbSelect, setulbSelect] = useState({ header: "Ranchi", lbid: 1 }, { header: " Dhanbad", ulbid: 2 })
-    useEffect(() => {
-        axios.get("http://localhost:3000/Select")
-            .then(function (response) {
-                // handle success
-                console.log(response);
-                setulbSelect(response.data)
-            })
-            .catch(function (error) {
-                console.log(error)
-            })
-
-    }, [])
-
-    // console.log(ulbSelect)
     return (
         <>
 
@@ -122,7 +117,7 @@ function Landing_Navbar() {
                                 </ul>
 
                                 <div class="md:flex items-center hidden space-x-4 ml-8 lg:ml-12">
-                                    <h1 class="text-text-gray-600  py-2 hover:cursor-pointer hover:text-indigo-600">LOGIN</h1>
+                                   <Link to="citizenDashboard"> <h1 class="text-text-gray-600  py-2 hover:cursor-pointer hover:text-indigo-600">LOGIN</h1></Link>
                                     <h1 class="text-text-gray-600  py-2 hover:cursor-pointer px-4 rounded text-white bg-gradient-to-tr from-indigo-600 to-green-600 hover:shadow-lg">SIGNUP</h1>
                                 </div>
                             </div>
@@ -135,35 +130,24 @@ function Landing_Navbar() {
                 <section className='m-0 p-0'>
                     <div class="bg-slate-50 sm:grid grid-cols-5  px-4 py-6   space-y-6 sm:space-y-0 sm:gap-4">
 
-                        <div class="h-96 col-span-4 rounded-md flex items-center shadow-xl shadow-indigo-500/50 "style={{ backgroundImage: `url('https://static.langimg.com/thumb/msid-80184386,imgsize-1160354,width-700,height-525,resizemode-75/navbharat-times.jpg')`}}>
-                            
-                                {/* <h2 class="text-white text-4xl">GOVERNMENT OF JHARKHAND</h2>
-                                <p class="text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7"></p>
-
-                                <a href="#" class="uppercase inline-block mt-8 text-sm bg-white py-2 px-4 rounded font-semibold hover:bg-indigo-100">get start</a> */}
-                                <TestingFile />
-                        
-
+                        <div class="h-96 col-span-4 rounded-md flex items-center shadow-xl shadow-indigo-500/50 bg-cover" style={{ backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Jharkhand_Legislative_Assembly_%28Jharkhand_Vidhan_Sabha%29_%28%E0%A4%9D%E0%A4%BE%E0%A4%B0%E0%A4%96%E0%A4%82%E0%A4%A1_%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8%E0%A4%B8%E0%A4%AD%E0%A4%BE%29.png')` }}>    
+                      <JuidcoContentHead />
+                      
                         </div>
                         <div class="h-96 col-span-1 drop-shadow-md">
                             <div class="bg-white py-3 px-4 rounded-lg flex justify-around items-center ">
 
-                                <select placeholder="search" class=" bg-gray-100 rounded-md  outline-none pl-2 ring-indigo-700 w-full mr-2 p-2" >
-                                    <option >SELECT YOUR ULB</option>
+                                <select placeholder="search" class=" bg-gray-100 rounded-md  outline-none pl-2 ring-indigo-700 w-full mr-2 p-2" >                                  
                                     {/* {
                                         ulbSelect?.map((items) => (
                                             <option >{items.header}</option>
                                         ))
                                     } */}
-
                                 </select>
                                 <span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor ">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg></span>
                             </div>
-
-
-
                             <div class="bg-white  rounded-md">
 
                                 <h1 class="text-center text-md my-4  bg-white py-2 rounded-md border-b-2 cursor-pointer  text-gray-900">SERVICES</h1>
@@ -191,8 +175,8 @@ function Landing_Navbar() {
                                                         </Typography>
                                                         <hr className='pt-2 ' />
 
-                                                        <input type="tel" required className=' bg-slate-200 py-1 px-8' placeholder='eg : 0123456789'>
-                                                        </input>
+                                                        <input type="tel" required className=' bg-slate-200 py-1 px-8' placeholder='eg : 0123456789' min="10" />
+
                                                         <button type='submit' className='bg-indigo-700 rounded-md py-1 px-2 text-white ml-48 mt-4' ><SendIcon /> Send OTP</button>
                                                     </form>
                                                     <form id="form" className={showForm2} onSubmit={confirmSubmit}>
@@ -219,8 +203,7 @@ function Landing_Navbar() {
 
                 </section>
 
-                <CardNotify />
-                <Peoples />
+              
             </main>
         </>
     )
