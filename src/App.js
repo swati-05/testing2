@@ -31,6 +31,7 @@ import GrevanshesPage from './Pages/Landing/GrevanshesPage';
 import CitizenDetailPage from './Pages/citizen/CitizenDetailPage';
 import CitizenViewDetail from './Pages/citizen/CitizenViewDetail';
 import LandingPage from './components/LandingPage';
+import CitizenAppliedLicenseDetail from './Pages/citizen/CitizenAppliedLicenseDetail';
 
 
 function App() {
@@ -66,7 +67,9 @@ function App() {
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/newapply" element={<Trade_NewApply />} />
           <Route path="/grivancePage" element={<GrevanshesPage />} />
-          <Route path="/viewDetail" element={<CitizenViewDetail />} />
+          <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} >
+          <Route path=":userId" element={<CitizenViewDetail />} />
+          </Route>
           <Route path="/citizenDashboard" element={<CitizenDetailPage />} />
           <Route path="*" element={<NotFound />} />
           
