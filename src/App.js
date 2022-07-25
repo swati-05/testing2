@@ -32,6 +32,9 @@ import CitizenDetailPage from './Pages/citizen/CitizenDetailPage';
 import CitizenViewDetail from './Pages/citizen/CitizenViewDetail';
 import LandingPage from './components/LandingPage';
 import CitizenAppliedLicenseDetail from './Pages/citizen/CitizenAppliedLicenseDetail';
+import DashboardNavbar from './Pages/citizen/DashboardNavbar';
+import CitizenDashboardPage from './components/CitizenDashboardPage';
+import TestComponent from './components/testDelete/TestComponent';
 
 
 function App() {
@@ -49,6 +52,8 @@ function App() {
 
         {/* <UserSidebar /> */}
         {/* <Citizen_RegisterForm /> */}
+        {/* <DashboardNavbar /> */}
+
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
@@ -68,9 +73,13 @@ function App() {
           <Route path="/newapply" element={<Trade_NewApply />} />
           <Route path="/grivancePage" element={<GrevanshesPage />} />
           <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} >
-          <Route path=":userId" element={<CitizenViewDetail />} />
+          {/* <Route path=":userId" element={<CitizenViewDetail />} /> */}
           </Route>
-          <Route path="/citizenDashboard" element={<CitizenDetailPage />} />
+          <Route path="/test/:userId" element={<CitizenViewDetail />} />
+
+          <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
+          <Route path="/test" element={<TestComponent />} />
+          <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
           <Route path="*" element={<NotFound />} />
           
           {/* <Outlet /> */}

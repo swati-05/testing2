@@ -136,8 +136,7 @@
       "id": 10
     }
   ],
-
-  "Select":[
+  "Select": [
     {
       "header": "Ranchi",
       "ulbid": 1
@@ -155,31 +154,46 @@
       "ulbid": 4
     }
   ],
-  "licenseTable":[
+  "licenseTable": [
     {
-      "id":"1",
+      "id": "1",
       "licensedFor": "trade",
-      "appliedDate" : "22/07/2022",
-      "status" : "Approved"
-     
+      "appliedDate": "22/07/2022",
+      "status": "Approved",
+      "applicationNo": "A65283471930194",
+      "firmName": "Testing",
+      "applicationType": "new apply",
+      "ownershipType": "own property"
     },
     {
-      "id":"2",
+      "id": "2",
       "licensedFor": "water",
-      "appliedDate" : "22/07/2022",
-      "status" : "Rejected"
+      "appliedDate": "22/07/2022",
+      "status": "Approved",
+      "applicationNo": "B65283471930194",
+      "firmName": "Testing",
+      "applicationType": "new apply",
+      "ownershipType": "own property"
     },
     {
-      "id":"3",
+      "id": "3",
       "licensedFor": "property",
-      "appliedDate" : "22/07/2022",
-      "status" : "Pending.."
+      "appliedDate": "22/07/2022",
+      "status": "Approved",
+      "applicationNo": "C65283471930194",
+      "firmName": "Testing",
+      "applicationType": "new apply",
+      "ownershipType": "own property"
     },
     {
-      "id":"4",
-      "licensedFor": "trade",
-      "appliedDate" : "22/07/2022",
-      "status" : "Process.."
+      "id": "4",
+      "licensedFor": "water",
+      "appliedDate": "22/07/2022",
+      "status": "Approved",
+      "applicationNo": "D65283471930194",
+      "firmName": "Testing",
+      "applicationType": "new apply",
+      "ownershipType": "own property"
     }
   ]
 }
