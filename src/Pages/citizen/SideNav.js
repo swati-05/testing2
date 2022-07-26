@@ -12,7 +12,7 @@ function SideNav() {
         <>
 
 
-            <div class="flex  ">
+            <div class={`flex ${navWidth}`}>
                 <aside class="w-36 h-full shadow-lg  px-1 absolute" style={{ 'backgroundColor': '#4f46e5' }}>
                     <ul class="relative">
                         <li class="relative">
@@ -35,6 +35,7 @@ function SideNav() {
                             </button>
                         </li>
                         <li class="relative">
+                        <Link to="/download">
                             <button className='bg-cyan-400 ml-8 mt-6 w-14 h-12 rounded-lg shadow-md shadow-cyan-500 '>
                                 <div class="rounded-full  flex flex-col items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -42,6 +43,7 @@ function SideNav() {
                                     </svg>
                                 </div>
                             </button>
+                            </Link>
                         </li>
                         <li class="relative">
                             <button className='bg-cyan-400 ml-8 mt-6 w-14 h-12 rounded-lg shadow-md shadow-cyan-500 '>
@@ -85,14 +87,16 @@ function SideNav() {
                                     <hr className=' border-gray-400 ml-3 mt-2' />
                                 </div>
                                 <div class="grid  gap-2 grid-cols-2 mt-5">
-                                    <div class="p-1 flex flex-col w-24 h-20 mt-1 ml-3 items-center bg-white rounded-md justify-center shadow-xl cursor-pointer">
-                                        <div class="rounded-full p-1 bg-indigo-200 flex flex-col items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
-                                            </svg>
+                                    <Link to="/apply">
+                                        <div class="p-1 flex flex-col w-24 h-20 mt-1 ml-3 items-center bg-white rounded-md justify-center shadow-xl cursor-pointer">
+                                            <div class="rounded-full p-1 bg-indigo-200 flex flex-col items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-xs mt-1 text-center font-semibold">Apply</p>
                                         </div>
-                                        <p class="text-xs mt-1 text-center font-semibold">Apply</p>
-                                    </div>
+                                    </Link>
 
                                     <div class="p-2 flex flex-col w-24 h-20 mt-1 items-center bg-white rounded-md justify-center shadow-xl cursor-pointer">
                                         <div class="rounded-full p-1 bg-indigo-200 flex flex-col items-center">
@@ -103,6 +107,7 @@ function SideNav() {
                                         <p class="text-xs mt-1 text-center font-semibold">Complain& Grivance</p>
                                     </div>
 
+                                   <Link to="/download">
                                     <div class="p-2 flex flex-col w-24 h-20 mt-1 ml-3 items-center bg-white rounded-md justify-center shadow-xl cursor-pointer">
                                         <div class="rounded-full p-1 bg-indigo-200 flex flex-col items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
@@ -111,6 +116,7 @@ function SideNav() {
                                         </div>
                                         <p class="text-xs mt-1 text-center font-semibold">Download</p>
                                     </div>
+                                    </Link> 
 
                                     <div class="p-2 flex flex-col w-24 h-20 mt-1 items-center bg-white rounded-md justify-center shadow-xl cursor-pointer">
                                         <div class="rounded-full p-1 bg-indigo-200 flex flex-col items-center">

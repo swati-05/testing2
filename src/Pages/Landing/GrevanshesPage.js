@@ -49,11 +49,12 @@ export default function GrevanshesPage() {
   };
 
   return (
-    <Box sx={{ width: '80%' }}>
-      <Box sx={{ border: 1, borderColor: 'divider',backgroundColor:'gray'  }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+    <div className='sm:p-0 w-9/12  border-2 m-auto bg-slate-100 '>
+      <Box >
+      <Box sx={{ border: 1, borderColor: 'divider',backgroundColor:'white' }} className='drop-shadow-md'>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
           <Tab label="New Complain" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Track Complain" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
       </Box>
@@ -68,5 +69,6 @@ export default function GrevanshesPage() {
       </TabPanel>
       {/* <Outlet /> */}
     </Box>
+    </div>
   );
 }

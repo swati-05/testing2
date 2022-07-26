@@ -195,5 +195,27 @@
       "applicationType": "new apply",
       "ownershipType": "own property"
     }
+  ],
+  "complainRecord": [
+    {
+      "id": "1",
+     "complainedFor":"puddle on road",
+     "complainedDate":"22/07/2022"
+    },
+    {
+      "id": "2",
+      "complainedFor":"puddle on road",
+     "complainedDate":"22/07/2022"
+    },
+    {
+      "id": "3",
+      "complainedFor":"puddle on road",
+      "complainedDate":"22/07/2022"
+    },
+    {
+      "id": "4",
+      "complainedFor":"puddle on road",
+      "complainedDate":"22/07/2022"
+    }
   ]
 }

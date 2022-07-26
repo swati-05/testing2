@@ -1,101 +1,84 @@
-import React from 'react'
-import logo from '../logo.svg'
-import bg from './bg.png'
-import { Link } from 'react-router-dom'
+import * as React from 'react'
+
+import { Link, useNavigate } from "react-router-dom";
+
+
+
+
+
+
 function Navbar() {
+
+
+
+
     return (
         <>
 
-            <div className=' flex drop-shadow-lg' style={{ backgroundImage: `url('${bg}')`}}>
-                <div className='flex-3 w-1/12 h-8 pt-6'>
-                    <a href="#" class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jharkhand_Rajakiya_Chihna.svg/1200px-Jharkhand_Rajakiya_Chihna.svg.png" class="ml-4  h-20 " alt="Flowbite Logo" />
+            <header>
 
-                    </a>
-                </div>
-                <div className='flex-1  '>
-                    <div className=' border-b-2 border-gray-400 h-16'>
-                        <div class="hidden relative md:block w-1/3 mx-auto pt-4">
-                            <div class="flex absolute inset-y-0 pt-4 items-center pl-3 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                                <span class="sr-only">Search icon</span>
+                <nav class="shadow-md bg-white border-b-2">
+                    <div class="flex justify-between items-center py-2 px-4 container mx-auto drop-shadow-md">
+                        <div className='flex  '>
+                            <div className=' '>
+                                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jharkhand_Rajakiya_Chihna.svg/1200px-Jharkhand_Rajakiya_Chihna.svg.png' className='h-16' />
                             </div>
-                            <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 opacity-75" placeholder="Search..." />
+                            <div className=' ml-4 mt-2  '>
+                                <h1 className='text-center '>Jharkhand Urban Infrastructure <br /> Development Company</h1>
+                            </div>
                         </div>
-        
-                    </div>
-           
 
-                    <div>
-                        <nav class=" border-gray-200 px-2 sm:px-4 py-0 rounded dark:bg-gray-900 h-16 pt-2 text-sm ">
-                            <div class="container flex flex-wrap justify-between  ">
-                              
-                                <div class="flex md:order-2">
-                                    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
-                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                                        <span class="sr-only">Search</span>
-                                    </button>
-                                   
-                                    <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
-                                        <span class="sr-only">Open menu</span>
-                                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                                    </button>
-                                </div>
-                                <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-search">
-                                    <div class="relative mt-3 md:hidden">
-                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                        <div>
+
+                            <div class="hover:cursor-pointer sm:hidden">
+                                <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
+                                <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
+                                <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
+                            </div>
+                            <div class="flex items-center">
+
+
+
+                                <ul class="sm:flex space-x-4 hidden items-center">
+                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Home</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">About</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Services</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Products</a></li>
+                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Contact</a></li>
+                                </ul>
+
+                                <div class="md:flex items-center hidden space-x-4 ml-8 lg:ml-12">
+                                    <div>
+
+                                        <div class="relative rounded-2xl bg-white px-1 pt-1 pb-1 shadow-xl ring-1 ring-gray-600/5 sm:mx-auto sm:max-w-lg sm:px-1">
+                                            <div class="mx-auto max-w-md">
+
+
+                                                <form action="" class="relative mx-auto w-max">
+                                                    <input type="search"
+                                                        class="peer cursor-pointer relative z-10 h-8 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                                    </svg>
+                                                </form>
+
+
+                                            </div>
                                         </div>
-                                        <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
+
                                     </div>
-                                    <ul class="flex flex-col mt-4 md:flex-row ml-6 md:mt-0 md:text-sm md:font-medium h-4">
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs' >                                              
-                                                <Link to="/property">PROPERTY</Link>
-                                                </button>
-
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs'>                                           
-                                                <Link to="/trade">TRADE</Link>
-                                            </button>
-
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs'>                                              
-                                                <Link to="/water">WATER</Link>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs' >
-                                                <Link to="/building">BUILDING PLAN</Link>
-                                                </button>
-
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs'>                                            
-                                                <Link to="/birth">BIRTH & DEATH</Link>
-                                            </button>
-
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs'>                                               
-                                                <Link to="/advertisement">ADVERTISEMENT</Link>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button className=' hover:text-white hover:bg-violet-600 text-slate-900 font-bold py-2 px-12 rounded-full text-xs'>             
-                                                <Link to="/solidWaste">SOLID WASTE</Link>
-                                            </button>
-                                        </li>
-                                    </ul>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                        </svg>
+                                    </div>
+                                    {/* <h1 class="text-text-gray-600  py-2 hover:cursor-pointer px-4 rounded text-white bg-gradient-to-tr from-indigo-600 to-green-600 hover:shadow-lg">SIGNUP</h1> */}
                                 </div>
                             </div>
-                        </nav>
+                        </div>
                     </div>
-                </div>
-            </div>
-
+                </nav>
+            </header>
 
         </>
     )

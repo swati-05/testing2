@@ -6,12 +6,12 @@ function GrevanceComplainForm() {
         <>
            
             
-                <div class="w-full max-w-6xl rounded bg-white drop-shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
-                    <div class="md:flex items-center -mx-10">
-                        <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0 ">
+                <div class="w-full max-w-6xl rounded bg-white drop-shadow-xl p-5 lg:p-10 mx-auto text-gray-800 relative md:text-left">
+                    <div class="md:flex items-center -mx-4">
+                        <div class="w-full md:w-1/2 px-8 mb-8 md:mb-0 ">
                             <div class="relative ">
                                 <img src={complain} class="w-full relative z-10" alt="" />
-                                <div class=" bg-white border-b-2 border-l-2 rounded-3xl shadow-black absolute rotate-[-9deg] bottom-10 left-10 right-10 z-0 h-96 "></div>
+                                {/* <div class=" bg-white border-b-2 border-l-2 rounded-3xl shadow-black absolute rotate-[-9deg] bottom-10 left-10 right-10 z-0 h-96 "></div> */}
                             </div>
                         </div>
                         <form>

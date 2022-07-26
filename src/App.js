@@ -35,12 +35,22 @@ import CitizenAppliedLicenseDetail from './Pages/citizen/CitizenAppliedLicenseDe
 import DashboardNavbar from './Pages/citizen/DashboardNavbar';
 import CitizenDashboardPage from './components/CitizenDashboardPage';
 import TestComponent from './components/testDelete/TestComponent';
+import ProgressCard from './Pages/citizen/ProgressCard';
+import Complain_Grivance from './components/Complain_Grivance';
+import ApplySubList from './Pages/citizen/ApplySubList';
+import CitizenWelcome from './Pages/citizen/CitizenWelcome';
+import DownloadPage from './components/DownloadPage';
+import SideNav from './Pages/citizen/SideNav';
 
 
 function App() {
   return (
     <>
       <div >
+        {/* <Navbar/>
+        <SideNav/> */}
+        {/* <ApplySubList /> */}
+        {/* <ProgressCard />  */}
         {/* <CitizenDetailPage /> */}
         {/* <GrevanshesForm /> */}
         {/* <Landing_Navbar /> */}
@@ -53,7 +63,7 @@ function App() {
         {/* <UserSidebar /> */}
         {/* <Citizen_RegisterForm /> */}
         {/* <DashboardNavbar /> */}
-
+        {/* <div className={`sm:w-full absolute top-0 ml-24 -mt-44 transition-all `}> */}
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
@@ -70,20 +80,22 @@ function App() {
           <Route path="/firmDetail" element={<FirmDetails />} />
           <Route path="/ownerDetail" element={<OwnerDetails />} />
           <Route path="/downloads" element={<Downloads />} />
-          <Route path="/newapply" element={<Trade_NewApply />} />
-          <Route path="/grivancePage" element={<GrevanshesPage />} />
+          <Route path="/apply" element={<CitizenWelcome />} />
+          <Route path="/grivancePage" element={<Complain_Grivance />} />
           <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} >
-          {/* <Route path=":userId" element={<CitizenViewDetail />} /> */}
+            {/* <Route path=":userId" element={<CitizenViewDetail />} /> */}
           </Route>
           <Route path="/test/:userId" element={<CitizenViewDetail />} />
 
           <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
           <Route path="/test" element={<TestComponent />} />
           <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
+          <Route path="/download" element={<DownloadPage />} />
           <Route path="*" element={<NotFound />} />
-          
+
           {/* <Outlet /> */}
         </Routes>
+        {/* </div> */}
 
       </div>
 
