@@ -8,6 +8,8 @@ import CitizenAccountDetail from './CitizenAccountDetail';
 import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
 import CitizenViewDetail from './CitizenViewDetail';
 import CitizenNotification from './CitizenNotification';
+import Navbar from '../../components/Navbar';
+import SideNav from './SideNav';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,25 +52,36 @@ export default function CitizenDetailPage() {
   };
 
   return (
-    <div className='ml-28 max-w-5xl border bg-white '>
-        <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Account" {...a11yProps(0)} />
-          <Tab label="Applied Licenses" {...a11yProps(1)} />
-          <Tab label="Notification" {...a11yProps(2)} />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-       <CitizenAccountDetail />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <CitizenAppliedLicenseDetail />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-       <CitizenNotification />
-      </TabPanel>
-    </Box>
-    </div>
+    <>
+      <Navbar />
+
+      <div  className='flex flex-row'>
+        <div>
+        <SideNav />
+        </div>
+        <div>
+          <div className=' w-full border '>
+            <Box sx={{ width: '100%' }}>
+              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                  <Tab label="Account" {...a11yProps(0)} />
+                  <Tab label="Applied Licenses" {...a11yProps(1)} />
+                  <Tab label="Notification" {...a11yProps(2)} />
+                </Tabs>
+              </Box>
+              <TabPanel value={value} index={0}>
+                <CitizenAccountDetail />
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <CitizenAppliedLicenseDetail />
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <CitizenNotification />
+              </TabPanel>
+            </Box>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

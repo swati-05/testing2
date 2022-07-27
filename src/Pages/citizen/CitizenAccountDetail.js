@@ -3,12 +3,13 @@ import React from 'react'
 function CitizenAccountDetail() {
     return (
         <>
-            <div>
-                <div class="md:grid md:grid-cols-3 md:gap-6">
-                    <div class="mt-5 md:mt-0 md:col-span-4">
-                        <form action="#" method="POST">
+       
+            
+                <div class="md:grid md:grid-cols-10 md:gap-6 w-full">
+                    <div class="mt-5 md:mt-0 md:col-span-4 ">
+                        <form >
                             <div class="shadow sm:rounded-md sm:overflow-hidden">
-                                <div class="px-4 py-5 bg-slate-100 space-y-6 sm:p-6">
+                                <div class="px-4 py-5  sm:p-6">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700"> Photo </label>
                                         <div class="mt-1 flex items-center">
@@ -59,7 +60,7 @@ function CitizenAccountDetail() {
                         </form>
                     </div>
                 </div>
-            </div>
+            
         </>
     )
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
-import TimeLine from '../../components/TimeLine';
+
 
 
 function CitizenViewDetail() {
@@ -25,7 +25,7 @@ function CitizenViewDetail() {
 
     return (
         <>
-        <TimeLine />
+        
             <div>
 
                 <form >

@@ -12,8 +12,8 @@ function SideNav() {
         <>
 
 
-            <div class={`flex ${navWidth}`}>
-                <aside class="w-36 h-full shadow-lg  px-1 absolute" style={{ 'backgroundColor': '#4f46e5' }}>
+            <div>
+                <aside class="w-48 h-full shadow-lg  px-1 absolute" style={{ 'backgroundColor': '#4f46e5' }}>
                     <ul class="relative">
                         <li class="relative">
                             <img src='https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png' className='h-20 ml-6 mt-6 ' />
@@ -56,7 +56,7 @@ function SideNav() {
                 </aside>
 
                 <aside>
-                    <div className={`${navWidth} h-screen bg-slate-200 transition-all duration-1000 ml-36 drop-shadow-md rounded-md overflow-hidden`}>
+                    <div className={`${navWidth} h-screen bg-slate-200 transition-all duration-1000 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
                         <div>
                             <div className=' mt-10'>
                                 <h1 className='font-normal ml-3'>Setting</h1>

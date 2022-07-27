@@ -41,12 +41,14 @@ import ApplySubList from './Pages/citizen/ApplySubList';
 import CitizenWelcome from './Pages/citizen/CitizenWelcome';
 import DownloadPage from './components/DownloadPage';
 import SideNav from './Pages/citizen/SideNav';
+import SidenavContent from './components/testDelete/SidenavContent';
 
 
 function App() {
   return (
     <>
-      <div >
+      <div className={`sm:w-full transition-all  `}>
+        {/* <SidenavContent/> */}
         {/* <Navbar/>
         <SideNav/> */}
         {/* <ApplySubList /> */}
@@ -63,12 +65,12 @@ function App() {
         {/* <UserSidebar /> */}
         {/* <Citizen_RegisterForm /> */}
         {/* <DashboardNavbar /> */}
-        {/* <div className={`sm:w-full absolute top-0 ml-24 -mt-44 transition-all `}> */}
+       
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/form" element={<About />} />
+          {/* <Route path="/home" element={<Home />} />
+          <Route path="/form" element={<About />} /> */}
           <Route path="/property" element={<PropertyPage />} />
           <Route path="/trade" element={<TradePage />} />
           <Route path="/water" element={<WaterPage />} />
@@ -82,23 +84,21 @@ function App() {
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/apply" element={<CitizenWelcome />} />
           <Route path="/grivancePage" element={<Complain_Grivance />} />
-          <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} >
-            {/* <Route path=":userId" element={<CitizenViewDetail />} /> */}
-          </Route>
+          <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} />
           <Route path="/test/:userId" element={<CitizenViewDetail />} />
-
           <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
           <Route path="/test" element={<TestComponent />} />
           <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
           <Route path="/download" element={<DownloadPage />} />
           <Route path="*" element={<NotFound />} />
 
-          {/* <Outlet /> */}
+        
+        
         </Routes>
-        {/* </div> */}
+        </div>
 
-      </div>
-
+      
+       
 
     </>
   );
