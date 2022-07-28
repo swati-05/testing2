@@ -14,7 +14,7 @@
       "date": "7th July 2022",
       "isArchived": 0,
       "ulbid": 1,
-      "id": 11
+      "id": 2
     },
     {
       "header": "NEws with id",
@@ -22,8 +22,25 @@
       "date": "7th July 2022",
       "isArchived": 0,
       "ulbid": 2,
-      "id": 13
+      "id": 3
+    },
+    {
+      "header": "Patna News",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+      "date": "09/04/2022",
+      "isArchived": 1,
+      "ulbid": 1,
+      "id": 4
+    },
+    {
+      "header": "Patna News",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+      "date": "09/04/2022",
+      "isArchived": 1,
+      "ulbid": 1,
+      "id": 5
     }
+   
   ],
   "notice": [
     {

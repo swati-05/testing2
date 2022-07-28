@@ -8,15 +8,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 function Navbar() {
-
-
-
-
     return (
         <>
 
             <header>
-
                 <nav class="shadow-md bg-white border-b-2">
                     <div class="flex justify-between items-center py-2 px-4 container mx-auto drop-shadow-md">
                         <div className='flex  '>

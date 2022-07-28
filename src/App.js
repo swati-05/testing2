@@ -42,11 +42,19 @@ import CitizenWelcome from './Pages/citizen/CitizenWelcome';
 import DownloadPage from './components/DownloadPage';
 import SideNav from './Pages/citizen/SideNav';
 import SidenavContent from './components/testDelete/SidenavContent';
+import Buttoncomponent from './components/testDelete/Buttoncomponent';
+import SliderImage from './Pages/Landing/SliderImage';
+import SliderCard from './Pages/Landing/SliderCard';
+import NewsComponent from './Pages/Landing/NewsComponent';
 
 
 function App() {
   return (
     <>
+    {/* <SliderCard />
+    <NewsComponent/> */}
+    {/* <SliderImage /> */}
+     {/* <Buttoncomponent /> */}
       <div className={`sm:w-full transition-all  `}>
         {/* <SidenavContent/> */}
         {/* <Navbar/>

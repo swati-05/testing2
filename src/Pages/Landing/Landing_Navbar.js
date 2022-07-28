@@ -66,11 +66,9 @@ function Landing_Navbar() {
 
     return (
         <>
-
             <header>
-
                 <nav class="shadow-md bg-white border-b-2">
-                    <div class="flex justify-between items-center py-2 px-4 container mx-auto drop-shadow-md">
+                    <div class="flex justify-between items-center py-1 px-2 container mx-auto ">
                         <div className='flex  '>
                             <div className=' '>
                                 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jharkhand_Rajakiya_Chihna.svg/1200px-Jharkhand_Rajakiya_Chihna.svg.png' className='h-16' />
@@ -79,65 +77,33 @@ function Landing_Navbar() {
                                 <h1 className='text-center '>Jharkhand Urban Infrastructure <br /> Development Company</h1>
                             </div>
                         </div>
-
                         <div>
-
                             <div class="hover:cursor-pointer sm:hidden">
                                 <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
                                 <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
                                 <spnan class="h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600"></spnan>
                             </div>
-                            <div class="flex items-center">
+                             
 
-                                {/* <div class="flex items-center  space-x-2  shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500">
-                                    <div class="flex bg-gray-100 p-2 w-64 space-x-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                        </svg>
-                                        <input class="bg-gray-100 outline-none" type="text" placeholder="Article name or keyword..." />
-                                    </div>
-                                    <div class="flex py-3 px-4  text-gray-500 font-semibold cursor-pointer">
-                                        <span>All categorie</span>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                    <div class="bg-indigo-600 py-2 px-5 text-white font-semibold  hover:shadow-lg transition duration-3000 cursor-pointer">
-                                        <span>Search</span>
-                                    </div>
-                                </div> */}
-
-                                <ul class="sm:flex space-x-4 hidden items-center">
-                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Home</a></li>
-                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">About</a></li>
-                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Services</a></li>
-                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Products</a></li>
-                                    <li><a href="#" class="text-gray-700 hover:text-indigo-600 text-md ">Contact</a></li>
-                                </ul>
-
-                                <div class="md:flex items-center hidden space-x-4 ml-8 lg:ml-12">
-                                   <Link to="citizenDashboard"> <h1 class="text-text-gray-600  py-2 hover:cursor-pointer hover:text-indigo-600">LOGIN</h1></Link>
-                                    <h1 class="text-text-gray-600  py-2 hover:cursor-pointer px-4 rounded text-white bg-gradient-to-tr from-indigo-600 to-green-600 hover:shadow-lg">SIGNUP</h1>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </nav>
             </header>
+
+
             <main>
 
                 <section className='m-0 p-0'>
                     <div class="bg-slate-50 sm:grid grid-cols-5  px-4 py-6   space-y-6 sm:space-y-0 sm:gap-4">
 
-                        <div class="h-96 col-span-4 rounded-md flex items-center shadow-xl shadow-indigo-500/50 bg-cover" style={{ backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Jharkhand_Legislative_Assembly_%28Jharkhand_Vidhan_Sabha%29_%28%E0%A4%9D%E0%A4%BE%E0%A4%B0%E0%A4%96%E0%A4%82%E0%A4%A1_%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8%E0%A4%B8%E0%A4%AD%E0%A4%BE%29.png')` }}>    
-                      <JuidcoContentHead />
-                      
+                        <div class="h-96 col-span-4 rounded-md flex items-center shadow-xl shadow-indigo-500/50 bg-cover" style={{ backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Jharkhand_Legislative_Assembly_%28Jharkhand_Vidhan_Sabha%29_%28%E0%A4%9D%E0%A4%BE%E0%A4%B0%E0%A4%96%E0%A4%82%E0%A4%A1_%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8%E0%A4%B8%E0%A4%AD%E0%A4%BE%29.png')` }}>
+                            <JuidcoContentHead />
+
                         </div>
                         <div class="h-96 col-span-1 drop-shadow-md">
                             <div class="bg-white py-3 px-4 rounded-lg flex justify-around items-center ">
 
-                                <select placeholder="search" class=" bg-gray-100 rounded-md  outline-none pl-2 ring-indigo-700 w-full mr-2 p-2" >                                  
+                                <select placeholder="search" class=" bg-gray-100 rounded-md  outline-none pl-2 ring-indigo-700 w-full mr-2 p-2" >
                                     {/* {
                                         ulbSelect?.map((items) => (
                                             <option >{items.header}</option>
@@ -203,7 +169,7 @@ function Landing_Navbar() {
 
                 </section>
 
-              
+
             </main>
         </>
     )
