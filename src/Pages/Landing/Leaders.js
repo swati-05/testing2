@@ -4,7 +4,7 @@ function Leaders() {
     return (
         <>
 
-            <div class=" flex justify-center items-center mt-4 bg-white drop-shadow-sm">
+            <div class=" flex justify-center items-center  bg-white drop-shadow-sm border">
                 <div class="w-64 h-80 p-4 bg-white rounded-sm shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500">
                     <img class="w-48 h-40 ml-3 object-cover rounded-t-md" src="https://cm.jharkhand.gov.in/sites/default/files/pictures/cmjharkhand09042021.jpg" alt="" />
                     <div class="mt-4">

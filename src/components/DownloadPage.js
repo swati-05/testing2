@@ -1,21 +1,20 @@
 import React from 'react'
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import DownloadButton from './DownloadButton';
-import Navbar from './Navbar';
 import SideNav from '../Pages/citizen/SideNav';
 
 function DownloadPage() {
     return (
         <>
-            <Navbar />
+  
 
             <div className='flex flex-row'>
                 <div>
-                    <SideNav />
+                    {/* <SideNav /> */}
                 </div>
                 <div>
-                    <div class="shadow-lg rounded-xl w-full md:w-80 p-4 bg-white dark:bg-gray-800 relative overflow-hidden">
-                        <div class="w-full flex items-center justify-between mb-8">
+                    <div class="w-80  p-2 bg-white dark:bg-gray-800 relative overflow-hidden">
+                        <div class="w-full flex items-center justify-between mb-4">
                             <p class="text-gray-800 dark:text-white text-xl">
                                 Download Document
                             </p>
@@ -39,7 +38,7 @@ function DownloadPage() {
                                 </span>
                             </div>
                         </div>
-                        <hr className='mb-4' />
+                        <hr className='mb-6' />
                         <div class="flex items-center mb-6 rounded justify-between">
                             <span class="rounded-lg ">
                                 <PictureAsPdfIcon className='text-red-500 ' />

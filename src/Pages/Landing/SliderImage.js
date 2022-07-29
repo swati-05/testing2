@@ -65,7 +65,7 @@ function SwipeableTextMobileStepper() {
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    height: 5,
+                    height: 1,
                     pl: 2,
                     bgcolor: 'background.default',
                 }}
@@ -92,9 +92,9 @@ function SwipeableTextMobileStepper() {
                                     display: 'block',
                                     maxWidth: '100%',
                                     overflow: 'hidden',
-                                    width: '80%',
+                                    width: '100%',
                                     height: 400,
-                                    marginLeft: 17
+                                    
                                 }}
                                 
                                 src={step.imgPath}

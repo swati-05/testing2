@@ -40,23 +40,23 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 
 const notice = [
-      {
-       heading:'NEWS' ,
-       content:<NewsComponent />,
-      },
-      {
-        heading:'NOTICE' ,
-        content:<NoticeComponent />,
-      },
-    //   {
-    //     heading:'Newss' ,
-    //     content: <SectionOurDomain/>,
-    //   },
-    //   {
-    //     heading:'Newss' ,
-    //     content: <SectionOurDomain/>,
-    //   },
-    ];
+  {
+    heading: 'NEWS',
+    content: <NewsComponent />,
+  },
+  {
+    heading: 'NOTICE',
+    content: <NoticeComponent />,
+  },
+  //   {
+  //     heading:'Newss' ,
+  //     content: <SectionOurDomain/>,
+  //   },
+  //   {
+  //     heading:'Newss' ,
+  //     content: <SectionOurDomain/>,
+  //   },
+];
 
 function SliderCard() {
   const theme = useTheme();
@@ -76,39 +76,41 @@ function SliderCard() {
   };
 
   return (
-    <Box sx={{ maxWidth: 300, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 300, flexGrow: 1, height: 450 }}>
       <Paper
         square
         elevation={0}
         sx={{
           display: 'flex',
           alignItems: 'center',
-          height: 50,
+          height: 60,
           pl: 2,
           bgcolor: 'background.default',
         }}
       >
-        <Typography >{notice[activeStep].heading}</Typography>    
+        <div className='pb-2 px-8   ml-16 mb-2'>
+          <Typography >{notice[activeStep].heading}</Typography>
+        </div>
       </Paper>
-      
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {notice.map((step, index) => (
-          <div key={step.heading}>
-            {Math.abs(activeStep - index) <= 2 ? (
-             <Box sx={{ height: 255, maxWidth: 400, width: '100%', p:1, backgroundColor:'white'}}>
-             {notice[activeStep].content}
-           </Box>
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
+
+        <AutoPlaySwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+        >
+          {notice.map((step, index) => (
+            <div key={step.heading}>
+              {Math.abs(activeStep - index) <= 2 ? (
+                <Box sx={{ height: 255, maxWidth: 400, p: 1, backgroundColor: 'white' }}>
+                  {notice[activeStep].content}
+                </Box>
+              ) : null}
+            </div>
+          ))}
+        </AutoPlaySwipeableViews>
       <MobileStepper
-      variant="text"
+        variant="text"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}

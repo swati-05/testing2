@@ -1,12 +1,13 @@
 import React from 'react'
 import GrevanshesPage from '../Pages/Landing/GrevanshesPage'
-import Landing_Navbar from '../Pages/Landing/Landing_Navbar'
-import Navbar from './Navbar'
+
+import LandingNav from './testDelete/LandingNav'
+
 
 function Complain_Grivance() {
   return (
     <>
-<Navbar />
+<LandingNav />
 <GrevanshesPage />
     </>
   )

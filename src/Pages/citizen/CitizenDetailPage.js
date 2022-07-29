@@ -8,8 +8,8 @@ import CitizenAccountDetail from './CitizenAccountDetail';
 import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
 import CitizenViewDetail from './CitizenViewDetail';
 import CitizenNotification from './CitizenNotification';
-import Navbar from '../../components/Navbar';
 import SideNav from './SideNav';
+import LandingNav from '../../components/testDelete/LandingNav';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,7 +53,7 @@ export default function CitizenDetailPage() {
 
   return (
     <>
-      <Navbar />
+      <LandingNav />
 
       <div  className='flex flex-row'>
         <div>

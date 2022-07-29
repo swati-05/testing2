@@ -14,7 +14,11 @@ function SideNav() {
 
             <div>
                 <aside class="w-48 h-full shadow-lg  px-1 absolute" style={{ 'backgroundColor': '#4f46e5' }}>
-                    <ul class="relative">
+                    <div>
+                      {/* <img src='https://images.pexels.com/photos/268415/pexels-photo-268415.jpeg?cs=srgb&dl=pexels-pixabay-268415.jpg&fm=jpg' className='w-full'/> */}
+                   
+                   <div className='p-4 '>
+                   <ul class="relative">
                         <li class="relative">
                             <img src='https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png' className='h-20 ml-6 mt-6 ' />
                         </li>
@@ -53,6 +57,8 @@ function SideNav() {
                             </button>
                         </li>
                     </ul>
+                   </div>
+                   </div>
                 </aside>
 
                 <aside>

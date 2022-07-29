@@ -1,6 +1,6 @@
 import React from 'react'
 import CitizenDashboardPage from '../../components/CitizenDashboardPage'
-import Navbar from '../../components/Navbar'
+import LandingNav from '../../components/testDelete/LandingNav'
 import SideNav from './SideNav'
 
 function ApplySubList() {
@@ -8,7 +8,7 @@ function ApplySubList() {
     return (
         <>
 
-            <Navbar />
+            <LandingNav />
             <div className='flex flex-row'>
                 <div>
                     <SideNav />
