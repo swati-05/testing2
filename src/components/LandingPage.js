@@ -1,24 +1,36 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Leaders from '../Pages/Landing/Leaders'
 import SectionOurDomain from '../Pages/Landing/SectionOurDomain'
 import SliderImage from '../Pages/Landing/SliderImage'
 import TopNavbar from '../Pages/Landing/TopNavbar'
+import Footer from './Footer'
 import LandingNav from './testDelete/LandingNav'
+import axios from 'axios'
 
 function LandingPage() {
+
+    const [newsList, setNewsList] = useState([])
+
+    const getUlbData = (ulbId) => {
+        axios.get(`http://localhost:3333/news?ulbid=${ulbId}`)
+        .then(function (response) {
+            console.log('news data via select ', response);
+            setNewsList(response.data)
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    
+    }
     return (
-        <>
-        
-        
-            {/* <Landing_Navbar /> */}
-            
-            
+        <>    
             <div>
                 <div > <TopNavbar /> </div>
-                <div><LandingNav /></div>
+                <div><LandingNav  funGetData = {getUlbData} /></div>
                 <div className=''><SliderImage /></div>
-                <div><SectionOurDomain /></div>
+                <div><SectionOurDomain newsData={newsList}/></div>
                 <div><Leaders /></div>
+                <div><Footer /> </div>
             </div>
         </>
     )

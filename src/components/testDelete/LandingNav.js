@@ -1,6 +1,12 @@
 import React from 'react'
+import SearchBox from '../../Pages/Landing/SearchBox'
 
-function LandingNav() {
+function LandingNav(props) {
+
+
+    const selectUlb =(id) => {
+      props.funGetData(id)
+    }
     return (
         <>
             <header>
@@ -71,10 +77,7 @@ function LandingNav() {
 
                                     <div class="relative  bg-white px-1 pt-1 pb-1    sm:mx-auto sm:max-w-lg sm:px-1">
                                         <div >
-
-
-
-                                            <form class="flex items-center">
+                                            {/* <form class="flex items-center">
                                                 <label for="simple-search" class="sr-only">Search</label>
                                                 <div class="relative w-full">
                                                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -86,11 +89,8 @@ function LandingNav() {
                                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                                     <span class="sr-only">Search</span>
                                                 </button>
-                                            </form>
-
-
-
-
+                                            </form> */}
+                                            <SearchBox funGetData = {selectUlb}/>
                                         </div>
                                     </div>
 

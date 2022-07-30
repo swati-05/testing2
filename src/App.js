@@ -47,12 +47,14 @@ import SliderCard from './Pages/Landing/SliderCard';
 import NewsComponent from './Pages/Landing/NewsComponent';
 
 
+
 function App() {
   return (
     <>
     {/* <SliderCard />
     <NewsComponent/> */}
     {/* <SliderImage /> */}
+
   
       <div className={`sm:w-full transition-all  `}>
         {/* <SidenavContent/> */}
