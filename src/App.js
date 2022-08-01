@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   Routes,
   Route,
@@ -46,68 +46,87 @@ import SliderImage from './Pages/Landing/SliderImage';
 import SliderCard from './Pages/Landing/SliderCard';
 import NewsComponent from './Pages/Landing/NewsComponent';
 
+import { contextVar } from './components/ContextVar';
+
 
 
 function App() {
+  const [ulbId, setulbId] = useState(0);
+  const [ulbData, setulbData] = useState({"news": [
+    {
+      "header": "Jharkhand News",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+      "date": "09/04/2022",
+      "isArchived": 1,
+      "ulbid": 1,
+      "id": 1
+    },
+    {
+      "header": "Jharkhand News",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+      "date": "09/04/2022",
+      "isArchived": 1,
+      "ulbid": 1,
+      "id": 1
+    }
+  ]})
+
+
+
   return (
     <>
-    {/* <SliderCard />
-    <NewsComponent/> */}
-    {/* <SliderImage /> */}
-
-  
-      <div className={`sm:w-full transition-all  `}>
-        {/* <SidenavContent/> */}
-        {/* <Navbar/>
+      <contextVar.Provider value={{ulbidfun : setulbId, ulbdatafun: setulbData, ulbdata: ulbData}}>
+        <div className={`sm:w-full transition-all  `}>
+          {/* <SidenavContent/> */}
+          {/* <Navbar/>
         <SideNav/> */}
-        {/* <ApplySubList /> */}
-        {/* <ProgressCard />  */}
-        {/* <CitizenDetailPage /> */}
-        {/* <GrevanshesForm /> */}
-        {/* <Landing_Navbar /> */}
+          {/* <ApplySubList /> */}
+          {/* <ProgressCard />  */}
+          {/* <CitizenDetailPage /> */}
+          {/* <GrevanshesForm /> */}
+          {/* <Landing_Navbar /> */}
 
-        {/* <Navbar /><br/> */}
-        {/* <ContentArea /> */}
-        {/* <Sidebar /> */}
-        {/* <ContentCard /> */}
+          {/* <Navbar /><br/> */}
+          {/* <ContentArea /> */}
+          {/* <Sidebar /> */}
+          {/* <ContentCard /> */}
 
-        {/* <UserSidebar /> */}
-        {/* <Citizen_RegisterForm /> */}
-        {/* <DashboardNavbar /> */}
-       
-        <Routes>
+          {/* <UserSidebar /> */}
+          {/* <Citizen_RegisterForm /> */}
+          {/* <DashboardNavbar /> */}
 
-          <Route path="/" element={<LandingPage />} />
-          {/* <Route path="/home" element={<Home />} />
+          <Routes>
+
+            <Route path="/" element={<LandingPage />} />
+            {/* <Route path="/home" element={<Home />} />
           <Route path="/form" element={<About />} /> */}
-          <Route path="/property" element={<PropertyPage />} />
-          <Route path="/trade" element={<TradePage />} />
-          <Route path="/water" element={<WaterPage />} />
-          <Route path="/building" element={<BuildingPage />} />
-          <Route path="/birth" element={< Birth_DeathPage />} />
-          <Route path="/advertisement" element={<AdvertisementPage />} />
-          <Route path="/solidWaste" element={< SolidWastePage />} />
-          <Route path="/appliedLicense" element={<AppliedLicenses />} />
-          <Route path="/firmDetail" element={<FirmDetails />} />
-          <Route path="/ownerDetail" element={<OwnerDetails />} />
-          <Route path="/downloads" element={<Downloads />} />
-          <Route path="/apply" element={<CitizenWelcome />} />
-          <Route path="/grivancePage" element={<Complain_Grivance />} />
-          <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} />
-          <Route path="/test/:userId" element={<CitizenViewDetail />} />
-          <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
-          <Route path="/test" element={<TestComponent />} />
-          <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
-          <Route path="/download" element={<DownloadPage />} />
-          <Route path="*" element={<NotFound />} />
+            <Route path="/property" element={<PropertyPage />} />
+            <Route path="/trade" element={<TradePage />} />
+            <Route path="/water" element={<WaterPage />} />
+            <Route path="/building" element={<BuildingPage />} />
+            <Route path="/birth" element={< Birth_DeathPage />} />
+            <Route path="/advertisement" element={<AdvertisementPage />} />
+            <Route path="/solidWaste" element={< SolidWastePage />} />
+            <Route path="/appliedLicense" element={<AppliedLicenses />} />
+            <Route path="/firmDetail" element={<FirmDetails />} />
+            <Route path="/ownerDetail" element={<OwnerDetails />} />
+            <Route path="/downloads" element={<Downloads />} />
+            <Route path="/apply" element={<CitizenWelcome />} />
+            <Route path="/grivancePage" element={<Complain_Grivance />} />
+            <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} />
+            <Route path="/test/:userId" element={<CitizenViewDetail />} />
+            <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
+            <Route path="/test" element={<TestComponent />} />
+            <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
+            <Route path="/download" element={<DownloadPage />} />
+            <Route path="*" element={<NotFound />} />
 
-        
-        
-        </Routes>
+
+
+          </Routes>
         </div>
+      </contextVar.Provider >
 
-      
-       
 
     </>
   );

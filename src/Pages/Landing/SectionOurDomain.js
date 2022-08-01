@@ -17,7 +17,7 @@ function SectionOurDomain(props) {
     return (
         <>
            
-            <div class="grid grid-cols-7 gap-4 bg-white border ">
+            <div class="grid grid-cols-7 gap-4 bg-red-500 border ">
                 <div class=" col-span-2  ml-10 ">
                  <KnowledageTab newsData ={props.newsData} />
                 </div>

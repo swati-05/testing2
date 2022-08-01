@@ -41,10 +41,10 @@ function a11yProps(index) {
   };
 }
 
-export default function KnowledageTab(props) {
+export default function KnowledageTab() {
 
 //    let newsData = props.newsData
-console.log('data at knowledge tab ',props.newsData)
+// console.log('data at knowledge tab ',props.newsData)
 
   const [value, setValue] = React.useState(0);
 
@@ -69,7 +69,7 @@ console.log('data at knowledge tab ',props.newsData)
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
-              <NewsComponent newsData = {props.newsData}/>
+              <NewsComponent />
               </TabPanel>
               <TabPanel value={value} index={1}>
            <DownloadPage />

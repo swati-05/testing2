@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 
-function NewsComponent(props) {
-    console.log('news at news component ',props.newsData)
+import { contextVar } from '../../components/ContextVar';
 
-    const [newsByUlb, setnewsByUlb] = useState([]);
-
-
-    useEffect(() => {
-        setnewsByUlb(props.newsData)
-    
-    }, [])
+function NewsComponent() {
+  
     
 
-    
+    const vals = useContext(contextVar)
+
+    console.log('vals from context ',vals.ulbdata)
+
     // const [getNews, setgetNews] = useState([])
     // useEffect(() => {
     //     axios.get('http://localhost:3333/news')
@@ -46,7 +43,7 @@ function NewsComponent(props) {
                     <div class="flow-root">
 
                         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 ">
-                            {newsByUlb?.map((item) => (
+                            {vals.ulbdata?.news.map((item)  => (
                                 <li class="py-1 sm:py-2">
                                     <div class="flex items-center space-x-4">
                                         <div class="flex-1 min-w-0">

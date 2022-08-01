@@ -9,26 +9,26 @@ import axios from 'axios'
 
 function LandingPage() {
 
-    const [newsList, setNewsList] = useState([])
+    // const [newsList, setNewsList] = useState([])
 
-    const getUlbData = (ulbId) => {
-        axios.get(`http://localhost:3333/news?ulbid=${ulbId}`)
-        .then(function (response) {
-            console.log('news data via select ', response);
-            setNewsList(response.data)
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+    // const getUlbData = (ulbId) => {
+    //     axios.get(`http://localhost:3333/news?ulbid=${ulbId}`)
+    //     .then(function (response) {
+    //         console.log('news data via select ', response);
+    //         setNewsList(response.data)
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     })
     
-    }
+    // }
     return (
         <>    
             <div>
                 <div > <TopNavbar /> </div>
-                <div><LandingNav  funGetData = {getUlbData} /></div>
+                <div><LandingNav   /></div>
                 <div className=''><SliderImage /></div>
-                <div><SectionOurDomain newsData={newsList}/></div>
+                <div><SectionOurDomain /></div>
                 <div><Leaders /></div>
                 <div><Footer /> </div>
             </div>

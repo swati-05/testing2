@@ -13,7 +13,7 @@ function CitizenDashboardPage() {
 
       {/* <LandingNav /> */}
       <LandingNav />
-      {/* <SideNav /> */}
+      <SideNav />
       <CitizenView/>
       
 

@@ -156,19 +156,83 @@
   "Select": [
     {
       "header": "Ranchi",
-      "ulbid": 1
+      "news": [
+        {
+          "header": "Ranchi News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 1
+        },
+        {
+          "header": "Ranchi News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 2
+        }
+      ],
+      "id": 1
     },
     {
       "header": "Dhanbad",
-      "ulbid": 2
+      "news": [
+        {
+          "header": "Dhanbad News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 3
+        },
+        {
+          "header": "Dhanbad News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 4
+        }
+      ],
+      "id": 2
     },
     {
       "header": "Bokaro",
-      "ulbid": 3
+      "news": [
+        {
+          "header": "Bokaro News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 5
+        },
+        {
+          "header": "Bokaro News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 6
+        }
+      ],
+      "id": 3
     },
     {
       "header": "Jamshedpur",
-      "ulbid": 4
+      "news": [
+        {
+          "header": "Jamshedpur News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 7
+        },
+        {
+          "header": "Jamshedpur News",
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+          "date": "09/04/2022",
+          "isArchived": 1,
+          "id": 8
+        }
+      ],
+      "id": 4
     }
   ],
   "licenseTable": [

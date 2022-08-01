@@ -1,12 +1,10 @@
 import React from 'react'
 import SearchBox from '../../Pages/Landing/SearchBox'
 
-function LandingNav(props) {
+function LandingNav() {
 
 
-    const selectUlb =(id) => {
-      props.funGetData(id)
-    }
+  
     return (
         <>
             <header>
@@ -90,7 +88,7 @@ function LandingNav(props) {
                                                     <span class="sr-only">Search</span>
                                                 </button>
                                             </form> */}
-                                            <SearchBox funGetData = {selectUlb}/>
+                                            <SearchBox />
                                         </div>
                                     </div>
 
