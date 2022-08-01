@@ -6,6 +6,8 @@ import TopNavbar from '../Pages/Landing/TopNavbar'
 import Footer from './Footer'
 import LandingNav from './testDelete/LandingNav'
 import axios from 'axios'
+import AboutJharkhand from '../Pages/Landing/AboutJharkhand'
+import LeadersGallery from '../Pages/Landing/LeadersGallery'
 
 function LandingPage() {
 
@@ -29,7 +31,8 @@ function LandingPage() {
                 <div><LandingNav   /></div>
                 <div className=''><SliderImage /></div>
                 <div><SectionOurDomain /></div>
-                <div><Leaders /></div>
+                <AboutJharkhand />
+                <div><LeadersGallery /></div>
                 <div><Footer /> </div>
             </div>
         </>

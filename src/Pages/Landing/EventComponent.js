@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
-import axios from 'axios'
-
+import React,{useContext} from 'react'
 import { contextVar } from '../../components/ContextVar';
 
-function NewsComponent() {
-  
-    
+
+function EventComponent() {
+
 
     const vals = useContext(contextVar)
 
     console.log('vals from context ',vals.ulbdata)
-
 
 
     return (
@@ -30,7 +27,7 @@ function NewsComponent() {
                     <div class="flow-root">
 
                         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 ">
-                            {vals.ulbdata?.news.map((item)  => (
+                            {vals.ulbdata?.events.map((item) => (
                                 <li class="py-1 sm:py-2">
                                     <div class="flex items-center space-x-4">
                                         <div class="flex-1 min-w-0">
@@ -40,7 +37,7 @@ function NewsComponent() {
                                         </div>
 
                                     </div>
-                                   
+
 
                                 </li>
                             ))}
@@ -59,4 +56,4 @@ function NewsComponent() {
     )
 }
 
-export default NewsComponent
+export default EventComponent

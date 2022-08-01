@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import NewsComponent from './NewsComponent';
 import DownloadPage from '../../components/DownloadPage';
+import EventComponent from './EventComponent';
 
 
 function TabPanel(props) {
@@ -59,23 +60,23 @@ export default function KnowledageTab() {
   
         </div>
         <div>
-          <div className=' w-full border'>
+          <div className=' w-full h-[29rem] mt-2 border bg-slate-50'>
             <Box sx={{ width: '100%' }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                   <Tab label="NEWS" {...a11yProps(0)} />
-                  <Tab label="DOWNLOADS" {...a11yProps(1)} />
-                  <Tab label="demo" {...a11yProps(2)} />
+                  <Tab label="EVENTS" {...a11yProps(1)} />
+                  <Tab label="DOWNLOADS" {...a11yProps(2)} />
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
               <NewsComponent />
               </TabPanel>
               <TabPanel value={value} index={1}>
-           <DownloadPage />
+          <EventComponent />
               </TabPanel>
               <TabPanel value={value} index={2}>
-            downloads
+              <DownloadPage />
               </TabPanel>
             </Box>
           </div>

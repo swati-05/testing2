@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React,{useContext} from 'react'
+import { contextVar } from '../../components/ContextVar';
+
 
 function NoticeComponent() {
 
-    const [getNotice, setgetNotice] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:3333/notice')
-            .then(function (response) {
-                // handle success
-                console.log(response.data);
-                setgetNotice(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+    const vals = useContext(contextVar)
 
-    }, [])
+    console.log('vals from context ',vals.ulbdata)
+
 
 
     return (
@@ -34,7 +26,7 @@ function NoticeComponent() {
                     <div class="flow-root">
 
                         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 ">
-                            {getNotice.map((item) => (
+                            {vals.ulbdata?.notice.map((item) => (
                                 <li class="py-0 sm:py-1">
                                     <div class="flex items-center space-x-4">
                                         <div class="flex-1 min-w-0">
@@ -42,18 +34,18 @@ function NoticeComponent() {
                                                 {item.header}
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                                                View all
-                                            </a>
-                                        </div>
+                                        
                                     </div>
                                     {/* <hr /> */}
 
                                 </li>
                             ))}
                         </ul>
-
+                        <div class="float-right text-base font-semibold text-gray-900 dark:text-white">
+                                            <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                                                View all
+                                            </a>
+                                        </div>
                     </div>
                 </div>
 

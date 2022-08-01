@@ -69,14 +69,14 @@ function TopNavbar() {
     return (
         <>
             <header >
-                <nav class="shadow-md bg-gray-100 border-b-2 h-8 ">
+                <nav class="shadow-md bg-indigo-500 drop-shadow-sm h-8  ">
 
 
                     <div>
 
                         <div class="relative   ">
-                            <div class="md:flex   float-right w-96 -mt-1">
-                                <div className='ml-2.5 mt-0.5 w-64 '>
+                            <div class="md:flex   float-right w-96 ">
+                                <div className='mr-6  w-60 bg-slate-50 rounded-full text-center h-6 mt-1  opacity-95 hover:scale-105 transition-all transform duration-500 '>
                                 <div >
                                             <Button onClick={handleOpen} >Complain & Grevances</Button>
                                             <Modal
@@ -113,29 +113,29 @@ function TopNavbar() {
                                         </div>
                                 </div>
 
-                               <div className='flex  mt-1.5 w-18'>
+                               <div className='flex  mt-2 w-18'>
                                <div className='flex-1'>
-                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200 " viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
                                 </svg>
                                </div>
                                <div className='flex-1'>
                               <Link to ="/citizenDashboard">
-                                <h2 class="text-text-gray-600   hover:cursor-pointer px-1 hover:text-indigo-600 ">Login</h2>
+                                <h2 class="text-text-gray-600   hover:cursor-pointer px-1 hover:text-white text-slate-200 text-sm">Login</h2>
                               </Link>
                                </div>
                                </div>
 
 
 
-                                <div className=' flex mt-1.5 w-18 px-2'>
+                                <div className=' flex mt-2 w-18 px-2'>
                                 <div className='flex-1'>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                                 </div>
                                 <div className='flex-1'>
-                                <h2 class="text-text-gray-600  hover:cursor-pointer px-1  hover:text-indigo-600 text-black ">Signup</h2>
+                                <h2 class="text-text-gray-600  hover:cursor-pointer px-1  hover:text-white text-slate-200 text-sm">Signup</h2>
                                 </div>
                                 </div>
                             </div>

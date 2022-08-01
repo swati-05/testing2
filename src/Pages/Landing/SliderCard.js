@@ -41,13 +41,13 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const notice = [
   {
-    heading: 'NEWS',
-    content: <NewsComponent />,
+    heading: 'IMPORTANT',
+    content:  <NoticeComponent />,
   },
-  {
-    heading: 'NOTICE',
-    content: <NoticeComponent />,
-  },
+  // {
+  //   heading: 'NOTICE',
+  //   content: <NoticeComponent />,
+  // },
   //   {
   //     heading:'Newss' ,
   //     content: <SectionOurDomain/>,
@@ -76,7 +76,7 @@ function SliderCard() {
   };
 
   return (
-    <Box sx={{ maxWidth: 300, flexGrow: 1, height: 450 }}>
+    <Box sx={{ maxWidth: 300, flexGrow: 1, height: 40}}>
       <Paper
         square
         elevation={0}
@@ -88,8 +88,8 @@ function SliderCard() {
           bgcolor: 'background.default',
         }}
       >
-        <div className='pb-2 px-8   ml-16 mb-2'>
-          <Typography >{notice[activeStep].heading}</Typography>
+        <div className='pb-2 px-8   ml-16 mb-2 font-serif'>
+          <Typography style={{color: 'black', fontSize: 18, fontFamily: 'Raleway'}}>{notice[activeStep].heading}</Typography>
         </div>
       </Paper>
 

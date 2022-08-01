@@ -1,13 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { contextVar } from '../../components/ContextVar';
+
 
 
 
 function SideNav() {
 
- const getdata = useContext(contextVar)
- alert(getdata.val)
 
     const [navWidth, setNavWidth] = useState('w-0')
     const toggleNav = () => {
