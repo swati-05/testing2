@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import CitizenAccountDetail from './CitizenAccountDetail';
 import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
-import CitizenViewDetail from './CitizenViewDetail';
+import CitizenViewDetail from './CitizenLicenseFullDetail';
 import CitizenNotification from './CitizenNotification';
 import SideNav from './SideNav';
 import LandingNav from '../../components/testDelete/LandingNav';

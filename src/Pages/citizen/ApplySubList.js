@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CitizenDashboardPage from '../../components/CitizenDashboardPage'
 import LandingNav from '../../components/testDelete/LandingNav'
 import SideNav from './SideNav'
@@ -44,17 +45,19 @@ function ApplySubList() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" sm:w-full p-4 ">
-                                    <div class="flex relative drop-shadow-md " >
-                                        <img alt="gallery" class="absolute inset-0 w-60 h-50 object-cover object-center drop-shadow-lg" src="https://www.automationmag.com/wp-content/uploads/2022/01/Word-of-Law-Nov-Dec-21.png" />
-                                        <button class="dark:bg-gray-800  focus:ring-gray-400 bottom-0 absolute  font-medium leading-none text-gray-800 py-1  bg-slate-50 w-full text-sm">Property</button>
-                                        <div class="px-4 py-6 relative z-5 w-60 border-2 bg-white opacity-0 hover:opacity-100 drop-shadow-lg">
+                                <Link to="/citizenSafForm">
+                                    <div class=" sm:w-full p-4 ">
+                                        <div class="flex relative drop-shadow-md " >
+                                            <img alt="gallery" class="absolute inset-0 w-60 h-50 object-cover object-center drop-shadow-lg" src="https://www.automationmag.com/wp-content/uploads/2022/01/Word-of-Law-Nov-Dec-21.png" />
+                                            <button class="dark:bg-gray-800  focus:ring-gray-400 bottom-0 absolute  font-medium leading-none text-gray-800 py-1  bg-slate-50 w-full text-sm">Property</button>
+                                            <div class="px-4 py-6 relative z-5 w-60 border-2 bg-white opacity-0 hover:opacity-100 drop-shadow-lg">
 
-                                            <h1 class="title-font text-md font-medium font-serif text-gray-900 mb-3">Property</h1>
-                                            <p class="text-sm">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                                <h1 class="title-font text-md font-medium font-serif text-gray-900 mb-3">Property</h1>
+                                                <p class="text-sm">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                                 <div class=" sm:w-full p-4 ">
                                     <div class="flex relative drop-shadow-md " >
                                         <img alt="gallery" class="absolute inset-0 w-60 h-50 object-cover object-center drop-shadow-lg" src="https://www.indiafilings.com/learn/wp-content/uploads/2019/05/Chennai-Water-Tax.jpg" />

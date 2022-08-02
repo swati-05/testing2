@@ -1,84 +1,107 @@
-import React from 'react'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
-function TimeLine() {
-    return (
-        <>
-            <div class="max-w-xl mx-auto my-4 border-b-2 pb-4">
-                <div class="flex pb-3">
-                    <div class="flex-1">
-                    </div>
+const steps = [
+  {
+    label: 'Back Office',
+    description: `Verified`,
+  },
+  {
+    label: 'Dealing Assistant ',
+    description:
+      'verified',
+  },
+  {
+    label: 'Trade Tax Daroga',
+    description: `Verifying...`,
+  },
+  {
+    label: 'Section Head ',
+    description:
+      '',
+  },
+  {
+    label: 'Executive Officer',
+    description: ``,
+  },
+];
 
-                    <div class="flex-1">
-                        <div class="w-10 h-10 bg-green mx-auto rounded-full text-lg text-white flex items-center">
-                            <span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white"></i></span>
-                        </div>
-                    </div>
+export default function TimeLine() {
+  const [activeStep, setActiveStep] = React.useState(0);
 
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
 
-                    <div class="w-1/6 align-center items-center align-middle content-center flex">
-                        <div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
-                            <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 100%"></div>
-                        </div>
-                    </div>
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
 
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
-                    <div class="flex-1">
-                        <div class="w-10 h-10 bg-green mx-auto rounded-full text-lg text-white flex items-center">
-                            <span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="w-1/6 align-center items-center align-middle content-center flex">
-                        <div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
-                            <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 20%"></div>
-                        </div>
-                    </div>
-
-                    <div class="flex-1">
-                        <div class="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
-                            <span class="text-grey-darker text-center w-full">3</span>
-                        </div>
-                    </div>
-
-
-                    <div class="w-1/6 align-center items-center align-middle content-center flex">
-                        <div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
-                            <div class="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="flex-1">
-                        <div class="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
-                            <span class="text-grey-darker text-center w-full">4</span>
-                        </div>
-                    </div>
-
-
-                    <div class="flex-1">
-                    </div>
+  return (
+   <>
+   <div className='text-center mt-6 text-xl font-serif font-semibold text-gray-600'>
+   <h1>APPLICATION STATUS </h1>
+   </div>
+    <Box sx={{ maxWidth: 400,marginLeft:8 ,marginTop:4 }}>
+      <Stepper activeStep={activeStep} orientation="vertical">
+        {steps.map((step, index) => (
+          <Step key={step.label}>
+            <StepLabel
+              optional={
+                index === 2 ? (
+                  <Typography variant="caption"></Typography>
+                ) : null
+              }
+            >
+              {step.label}
+            </StepLabel>
+            <StepContent>
+              <Typography>{step.description}</Typography>
+              {/* <Box sx={{ mb: 2 }}>
+                <div>
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
+                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                  </Button>
+                  <Button
+                    disabled={index === 0}
+                    onClick={handleBack}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
+                    Back
+                  </Button>
                 </div>
-
-                <div class="flex text-xs content-center text-center">
-                    <div class="w-1/4">
-                        Invitation received
-                    </div>
-
-                    <div class="w-1/4">
-                        Personal details
-                    </div>
-
-                    <div class="w-1/4">
-                        Application details
-                    </div>
-
-                    <div class="w-1/4">
-                        Confirmation
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+              </Box> */}
+            </StepContent>
+          </Step>
+        ))}
+      </Stepper>
+      {activeStep === steps.length && (
+        <Paper square elevation={0} sx={{ p: 3 }}>
+          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+            Reset
+          </Button>
+        </Paper>
+      )}
+    </Box>
+    <div>
+        <img src='https://img.freepik.com/free-vector/maturity-stage-online-service-platform-project-life-cycle-period-business-project-implementation-development-online-tutorial-consultation-plan-vector-flat-illustration_613284-968.jpg?w=740&t=st=1659425145~exp=1659425745~hmac=f3cd75e36a44133073a007eb8db61e15411661ec014840f5cd53177e43e8faf8'/>
+    </div>
+    </>
+  );
 }
-
-export default TimeLine

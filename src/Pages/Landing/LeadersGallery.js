@@ -12,7 +12,7 @@ function LeadersGallery() {
                     <div class="container px-2 py-1 mx-auto ">
                         <div class="flex items-center mx-auto  pb-2 mb-2 sm:flex-row flex-col hover:scale-105 transition-all transform duration-500 rounded-sm shadow-sm hover:shadow-2xl ">
                             <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0   ">
-                                <img src='https://o.remove.bg/downloads/db277549-c741-4efe-9a94-d95850358206/cmjharkhand09042021-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
+                                <img src='https://o.remove.bg/downloads/7551e336-17e4-4f28-8963-f714cbeb7e2e/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
                             </div>
                             <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                                 <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Sri Hemant Soren</h2>
@@ -27,7 +27,7 @@ function LeadersGallery() {
 
                             </div>
                             <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0  ">
-                                <img src='https://o.remove.bg/downloads/1e60c3fc-3ccb-4a04-95fc-596417dfa18f/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
+                                <img src='https://o.remove.bg/downloads/b8241235-b5e0-4f7a-9f95-fbbf683e6f8e/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@ function LeadersGallery() {
                     <div class="container px-2 py-1 mx-auto ">
                             <div class="flex items-center mx-auto pb-2 mb-2 px-4 sm:flex-row flex-col hover:scale-105 transition-all transform duration-500 rounded-sm shadow-sm hover:shadow-2xl   ">
                             <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  inline-flex items-center justify-center text-indigo-500 flex-shrink-0  ">
-                                <img src='https://o.remove.bg/downloads/6ab15242-d56c-4e71-b122-69e8bba437ef/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
+                                <img src='https://o.remove.bg/downloads/5fd5a7d2-664e-496e-bf9b-9eb322851c35/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
                             </div>
                             <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                                 <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Shri Sukhdeo Singh</h2>
@@ -52,7 +52,7 @@ function LeadersGallery() {
 
                             </div>
                             <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 ">
-                                <img src='https://o.remove.bg/downloads/1e60c3fc-3ccb-4a04-95fc-596417dfa18f/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
+                                <img src='https://o.remove.bg/downloads/b8241235-b5e0-4f7a-9f95-fbbf683e6f8e/download-removebg-preview.png' class="sm:w-28 sm:h-28 w-32 h-32" />
                             </div>
                         </div>
                     </div>

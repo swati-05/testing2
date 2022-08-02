@@ -1,7 +1,5 @@
 import React from 'react'
-import DownloadButton from '../../components/DownloadButton'
-import DownloadPage from '../../components/DownloadPage'
-import Downloads from '../../components/Downloads'
+
 import KnowledageTab from './KnowledageTab'
 import OurDomainContent from './OurDomainContent'
 import OurDomain from './OurDomainContent'

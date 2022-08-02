@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import GrevanceComplainForm from './GrevanceComplainForm';
 import GrevanceStatusTable from './GrevanceStatusTable';
-
+import AnnouncementIcon from '@mui/icons-material/Announcement';
+import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,26 +50,26 @@ export default function GrevanshesPage() {
   };
 
   return (
-    <div className='sm:p-0 w-9/12  border-2 m-auto bg-slate-100 '>
+    <div className=' w-full h- full m-auto bg-white '>
       <Box >
-      <Box sx={{ border: 1, borderColor: 'divider',backgroundColor:'white' }} className='drop-shadow-md'>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
-          <Tab label="New Complain" {...a11yProps(0)} />
-          <Tab label="Track Complain" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
+        <Box sx={{ borderColor: 'divider', backgroundColor: 'white' }} >
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
+            <Tab icon={<AnnouncementIcon color="warning" variant="contained"/>} label="Complain" {...a11yProps(0)} />
+            <Tab icon={<ViewTimelineIcon color="success" variant="contained"/>} label="Track Complain" {...a11yProps(1)} />
+            <Tab icon={<AnnouncementIcon color="secondary" variant="contained"/>} label="Complain" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0} >
+          <GrevanceComplainForm />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <GrevanceStatusTable />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          Item Three
+        </TabPanel>
+        {/* <Outlet /> */}
       </Box>
-      <TabPanel value={value} index={0}>
-       <GrevanceComplainForm />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-       <GrevanceStatusTable />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      {/* <Outlet /> */}
-    </Box>
     </div>
   );
 }

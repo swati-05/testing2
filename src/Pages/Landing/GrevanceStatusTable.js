@@ -33,7 +33,7 @@ function GrevanceStatusTable() {
 
 
             <div className= {closeTable}>
-                <div className='border flex justify-between bg-indigo-600'>
+                <div className=' flex justify-between bg-slate-500 w-full'>
                     <div>
 
                     </div>

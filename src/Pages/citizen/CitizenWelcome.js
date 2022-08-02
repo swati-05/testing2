@@ -18,7 +18,8 @@ function CitizenWelcome() {
         </div> */}
 
 
-      <div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
+      {/* <div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5"> */}
+      <ApplySubList/>
         <div class="bg-indigo-600 text-white rounded shadow-xl py-5 px-5 w-full lg:w-10/12 xl:w-3/4" >
           <div class="flex flex-wrap -mx-3 items-center">
             <div class="w-1/4 px-3 text-center hidden md:block">
@@ -40,7 +41,7 @@ function CitizenWelcome() {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
 
 
 

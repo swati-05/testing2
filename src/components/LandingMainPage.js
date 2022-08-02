@@ -9,7 +9,7 @@ import axios from 'axios'
 import AboutJharkhand from '../Pages/Landing/AboutJharkhand'
 import LeadersGallery from '../Pages/Landing/LeadersGallery'
 
-function LandingPage() {
+function LandingMainPage() {
 
     // const [newsList, setNewsList] = useState([])
 
@@ -39,4 +39,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default LandingMainPage
