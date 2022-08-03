@@ -15,6 +15,9 @@ function CitizenOwnerDetails(props) {
     const [editStatus, setEditStatus] = useState(false) //to check edit or add of form
     const [editIndex, setEditIndex] = useState() //to carry the index to edit if edistatus is true
     const [AddOwnerForm, setAddOwnerForm] = useState('-translate-y-full -top-80')
+   
+    const [uploadimagefile, setuploadimageFile] = useState();
+
     const seleOptions = [
         { option: 'one', value: 1 },
         { option: 'two', value: 2 },
@@ -39,6 +42,7 @@ function CitizenOwnerDetails(props) {
         emailId: yup.string(),
         armedForce: yup.string().required('Select armed force status'),
         speciallayAbled: yup.string().required('Select specially-abled status'),
+        ownerimage: yup.mixed().required('A file is required')
 
     })
     const formik = useFormik({
@@ -53,7 +57,8 @@ function CitizenOwnerDetails(props) {
             pan: '',
             emailId: '',
             armedForce: 'no',
-            speciallayAbled: 'no'
+            speciallayAbled: 'no',
+            ownerimage:''
         },
 
         onSubmit: (values, resetForm) => {
@@ -120,6 +125,7 @@ function CitizenOwnerDetails(props) {
         formik.initialValues.emailId = tempOwnerlist[index].emailId
         formik.initialValues.armedForce = tempOwnerlist[index].armedForce
         formik.initialValues.speciallayAbled = tempOwnerlist[index].speciallayAbled
+        formik.initialValues.ownerimage = tempOwnerlist[index].ownerimage
 
         toggleForm()
     }
@@ -130,6 +136,13 @@ function CitizenOwnerDetails(props) {
             props.nextFun(4)
         }
     }
+    const handleChange = (e) => {
+        console.log("File" , e.target.files);
+        setuploadimageFile(URL.createObjectURL(e.target.files[0]));
+        <img src={uploadimagefile} />
+        console.log("image" , uploadimagefile)
+    }
+
     return (
         <>
 
@@ -223,6 +236,12 @@ function CitizenOwnerDetails(props) {
                                     </select>
                                     <span className="text-red-600 absolute text-xs">{formik.touched.speciallayAbled && formik.errors.speciallayAbled ? formik.errors.speciallayAbled : null}</span>
                                 </div>
+                                <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
+                                    <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">Upload Image</label>
+                                    <input {...formik.getFieldProps('ownerimage')} type="file" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none shadow-md"
+                                       onChange={handleChange} />
+                                    <span className="text-red-600 absolute text-xs">{formik.touched.ownerimage && formik.errors.ownerimage ? formik.errors.ownerimage : null}</span>
+                                </div>
                                 <div className=" flex justify-center items-end">
                                     <div className='md:px-10'>
                                         <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out cursor-pointer">{editStatus ? 'Update' : 'Add'}</button>
@@ -291,6 +310,7 @@ function CitizenOwnerDetails(props) {
                                             <td className="px-2 py-2 text-sm text-left">{data.emailId}</td>
                                             <td className="px-2 py-2 text-sm text-left">{data.armedForce}</td>
                                             <td className="px-2 py-2 text-sm text-left">{data.speciallayAbled}</td>
+                                            <td className="px-2 py-2 text-sm text-left">{data.ownerimage}</td>
                                             <td className="px-2 py-2 text-sm text-left"><TbEdit onClick={() => editOwner(index)} className='inline text-green-500 font-semibold text-lg cursor-pointer hover:text-green-700 relative hover:scale-150' /><RiDeleteBack2Line onClick={() => removeOwner(index)} className='inline ml-2 text-red-400 font-semibold text-lg cursor-pointer hover:text-red-700 relative hover:scale-150' /></td>
                                         </tr>
                                     </>

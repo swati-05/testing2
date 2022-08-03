@@ -34,9 +34,10 @@ function NewsComponent() {
                                 <li class="py-1 sm:py-2">
                                     <div class="flex items-center space-x-4">
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                         <p class="text-sm font-medium text-gray-900 truncate rounded-full dark:text-white">
                                                 {item.header}
                                             </p>
+                                        
                                         </div>
 
                                     </div>
@@ -46,7 +47,7 @@ function NewsComponent() {
                             ))}
 
                         </ul>
-                        <div class="inline-flex float-right text-base font-semibold text-gray-900 dark:text-white">
+                        <div class="inline-flex float-right text-base font-semibold text-gray-900 dark:text-white p-4">
                             <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                                 View all
                             </a>

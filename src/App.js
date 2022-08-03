@@ -11,7 +11,7 @@ import CitizenDetailPage from './Pages/citizen/CitizenDetailPage';
 import CitizenViewDetail from './Pages/citizen/CitizenLicenseFullDetail';
 import LandingPage from './components/LandingMainPage';
 import CitizenAppliedLicenseDetail from './Pages/citizen/CitizenAppliedLicenseDetail';
-import CitizenDashboardPage from './components/CitizenDashboardPage';
+import CitizenDashboardPage from './components/CitizenMainPage';
 import TestComponent from './components/testDelete/TestComponent';
 import ComplainGrivanceMainPage from './components/ComplainGrivanceMainPage'
 import CitizenWelcome from './Pages/citizen/CitizenWelcome';
@@ -20,7 +20,8 @@ import { contextVar } from './components/ContextVar';
 import CitizenLicenseFullDetail from './Pages/citizen/CitizenLicenseFullDetail';
 import CitizenSafApplicationFormIndex from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafApplicationFormIndex'
 import LandingMainPage from './components/LandingMainPage';
-
+import ImageUpload from './components/testDelete/ImageUpload';
+import CitizenMainPage from './components/CitizenMainPage'
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
   const [ulbData, setulbData] = useState({
     "news": [
       {
-        "header": "Jharkhand News",
+        "header": "Jharkhand News Jharkhand News",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
@@ -36,7 +37,39 @@ function App() {
         "id": 1
       },
       {
-        "header": "Jharkhand News",
+        "header": "Jharkhand News Jharkhand News",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+        "date": "09/04/2022",
+        "isArchived": 1,
+        "ulbid": 1,
+        "id": 1
+      },
+      {
+        "header": "Jharkhand News Jharkhand News",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+        "date": "09/04/2022",
+        "isArchived": 1,
+        "ulbid": 1,
+        "id": 1
+      },
+      {
+        "header": "Jharkhand News Jharkhand News",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+        "date": "09/04/2022",
+        "isArchived": 1,
+        "ulbid": 1,
+        "id": 1
+      },
+      {
+        "header": "Jharkhand News Jharkhand News",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
+        "date": "09/04/2022",
+        "isArchived": 1,
+        "ulbid": 1,
+        "id": 1
+      },
+      {
+        "header": "Jharkhand News Jharkhand News",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
@@ -110,7 +143,7 @@ function App() {
     <>
       <contextVar.Provider value={{ ulbdatafun: setulbData, ulbdata: ulbData }}>
         <div className={`sm:w-full transition-all  `}>
-        
+        {/* <ImageUpload /> */}
           <Routes>
             <Route path="/" element={<LandingMainPage />} />
             {/* <Route path="/home" element={<Home />} />
@@ -119,7 +152,7 @@ function App() {
             <Route path="/grivancePage" element={<ComplainGrivanceMainPage />} />
             <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} />
             <Route path="/test/:userId" element={<CitizenLicenseFullDetail />} />
-            <Route path="/citizenDashboard" element={<CitizenDashboardPage />} />
+            <Route path="/citizenDashboard" element={<CitizenMainPage />} />
             <Route path="/test" element={<TestComponent />} />
             <Route path="/citizenDashboard/citizenAccount" element={<CitizenDetailPage />} />
             <Route path="/download" element={<DownloadPage />} />

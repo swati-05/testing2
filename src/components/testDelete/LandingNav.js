@@ -11,11 +11,11 @@ function LandingNav() {
                 <nav class="shadow-md bg-white border-b-2 h-22">
                     <div class="flex justify-between items-center py-1 px-2 container mx-auto ">
                         <div className='flex  '>
-                            <div className=' '>
+                            <div className=' p-2'>
                                 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jharkhand_Rajakiya_Chihna.svg/1200px-Jharkhand_Rajakiya_Chihna.svg.png' className='h-20' />
                             </div>
-                            <div className=' ml-4 mt-4  '>
-                                <h1 className='text-center text-lg  text-gray-600'>Jharkhand Urban Infrastructure <br /> Development Company</h1>
+                            <div className=' ml-4 mt-6  '>
+                                <h1 className='text-center text-md  text-gray-600 font-semibold font-sans'>Jharkhand Urban Infrastructure <br /> Development Company</h1>
                             </div>
                         </div>
                         <div>
@@ -29,7 +29,7 @@ function LandingNav() {
                                     <div>
                                         <div class="flex-col  ">
                                             <div class="flex w-60 justify-center space-x-0 ">
-                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-l-full hover:bg-gray-500 hover:text-white  text-gray-500 font-semibold  hover:flex-grow hover: will-change-contents transition-all duration-200 ease-in-out ">
+                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-l-full hover:bg-[#005691] hover:text-white  text-[#005691] font-semibold  hover:flex-grow hover: will-change-contents transition-all duration-200 ease-in-out ">
                                                     <div className='flex flex-row'>
                                                         <div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -41,7 +41,7 @@ function LandingNav() {
                                                         </div>
                                                     </div>
                                                 </button>
-                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-none hover:bg-gray-500 hover:text-white  text-gray-500 font-semibold  hover:flex-grow transition-all duration-200 ease-in-out">
+                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-none hover:hover:bg-[#005691] hover:text-white  text-[#005691]  font-semibold  hover:flex-grow transition-all duration-200 ease-in-out">
                                                     <div className='flex flex-row'>
                                                         <div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -54,7 +54,7 @@ function LandingNav() {
                                                     </div>
                                                 </button>
 
-                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-gray-500 hover:text-white  text-gray-500 font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+                                                <button class="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-[#005691] hover:text-white  text-[#005691]  font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
                                                     <div className='flex flex-row'>
                                                         <div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ml-1" viewBox="0 0 20 20" fill="currentColor">

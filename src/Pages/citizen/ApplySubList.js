@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CitizenDashboardPage from '../../components/CitizenDashboardPage'
+import CitizenDashboardPage from '../../components/CitizenMainPage'
 import LandingNav from '../../components/testDelete/LandingNav'
 import SideNav from './SideNav'
 
@@ -33,7 +33,7 @@ function ApplySubList() {
                                             <p class="text-sm">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                         </div>
                                     </div>
-                                </div>
+                              </div>
                                 <div class=" sm:w-full p-4 ">
                                     <div class="flex relative drop-shadow-md " >
                                         <img alt="gallery" class="absolute inset-0 w-60 h-50 object-cover object-center drop-shadow-lg" src="https://image.slidesharecdn.com/deathandbirthcertificate-131013141947-phpapp02/85/death-and-birth-certificate-1-320.jpg?cb=1381674712" />

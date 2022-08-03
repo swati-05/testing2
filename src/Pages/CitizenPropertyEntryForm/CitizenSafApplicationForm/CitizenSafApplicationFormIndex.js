@@ -97,6 +97,7 @@ function CitizenSafApplicationFormIndex() {
     }
     return (
         <>
+        <div className='w-10/12 ml-48 overflow-x-hidden h-screen'>
             <ToastContainer position="top-right"
                 autoClose={2000} />
                   <div className='text-right relative top-0'>
@@ -125,7 +126,7 @@ function CitizenSafApplicationFormIndex() {
             {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button></div>}
 
 
-
+            </div>
 
         </>
     )

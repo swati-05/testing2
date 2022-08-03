@@ -109,7 +109,7 @@ function SliderCard() {
             </div>
           ))}
         </AutoPlaySwipeableViews>
-      <MobileStepper
+      {/* <MobileStepper
         variant="text"
         steps={maxSteps}
         position="static"
@@ -138,7 +138,7 @@ function SliderCard() {
             Back
           </Button>
         }
-      />
+      /> */}
     </Box>
   );
 }

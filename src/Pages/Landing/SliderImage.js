@@ -1,4 +1,4 @@
-import  React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -48,7 +48,7 @@ function SliderImage() {
 
     const vals = useContext(contextVar)
 
-console.log('vals from context ',vals.ulbdata)
+    console.log('vals from context ', vals.ulbdata)
 
 
     const theme = useTheme();
@@ -80,10 +80,10 @@ console.log('vals from context ',vals.ulbdata)
                     bgcolor: 'background.default',
                 }}
             >
-              
+
                 <Typography>{vals.ulbdata?.images[activeStep].label}</Typography>
-             
-          
+
+
             </Paper>
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -91,8 +91,8 @@ console.log('vals from context ',vals.ulbdata)
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
             >
-        
-                { vals.ulbdata?.images.map((step, index) => (
+
+                {vals.ulbdata?.images.map((step, index) => (
                     <div key={step.label}>
                         {Math.abs(activeStep - index) <= 2 ? (
                             <Box
@@ -100,51 +100,52 @@ console.log('vals from context ',vals.ulbdata)
                                 sx={{
                                     height: 255,
                                     display: 'block',
-                                    maxWidth: '95%',
+                                    maxWidth: '100%',
                                     overflow: 'hidden',
                                     width: '100%',
                                     height: 350,
-                                    marginLeft:5
-                                    
+
+
                                 }}
-                                
+
                                 src={step.imgPath}
                                 alt={step.label}
                             />
                         ) : null}
-                        
+                        {/* <MobileStepper
+                            steps={maxSteps}
+                            position="static"
+                            activeStep={activeStep}
+                            nextButton={
+                                <Button
+                                    size="small"
+                                    onClick={handleNext}
+                                    disabled={activeStep === maxSteps - 1}
+                                    className="z-10"
+                                >
+                                    Next
+                                    {theme.direction === 'rtl' ? (
+                                        <KeyboardArrowLeft />
+                                    ) : (
+                                        <KeyboardArrowRight />
+                                    )}
+                                </Button>
+                            }
+                            backButton={
+                                <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                                    {theme.direction === 'rtl' ? (
+                                        <KeyboardArrowRight />
+                                    ) : (
+                                        <KeyboardArrowLeft />
+                                    )}
+                                    Back
+                                </Button>
+                            }
+                        /> */}
                     </div>
                 ))}
             </AutoPlaySwipeableViews>
-            <MobileStepper
-                steps={maxSteps}
-                position="static"
-                activeStep={activeStep}
-                nextButton={
-                    <Button
-                        size="small"
-                        onClick={handleNext}
-                        disabled={activeStep === maxSteps - 1}
-                    >
-                        Next
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowLeft />
-                        ) : (
-                            <KeyboardArrowRight />
-                        )}
-                    </Button>
-                }
-                backButton={
-                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowRight />
-                        ) : (
-                            <KeyboardArrowLeft />
-                        )}
-                        Back
-                    </Button>
-                }
-            />
+
         </Box>
     );
 }
