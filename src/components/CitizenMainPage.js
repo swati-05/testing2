@@ -13,22 +13,22 @@ function CitizenDashboardPage() {
 
 
       {/* <LandingNav /> */}
-      <LandingNav />
-            <div className='flex flex-row'>
-                <div>
-                    <SideNav />
-                </div>
-                <div>
+ 
+      <div className='flex flex-row'>
+        <div>
+          <SideNav />
+        </div>
+        <div>
+        <LandingNav />
+          <CitizenEntryPage />
+          <CitizenContentArea />
 
-                   <CitizenEntryPage />
-                   <CitizenContentArea />
-            
 
-                </div>
-            </div>
-    
+        </div>
+      </div>
 
-      
+
+
 
 
     </>

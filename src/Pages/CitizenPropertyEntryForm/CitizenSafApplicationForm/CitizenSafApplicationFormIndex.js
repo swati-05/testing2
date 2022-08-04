@@ -10,6 +10,7 @@ import { ImUpload2 } from 'react-icons/im'
 import { TbWebhook } from 'react-icons/tb'
 import CitizenBasicDetails from './CitizenBasicDetails'
 import CitizenFormSubmitResponse from '../CitizenFormSubmitResponse'
+import SideNav from '../../citizen/SideNav'
 
 function CitizenSafApplicationFormIndex() {
     const [formIndex, setFormIndex] = useState(1) //formindex specifies type of form like basicdetails at index 1 ...
@@ -88,44 +89,51 @@ function CitizenSafApplicationFormIndex() {
         // setAllFormData({...allFormData,formData}) //this is going to replace upcoming data since has same formData key all the time
         setAllFormData({ ...allFormData, [key]: formData })
     }
-    if (responseScreenStatus=='success') {
+    if (responseScreenStatus == 'success') {
         return (
             <>
-            <CitizenFormSubmitResponse/>
+                <CitizenFormSubmitResponse />
             </>
         )
     }
     return (
         <>
-        <div className='w-10/12 ml-48 overflow-x-hidden h-screen'>
-            <ToastContainer position="top-right"
-                autoClose={2000} />
-                  <div className='text-right relative top-0'>
-                <span className='bg-sky-100 border-l border-b border-white text-black col-span-12 sm:col-span-2 sm:col-start-11 pl-4 rounded-l shadow-lg font-semibold pr-4'><TbWebhook className='inline' /> SAF Entry</span>
-            </div>
-            <div className="flex mt-0">
+            <div className='flex flex-row'>
+                <div>
+                    <SideNav />
+                </div>
+                <div className='w-full'>
+                    <div className='  overflow-x-hidden h-screen'>
+                        <ToastContainer position="top-right"
+                            autoClose={2000} />
+                        <div className='text-right relative top-0'>
+                            <span className='bg-sky-100 border-l border-b border-white text-black col-span-12 sm:col-span-2 sm:col-start-11 pl-4 rounded-l shadow-lg font-semibold pr-4'><TbWebhook className='inline' /> SAF Entry</span>
+                        </div>
+                        {/* <div className="flex mt-0">
                 <CitizenFormStatusTimeline active={formIndex == 1 && true} index="1" level="Basic Details" verificationStatus={formIndex >= 2 && true} last={false} />
                 <CitizenFormStatusTimeline active={formIndex == 2 && true} index="2" level="Property Details" verificationStatus={formIndex >= 3 && true} last={false} />
                 <CitizenFormStatusTimeline active={formIndex == 3 && true} index="3" level="Electricity & Water" verificationStatus={formIndex >= 4 && true} last={false} />
                 <CitizenFormStatusTimeline active={formIndex == 4 && true} index="4" level="Owner Details" verificationStatus={formIndex >= 5 && true} last={false} />
                 <CitizenFormStatusTimeline active={formIndex == 5 && true} index="5" level="Floor Details" verificationStatus={formIndex >= 6 && true} last={true} />
-            </div>
-           
-
-            <div className={`${animateform1} transition-all relative`}><CitizenBasicDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-            {/* collectDataFun to receive form data on every save&next */}
-            {/* submitFun to activate final submit button when all forms are filled */}
-            {/* toastFun to activate toast notification via receiving toast message */}
-            {/* backFun to go back from any specific form level */}
-            {/* nextFun to go next from any specific form level */}
-            <div className={`${animateform2} transition-all relative`}><CitizenPropertyAddressDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-            <div className={`${animateform3} transition-all relative`}><CitizenElectricityWaterDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} backFun={backFun} nextFun={nextFun} /></div>
-            <div className={`${animateform4} transition-all relative`}><CitizenOwnerDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-            <div className={`${animateform5} transition-all relative`}><CitizenFloorDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-
-            {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button></div>}
+            </div> */}
 
 
+                        <div className={`${animateform1} transition-all relative`}><CitizenBasicDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                        {/* collectDataFun to receive form data on every save&next */}
+                        {/* submitFun to activate final submit button when all forms are filled */}
+                        {/* toastFun to activate toast notification via receiving toast message */}
+                        {/* backFun to go back from any specific form level */}
+                        {/* nextFun to go next from any specific form level */}
+                        <div className={`${animateform2} transition-all relative`}><CitizenPropertyAddressDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                        <div className={`${animateform3} transition-all relative`}><CitizenElectricityWaterDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} backFun={backFun} nextFun={nextFun} /></div>
+                        <div className={`${animateform4} transition-all relative`}><CitizenOwnerDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                        <div className={`${animateform5} transition-all relative`}><CitizenFloorDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+
+                        {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button></div>}
+
+
+                    </div>
+                </div>
             </div>
 
         </>

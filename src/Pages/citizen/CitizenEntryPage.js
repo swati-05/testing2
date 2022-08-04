@@ -8,7 +8,7 @@ function CitizenEntryPage() {
             
                 <div>
 
-                    <div class="bg-white text-white rounded shadow-xl py-5 px-5 w-full border " >
+                    <div class="bg-white text-white rounded shadow-xl py-5 px-5 w-full  " >
                         <div class="flex flex-wrap -mx-3 items-center">
                             <div class="w-1/4 px-3 text-center hidden md:block">
                                 <div class="p-5 xl:px-2 md:py-2 ">
@@ -17,9 +17,9 @@ function CitizenEntryPage() {
                             </div>
                             <div class="w-full sm:w-1/2 md:w-2/4 px-2 text-left">
                                 <div class="p-5 xl:px-8 md:py-2">
-                                    <h3 class="text-4xl text-black font-sans p-4">Welcome, Scott!</h3>
+                                    <h3 class="text-4xl text-gray-600 font-sans p-4">Welcome, Scott!</h3>
                                     {/* <h5 class="text-xl mb-3 text-black">Lorem ipsum sit amet</h5> */}
-                                    <p class="text-sm text-black ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt obcaecati natus quas in quos veniam esse sequi magni necessitatibus unde eveniet tempore facilis consequatur, itaque debitis, et temporibus beatae mollitia.</p>
+                                    <p class="text-sm text-gray-500 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt obcaecati natus quas in quos veniam esse sequi magni necessitatibus unde eveniet tempore facilis consequatur, itaque debitis, et temporibus beatae mollitia.</p>
                                 </div>
                             </div>
                             <div class="w-full sm:w-1/2 md:w-1/4 px-3 text-center">

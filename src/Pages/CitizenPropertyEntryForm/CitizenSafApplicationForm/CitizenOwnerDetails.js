@@ -237,11 +237,12 @@ function CitizenOwnerDetails(props) {
                                     <span className="text-red-600 absolute text-xs">{formik.touched.speciallayAbled && formik.errors.speciallayAbled ? formik.errors.speciallayAbled : null}</span>
                                 </div>
                                 <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
-                                    <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">Upload Image</label>
+                                    <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Owner Image</label>
                                     <input {...formik.getFieldProps('ownerimage')} type="file" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none shadow-md"
                                        onChange={handleChange} />
                                     <span className="text-red-600 absolute text-xs">{formik.touched.ownerimage && formik.errors.ownerimage ? formik.errors.ownerimage : null}</span>
                                 </div>
+                                
                                 <div className=" flex justify-center items-end">
                                     <div className='md:px-10'>
                                         <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out cursor-pointer">{editStatus ? 'Update' : 'Add'}</button>

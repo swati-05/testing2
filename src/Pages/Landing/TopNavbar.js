@@ -135,7 +135,9 @@ function TopNavbar() {
                                 </svg>
                                 </div>
                                 <div className='flex-1'>
+                                <Link to = '/signup'>
                                 <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">Signup</h2>
+                                </Link>
                                 </div>
                                 </div>
                             </div>

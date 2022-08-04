@@ -16,23 +16,23 @@ function SideNav() {
 
 
             <div>
-                <aside class="w-48 h-full shadow-lg  px-1 absolute" style={{ 'backgroundColor': '#4f46e5' }}>
+                <aside class="w-48 h-screen shadow-lg  absolute bg-white" >
                     <div>
-                      {/* <img src='https://images.pexels.com/photos/268415/pexels-photo-268415.jpeg?cs=srgb&dl=pexels-pixabay-268415.jpg&fm=jpg' className='w-full'/> */}
+                      <img src='https://img.freepik.com/free-vector/blue-copy-space-digital-background_23-2148821698.jpg?w=740&t=st=1659601881~exp=1659602481~hmac=77f10daa31bd0f42967b6e11dbcaa256bdb8c64cb92e7476654701bdedba6eac' className='w-full h-40'/>
                    
-                   <div className='p-4 '>
+                   <div className='-mt-20 p-4 '>
                    <ul class="relative">
                         <li class="relative">
-                            <img src='https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png' className='h-20 ml-6 mt-6 ' />
+                            <img src='https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png' className='h-24 ml-6 mt-6 ' />
                         </li>
                         <li class="relative">
-                            <h1 className='ml-5 mt-4 text-white'>Citizen Name</h1>
+                            <h1 className='ml-6 mt-4 text-gray-700'>Citizen Name</h1>
                         </li>
                         <li class="relative">
-                            <h1 className='ml-2 text-white text-sm'>citizen@gmail.com</h1>
+                            <h1 className='ml-3 text-gray-700 text-sm'>citizen@gmail.com</h1>
                         </li>
                         <li class="relative">
-                            <button className='bg-cyan-400 ml-8 mt-6 w-14 h-12 rounded-lg shadow-md shadow-cyan-500 ' onClick={toggleNav}>
+                            <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900 ' onClick={toggleNav}>
                                 <div class="rounded-full  flex flex-col items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-white" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
@@ -43,7 +43,7 @@ function SideNav() {
                         </li>
                         <li class="relative">
                         <Link to="/download">
-                            <button className='bg-cyan-400 ml-8 mt-6 w-14 h-12 rounded-lg shadow-md shadow-cyan-500 '>
+                            <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900  '>
                                 <div class="rounded-full  flex flex-col items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -53,7 +53,7 @@ function SideNav() {
                             </Link>
                         </li>
                         <li class="relative">
-                            <button className='bg-cyan-400 ml-8 mt-6 w-14 h-12 rounded-lg shadow-md shadow-cyan-500 '>
+                            <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900  '>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-3 text-white" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                                 </svg>
@@ -65,7 +65,7 @@ function SideNav() {
                 </aside>
 
                 <aside>
-                    <div className={`${navWidth} h-screen bg-slate-200 transition-all duration-1000 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
+                    <div className={`${navWidth} h-screen bg-slate-50 transition-all duration-1000 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
                         <div>
                             <div className=' mt-10'>
                                 <h1 className='font-normal ml-3'>Setting</h1>
