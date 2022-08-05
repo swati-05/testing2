@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
-import LandingNav from '../../components/testDelete/LandingNav';
+import LandingNav from '../Landing/LandingNav';
 import TimeLine from '../../components/TimeLine';
 
 

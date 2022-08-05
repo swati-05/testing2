@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CitizenDashboardPage from '../../components/CitizenMainPage'
-import LandingNav from '../../components/testDelete/LandingNav'
+import LandingNav from '../Landing/LandingNav'
 import SideNav from './SideNav'
 
 function ApplySubList() {

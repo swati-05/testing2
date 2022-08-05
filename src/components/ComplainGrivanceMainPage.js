@@ -1,7 +1,7 @@
 import React from 'react'
 import GrevanshesPage from '../Pages/Landing/GrevanshesPage'
 import complain from '../assets/complain.png'
-import LandingNav from './testDelete/LandingNav'
+import LandingNav from '../Pages/Landing/LandingNav'
 import TimeLine from './TimeLine'
 
 

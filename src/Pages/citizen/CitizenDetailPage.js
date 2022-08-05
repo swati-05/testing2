@@ -9,7 +9,7 @@ import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
 import CitizenViewDetail from './CitizenLicenseFullDetail';
 import CitizenNotification from './CitizenNotification';
 import SideNav from './SideNav';
-import LandingNav from '../../components/testDelete/LandingNav';
+import LandingNav from '../Landing/LandingNav';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBox from '../../Pages/Landing/SearchBox'
+import SearchBox from './SearchBox'
 
 function LandingNav() {
 
