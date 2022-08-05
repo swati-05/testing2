@@ -21,6 +21,7 @@ import CitizenMainPage from './components/CitizenMainPage'
 import CitizenSelfAdvtDetailForm from './Pages/citizenAdvertisementForm/citizenSelfAdvertisement/CitizenSelfAdvtDetailForm';
 import {newsData} from './StaticData'
 import CitizenRegistrationForm from './components/CitizenRegistrationForm';
+import Register from './Pages/Registration/Register';
 
 
 function App() {
@@ -159,6 +160,7 @@ function App() {
             <Route path="/download" element={<DownloadPage />} />
             <Route path="/citizenSafForm" element={<CitizenSafApplicationFormIndex />} />
             <Route path="/citizenselfdetailform" element={<CitizenSelfAdvtDetailForm />} />
+            <Route path="/register" element={<Register/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
