@@ -22,6 +22,7 @@ import CitizenSelfAdvtDetailForm from './Pages/citizenAdvertisementForm/citizenS
 import {newsData} from './StaticData'
 import CitizenRegistrationForm from './components/CitizenRegistrationForm';
 import Register from './Pages/Registration/Register';
+import About from './components/About';
 
 
 function App() {
@@ -144,10 +145,9 @@ function App() {
     <>
       <contextVar.Provider value={{ ulbdatafun: setulbData, ulbdata: ulbData }}>
         <div className={`sm:w-full transition-all  `}>
-  
           <Routes>
             <Route path="/" element={<LandingMainPage />} />
-            {/* <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} /> 
             {/* <Route path="/downloads" element={<Downloads />} /> */}
             <Route path="/apply" element={<CitizenWelcome />} />
             <Route path="/signup" element={<CitizenRegistrationForm />} />

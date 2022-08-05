@@ -42,7 +42,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const notice = [
   {
     heading: 'IMPORTANT',
-    content:  <NoticeComponent />,
+    content: <NoticeComponent />,
   },
   // {
   //   heading: 'NOTICE',
@@ -76,22 +76,27 @@ function SliderCard() {
   };
 
   return (
-    <Box sx={{ maxWidth: 300, flexGrow: 1, height: 40}}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 60,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-        <div className='pb-2 px-8   ml-16 mb-2 font-serif'>
-          <Typography style={{color: 'black', fontSize: 18, fontFamily: 'Raleway'}}>{notice[activeStep].heading}</Typography>
-        </div>
-      </Paper>
+    <div className=' w-full h-[29rem] mt-2  bg-white drop-shadow-md rounded-lg'>
+      <Box sx={{ maxWidth: 300, flexGrow: 1, height: 40 }}>
+        <Paper
+          square
+          elevation={0}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            height: 60,
+            pl: 2,
+            bgcolor: 'background.default',
+          }}
+        >
+          <div className='pb-2 px-8 ml-16 mb-2 '>
+            <span class="flex h-2 w-3">
+              <span class="animate-ping absolute inline-flex h-6 w-32 mt-2 rounded-xl bg-red-500 opacity-75"></span>
+              {/* <span class="relative inline-flex rounded-full h-2 w-2  bg-red-400"></span> */}
+            </span>
+            <Typography style={{ color: 'red', fontSize: 18, }}>{notice[activeStep].heading}</Typography>
+          </div>
+        </Paper>
 
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -102,14 +107,14 @@ function SliderCard() {
           {notice.map((step, index) => (
             <div key={step.heading}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <Box sx={{ height: 255, maxWidth: 400, p: 1, backgroundColor: 'white' }}>
+                <Box sx={{ height: 255, maxWidth: 400, p: 1 }}>
                   {notice[activeStep].content}
                 </Box>
               ) : null}
             </div>
           ))}
         </AutoPlaySwipeableViews>
-      {/* <MobileStepper
+        {/* <MobileStepper
         variant="text"
         steps={maxSteps}
         position="static"
@@ -139,7 +144,8 @@ function SliderCard() {
           </Button>
         }
       /> */}
-    </Box>
+      </Box>
+    </div>
   );
 }
 
