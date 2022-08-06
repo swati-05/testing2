@@ -32,7 +32,7 @@ function CitizenRegistrationForm() {
                     >
                         {({ isSubmitting }) => (
 
-                            <div className='w-9/12  p-8 ml-4 bg-white'>
+                            <div className='w-12/12  p-8 ml-4 bg-white'>
                                 <div className='text-center p-4 text-2xl -mt-5 font-sans font-bold text-gray-600'>
                                     <h1>REGISTRATION FORM</h1>
                                 </div>
