@@ -1,7 +1,7 @@
 export const newsData = {
     "news": [
       {
-        "header": "Jharkhand News Jharkhand News",
+        "header": "Super Earth with possibility for life discovered",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
@@ -9,7 +9,7 @@ export const newsData = {
         "id": 1
       },
       {
-        "header": "Jharkhand News Jharkhand News",
+        "header": "About CCE, IIT Madras Digital Skills Academy",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
@@ -17,7 +17,7 @@ export const newsData = {
         "id": 1
       },
       {
-        "header": "Jharkhand News Jharkhand News",
+        "header": "Living through habitable zone",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
@@ -25,29 +25,14 @@ export const newsData = {
         "id": 1
       },
       {
-        "header": "Jharkhand News Jharkhand News",
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
-        "date": "09/04/2022",
-        "isArchived": 1,
-        "ulbid": 1,
-        "id": 1
-      },
-      {
-        "header": "Jharkhand News Jharkhand News",
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
-        "date": "09/04/2022",
-        "isArchived": 1,
-        "ulbid": 1,
-        "id": 1
-      },
-      {
-        "header": "Jharkhand News Jharkhand News",
+        "header": "Columbia University's AI program discovers alternative physics",
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nemo error modi delectus rerum qui explicabo ipsa quam. Fuga voluptas nostrum nobis quam vero accusantium expedita aspernatur corrupti officia doloremque odio delectus ratione, facilis nam, esse molestias quo? Accusantium consectetur odio magni optio minus, officia deserunt voluptatem saepe possimus cupiditate!",
         "date": "09/04/2022",
         "isArchived": 1,
         "ulbid": 1,
         "id": 1
       }
+      
     ],
     "events": [
       {

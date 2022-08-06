@@ -11,67 +11,67 @@ function OurDomainContent2() {
                 <div className="p-2 col-span-4 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200" onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-photo/villa-house-model-key-drawing-retro-desktop-real-estate-sale-concept_1387-310.jpg?w=740&t=st=1659358823~exp=1659359423~hmac=6e6f7cf045a717d81702af6a51d550d41be850642491c0b576eef3728452cea3' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/real-estate-searching_52683-46407.jpg?w=740&t=st=1659594868~exp=1659595468~hmac=93d688f9e341442af8050c8b1adf543da1d76b1df5a277be34dd28bc3fd39b28' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-0'></div>
 
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-slate-200">
                             <h1 className="title-font text-sm font-medium text-gray-800">Property</h1>
                         </div>
 
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
 
                     </div>
                 </div>
                 <div className="p-2 col-span-4 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200 " onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/business-growth-graph_53876-90457.jpg?w=740&t=st=1659358736~exp=1659359336~hmac=91d73849d48e1a7b1fb98ffb3230a5a5ef0296d2c02d67fecf05a36d2c114386' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/successful-partnership-negotiation-partners-handshaking_335657-2453.jpg?w=740&t=st=1659593504~exp=1659594104~hmac=6242bdcc25cd27e6b5368c09ea84aee84da3653dc98d1cf4510569b9fc971eb6' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-0'></div>
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-slate-200">
                             <h1 className="title-font text-sm font-medium text-gray-800">Trade</h1>
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
                 <div className="p-2 col-span-4 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200" onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-psd/city-light-billboard-mockup-template_1051-3305.jpg?w=740&t=st=1659358916~exp=1659359516~hmac=7a78b7fe967ef358c1c3f963715b7f08cc0695171fb442a36fa25d708bf072e0' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/bloggers-advertising-referrals-young-people-with-gadgets-loudspeakers-announcing-news-attracting-target-audience-vector-illustration-marketing-promotion-communication_74855-8244.jpg?t=st=1659594287~exp=1659594887~hmac=285b3c4de1ec111a568628448d0959932602161df6bf010cfc3aad47c6d1f269' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-10'></div>
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-slate-200 border-t border-white">
                             <h1 className="title-font text-sm font-medium text-gray-800">Advertisement</h1>
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
                 <div className="p-2 col-span-4 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200" onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-psd/architecture-composition-with-paper-mockup_23-2147866488.jpg?w=740&t=st=1659358281~exp=1659358881~hmac=bef29a975601afe23d73ed26db553802b39de322aead0ed7d330d66e4220d689' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/building-concept-illustration_114360-4469.jpg?w=740&t=st=1659600603~exp=1659601203~hmac=73157c68dcc27ee3db479dcbe336ccb090081c43f9f6d0dabb4122c730c323d2' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-0'></div>
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-slate-200">
                             <h1 className="title-font text-sm font-medium text-gray-800">Building Plans & Approval</h1>
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
                 <div className="p-2 col-span-4 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200" onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/vector-clean-shiny-blue-drop-with-circles-water-close-up-front-view_1284-48012.jpg?w=740&t=st=1659358401~exp=1659359001~hmac=4c576e320e99bffdfe1fd300f451680b284405098d6c2fa2e49534887ee55258' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/vector-clean-shiny-blue-drop-with-circles-water-close-up-front-view_1284-48012.jpg?w=740&t=st=1659594024~exp=1659594624~hmac=c260f1254b7d3695a9a0b4ed4ff4c7d0c96a497d9c97c37690617008ff35dcde' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-0'></div>
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-slate-200">
                             <h1 className="title-font text-sm font-medium text-gray-800">Water</h1>
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
                 <div className="p-2 col-span-4 h-40">
@@ -84,20 +84,20 @@ function OurDomainContent2() {
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
                 <div className="p-2 col-span-12 h-40">
 
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg relative cursor-pointer hover:scale-110 transition-all duration-200" onMouseEnter={() => setcontentStyle('left-10')} onMouseLeave={() => setcontentStyle('-left-40')}>
-                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-photo/close-up-hand-completing-form_23-2149191372.jpg?w=740&t=st=1659358583~exp=1659359183~hmac=48ed7d221999c37b9e0ff84d8df59df2d6910f2554d99525db020e2947086ecf' alt="" />
+                        <img className='absolute w-full h-full top-0 left-0' src='https://img.freepik.com/free-vector/vintage-achievement-certificate-template-vector-professional-design-beige_53876-157582.jpg?w=740&t=st=1659594660~exp=1659595260~hmac=fda76c07c9c807c69ab10368ab5d76205a7ff780e84cbff975ebb2431f62dece' alt="" />
                         <div className='w-full h-full bg-gray-900 absolute top-0 left-0 opacity-0'></div>
                         <div className="w-full py-1 text-center z-50 absolute bottom-0 left-50 bg-indigo-200">
                             <h1 className="title-font text-sm font-medium text-gray-800">Birth & Death Certificate</h1>
                             <div className="flex items-center flex-wrap ">
                             </div>
                         </div>
-                        <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div>
+                        {/* <div className={`absolute ${contentStyle} bg-gray-300  py-4 text-xs w-3/5 text-center  top-10 text-white duration-75`}>More About Advertisement</div> */}
                     </div>
                 </div>
             </div>

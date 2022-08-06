@@ -60,7 +60,7 @@ export default function KnowledageTab() {
   
         </div>
         <div>
-          <div className=' w-full h-[29rem] mt-2  bg-white'>
+          <div className=' w-80 h-[29rem] mt-2  bg-white drop-shadow-md rounded-lg'>
             <Box sx={{ width: '100%',height: '100%' }}>
               <Box sx={{   }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">

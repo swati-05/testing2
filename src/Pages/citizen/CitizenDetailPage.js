@@ -9,7 +9,8 @@ import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
 import CitizenViewDetail from './CitizenLicenseFullDetail';
 import CitizenNotification from './CitizenNotification';
 import SideNav from './SideNav';
-import LandingNav from '../../components/testDelete/LandingNav';
+import LandingNav from '../Landing/LandingNav';
+import CitizenAccountSetting from './CitizenAccountSetting';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -55,22 +56,21 @@ export default function CitizenDetailPage() {
     <>
       <LandingNav />
 
-      <div  className='flex flex-row'>
-        <div>
-        <SideNav />
+      <div className='flex flex-row'>
+        <div className='flex-1'>
+          <SideNav />
         </div>
-        <div>
-          <div className=' w-full border '>
-            <Box sx={{ width: '100%' }}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <div className='flex-4 border bg-white w-full'>
+            <Box sx={{ }}>
+              <Box sx={{ borderBottom: 1, borderColor: 'divider',width:'100%' }}>
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{backgroundColor:'#eee'}}>
                   <Tab label="Account" {...a11yProps(0)} />
                   <Tab label="Applied Licenses" {...a11yProps(1)} />
                   <Tab label="Notification" {...a11yProps(2)} />
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
-                <CitizenAccountDetail />
+                <CitizenAccountSetting />
               </TabPanel>
               <TabPanel value={value} index={1}>
                 <CitizenAppliedLicenseDetail />
@@ -80,7 +80,6 @@ export default function CitizenDetailPage() {
               </TabPanel>
             </Box>
           </div>
-        </div>
       </div>
     </>
   );

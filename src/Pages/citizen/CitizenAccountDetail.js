@@ -3,9 +3,9 @@ import React from 'react'
 function CitizenAccountDetail() {
     return (
         <>
-       
-            
-                <div class="md:grid md:grid-cols-10 md:gap-6 w-full">
+
+
+            <div class="md:grid md:grid-cols-10 md:gap-6 w-full">
                     <div class="mt-5 md:mt-0 md:col-span-4 ">
                         <form >
                             <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -60,7 +60,8 @@ function CitizenAccountDetail() {
                         </form>
                     </div>
                 </div>
-            
+
+          
         </>
     )
 }

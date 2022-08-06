@@ -4,7 +4,7 @@ import CitizenContentArea from '../Pages/citizen/CitizenContentArea'
 import CitizenEntryPage from '../Pages/citizen/CitizenEntryPage'
 import DashboardNavbar from '../Pages/citizen/DashboardNavbar'
 import SideNav from '../Pages/citizen/SideNav'
-import LandingNav from './testDelete/LandingNav'
+import LandingNav from '../Pages/Landing/LandingNav'
 
 
 function CitizenDashboardPage() {

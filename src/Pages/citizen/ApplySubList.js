@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CitizenDashboardPage from '../../components/CitizenMainPage'
-import LandingNav from '../../components/testDelete/LandingNav'
+import LandingNav from '../Landing/LandingNav'
 import SideNav from './SideNav'
 
 function ApplySubList() {
@@ -47,7 +47,7 @@ function ApplySubList() {
                                         </div>
                                     </div>
                                 </div>
-                                <Link to="/citizenSafForm">
+                                <Link to="/citizenProperty">
                                     <div class=" sm:w-full p-4 ">
                                         <div class="flex relative drop-shadow-sm  " >
                                             <img alt="gallery" class="absolute inset-0 w-58 h-36 object-cover object-center drop-shadow-sm rounded-md" src="https://img.freepik.com/free-vector/real-estate-searching_52683-46407.jpg?w=740&t=st=1659594868~exp=1659595468~hmac=93d688f9e341442af8050c8b1adf543da1d76b1df5a277be34dd28bc3fd39b28" />

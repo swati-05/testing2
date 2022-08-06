@@ -9,7 +9,7 @@ import {getCurrentDate} from '../CitizenPowerupFunctions'
 
 
 
-function CitizenFloorDetails(props) {
+function FloorDetails(props) {
     const [ownerCount, setOwnerCount] = useState([1])
     const [floorList, setfloorList] = useState([])
     const [editStatus, setEditStatus] = useState(false) //to check edit or add of form
@@ -271,4 +271,4 @@ function CitizenFloorDetails(props) {
     )
 }
 
-export default CitizenFloorDetails
+export default FloorDetails

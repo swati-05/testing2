@@ -50,8 +50,8 @@ export default function TimeLine() {
 
   return (
    <>
-   <div className='text-center mt-6 text-xl font-serif font-semibold text-gray-600'>
-   <h1>APPLICATION STATUS </h1>
+   <div className='text-center mt-6 text-lg font-serif font-semibold  text-gray-600'>
+   <h1 className=''>APPLICATION STATUS </h1>
    </div>
     <Box sx={{ maxWidth: 400,marginLeft:8 ,marginTop:4 }}>
       <Stepper activeStep={activeStep} orientation="vertical">

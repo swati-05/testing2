@@ -4,49 +4,50 @@ import axios from 'axios'
 import { contextVar } from '../../components/ContextVar';
 
 function NewsComponent() {
-  
-    
+
+
 
     const vals = useContext(contextVar)
 
-    console.log('vals from context ',vals.ulbdata)
+    console.log('vals from context ', vals.ulbdata)
 
 
 
     return (
         <>
-            <div class="max-w-xl mx-auto">
+            <div class=" mx-auto w-full ">
 
-                <div class="sm:p-2 dark:bg-gray-800 dark:border-gray-700">
-                    <div class="flex justify-between items-center   mb-6">
-                        {/* <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white ">Jharkhand Headlines</h3> */}
-                        {/* <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 ml-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-8   inline-block mr-2 text-indigo-800" viewBox="0 0 20 20" fill="currentColor">
+                <div class="sm:p-1 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex justify-between items-center   mb-2">
+                        <h3 class="text-xl font-bold leading-none text-gray-600 dark:text-white ">Jharkhand Headlines</h3>
+                        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 ml-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class=" h-8   inline-block mr-2 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" />
                                 <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
                             </svg>
-                        </a> */}
+                        </a>
                     </div>
-                    <div class="flow-root">
+                    <div class="">
 
-                        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 ">
-                            {vals.ulbdata?.news.map((item)  => (
-                                <li class="py-1 sm:py-2">
-                                    <div class="flex items-center space-x-4">
-                                        <div class="flex-1 min-w-0">
-                                         <p class="text-sm font-medium text-gray-900 truncate rounded-full dark:text-white">
-                                                {item.header}
-                                            </p>
-                                        
-                                        </div>
+                        {vals.ulbdata?.news.map((item) => (
+
+                            <div class="flex items-center space-x-0">
+                                <div class="flex flex-col items-center bg-white  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                    <img class="object-cover w-full   md:h-auto md:w-24  ml-2 mt-2" src="https://image.shutterstock.com/image-vector/breaking-news-background-world-global-260nw-720038230.jpg" alt="" />
+
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex flex-col justify-between p-3 ml-2 ">
+                                        <h5 class="mb-2 text-xs font-bold tracking-tight text-gray-600 dark:text-white">
+                                            {item.header}
+                                        </h5>
 
                                     </div>
-                                   
 
-                                </li>
-                            ))}
+                                </div>
 
-                        </ul>
+                            </div>
+                        ))}
                         <div class="inline-flex float-right text-base font-semibold text-gray-900 dark:text-white p-4">
                             <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                                 View all
