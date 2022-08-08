@@ -26,6 +26,7 @@ import About from './components/About';
 import CitizenSubPropertyCategory from './Pages/citizen/CitizenSubPropertyCategory';
 import CitizenSafEntryScreen from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafEntryScreen';
 import Login from './Pages/CitizenLogin/Login';
+import Logout from './Pages/CitizenLogin/Logout';
 
 
 function App() {
@@ -168,6 +169,7 @@ function App() {
             <Route path='/safform/:assType' element={<CitizenSafApplicationFormIndex />} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/logout" element={<Logout/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
