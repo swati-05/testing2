@@ -27,7 +27,7 @@ import CitizenSubPropertyCategory from './Pages/citizen/CitizenSubPropertyCatego
 import CitizenSafEntryScreen from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafEntryScreen';
 import Login from './Pages/CitizenLogin/Login';
 import Logout from './Pages/CitizenLogin/Logout';
-
+import Demo from './Pages/CitizenLogin/Demo'
 
 function App() {
   // const [ulbId, setulbId] = useState(0);
@@ -170,6 +170,7 @@ function App() {
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/logout" element={<Logout/>} />
+            <Route path="/demo" element={<Demo/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

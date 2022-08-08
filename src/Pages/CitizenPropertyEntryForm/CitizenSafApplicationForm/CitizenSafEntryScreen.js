@@ -38,7 +38,7 @@ function CitizenSafEntryScreen() {
             setnewStatus('w-0 col-span-0 md:col-span-0 hidden')
             setreStatus('col-span-12 md:col-span-12 py-0 block')
             setmutationStatus('w-0 col-span-0 md:col-span-0 hidden')
-            alert ("enter holding no.")
+            alert("enter holding no.")
         }
         if (type == 'mu') {
             setnewStatus('w-0 col-span-0 md:col-span-0 hidden')
@@ -95,62 +95,64 @@ function CitizenSafEntryScreen() {
                 </div>
                 <div>
                     <LandingNav />
-                    <div className=' bg-white '>
-                        <section className={`${(reStatus == 'col-span-12 md:col-span-12 py-0 block ' || mutationStatus == 'col-span-12 md:col-span-12 py-0 block') ? 'block' : 'block'} text-gray-600 body-font overflow-hidden  shadow-lg p-3  border-gray-200`}>
-                            <h1 className="text-gray-700 text-xl title-font font-medium mb-4 flex items-center"><FcHome className="inline" /> <p className='ml-3'>Find Holding</p></h1>
+                    <div className='  bg-white '>
+                     
+                            <section className={`${(reStatus == 'col-span-12 md:col-span-12 py-0 block ' || mutationStatus == 'col-span-12 md:col-span-12 py-0 block') ? 'block' : 'block'} text-gray-600 body-font overflow-hidden  shadow-lg p-3  border-gray-200`}>
+                                <h1 className="text-gray-700 text-xl title-font font-medium mb-4 flex items-center"><FcHome className="inline" /> <p className='ml-3'>Find Holding</p></h1>
 
-                            <form onSubmit={formik.handleSubmit}>
-                                <div className="  grid grid-cols-6">
-                                    <div className=" flex-1 form-group mb-3 col-span-4 md:col-span-2">
-                                        <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold "><small className="block mt-1 text-sm font-semibold text-red-600 inline  ">*</small>Holding no.</label>
-                                        <input {...formik.getFieldProps('holdingNo')} type="text" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md"
-                                            placeholder="Enter holding no." />
-                                        <span classNameName="text-red-600 absolute text-xs">{formik.touched.holdingNo && formik.errors.holdingNo ? formik.errors.holdingNo : null}</span>
-                                    </div>
-                                    <div className="flex-1 form-group mb-2 col-span-1 md:col-span-1 align-bottom">
-                                        <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold invisible "><small className="block mt-1 text-sm font-semibold text-red-600 inline  ">*</small>Enter Holding no.</label>
-                                        <div className='md:px-10 text-right'>
-                                            <button onClick={() => setDataListStatus(true)} type="submit" className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight  rounded  hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"><TbSearch className="inline text-sm font-bold" />Find</button>
+                                <form onSubmit={formik.handleSubmit}>
+                                    <div className="  grid grid-cols-6">
+                                        <div className=" flex-1 form-group mb-3 col-span-4 md:col-span-2">
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold "><small className="block mt-1 text-sm font-semibold text-red-600 inline  ">*</small>Holding no.</label>
+                                            <input {...formik.getFieldProps('holdingNo')} type="text" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md"
+                                                placeholder="Enter holding no." />
+                                            <span classNameName="text-red-600 absolute text-xs">{formik.touched.holdingNo && formik.errors.holdingNo ? formik.errors.holdingNo : null}</span>
+                                        </div>
+                                        <div className="flex-1 form-group mb-2 col-span-1 md:col-span-1 align-bottom">
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold invisible "><small className="block mt-1 text-sm font-semibold text-red-600 inline  ">*</small>Enter Holding no.</label>
+                                            <div className='md:px-10 text-right'>
+                                                <button onClick={() => setDataListStatus(true)} type="submit" className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight  rounded  hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"><TbSearch className="inline text-sm font-bold" />Find</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
 
 
-                            {/* found holding */}
-                            {
-                                dataListStatus && <div className="py-2 overflow-x-auto bg-white">
-                                    <div className="inline-block min-w-full rounded-lg overflow-hidden bg-white">
-                                        <table className="min-w-full leading-normal">
-                                            <thead className='font-bold text-left text-sm bg-sky-50'>
-                                                <tr >
-                                                    <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Holding No</th>
-                                                    <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Owner Name</th>
-                                                    <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Guardian Name</th>
-                                                    <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Address</th>
-                                                    <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Action</th>
+                                {/* found holding */}
+                                {
+                                    dataListStatus && <div className="py-2 overflow-x-auto bg-white">
+                                        <div className="inline-block min-w-full rounded-lg overflow-hidden bg-white">
+                                            <table className="min-w-full leading-normal">
+                                                <thead className='font-bold text-left text-sm bg-sky-200'>
+                                                    <tr >
+                                                        <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Holding No</th>
+                                                        <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Owner Name</th>
+                                                        <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Guardian Name</th>
+                                                        <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Address</th>
+                                                        <th className="px-2 py-3 border-b border-gray-200 text-gray-800  text-left text-xs uppercase text-left">Action</th>
 
 
-                                                </tr>
-                                            </thead>
-                                            <tbody className="text-sm">
-                                                <tr className="bg-white shadow-lg border-b border-gray-200">
-                                                    <td className="px-2 py-2 text-sm text-left">{holdingData?.holdingNo}</td>
-                                                    <td className="px-2 py-2 text-sm text-left">{holdingData?.ownerName}</td>
-                                                    <td className="px-2 py-2 text-sm text-left">{holdingData?.guardianName}</td>
-                                                    <td className="px-2 py-2 text-sm text-left">{holdingData?.Address}</td>
-                                                    <td className="px-2 py-2 text-sm text-left">
-                                                        {(asstypeStatus == 're' || asstypeStatus == 'both') && <button onClick={() => navigate('/safform/re')} type="button" className=" px-2 py-1 bg-green-200 text-black hover:text-white font-medium text-xs leading-tight  rounded  hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Re-Assessment</button>}
-                                                        {(asstypeStatus == 'mu' || asstypeStatus == 'both') && <button onClick={() => navigate('/safform/mu')} type="button" className="ml-2 px-2 py-1 bg-orange-200 text-black hover:text-white font-medium text-xs leading-tight  rounded  hover:bg-orange-700 hover:shadow-lg focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">Mutation</button>}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="text-sm">
+                                                    <tr className="bg-white shadow-lg border-b border-gray-200">
+                                                        <td className="px-2 py-2 text-sm text-left">{holdingData?.holdingNo}</td>
+                                                        <td className="px-2 py-2 text-sm text-left">{holdingData?.ownerName}</td>
+                                                        <td className="px-2 py-2 text-sm text-left">{holdingData?.guardianName}</td>
+                                                        <td className="px-2 py-2 text-sm text-left">{holdingData?.Address}</td>
+                                                        <td className="px-2 py-2 text-sm text-left">
+                                                            {(asstypeStatus == 're' || asstypeStatus == 'both') && <button onClick={() => navigate('/safform/re')} type="button" className=" px-2 py-1 bg-green-200 text-black hover:text-white font-medium text-xs leading-tight  rounded  hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Re-Assessment</button>}
+                                                            {(asstypeStatus == 'mu' || asstypeStatus == 'both') && <button onClick={() => navigate('/safform/mu')} type="button" className="ml-2 px-2 py-1 bg-orange-200 text-black hover:text-white font-medium text-xs leading-tight  rounded  hover:bg-orange-700 hover:shadow-lg focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">Mutation</button>}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
+                                        </div>
                                     </div>
-                                </div>
-                            }
-                        </section>
+                                }
+                            </section>
+                       
                     </div>
                     <div className='flex flex-row bg-white overflow-auto -mt-4'>
                         <div>

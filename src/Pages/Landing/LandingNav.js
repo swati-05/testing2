@@ -34,7 +34,7 @@ const menuOpen = () => {
                                     <div>
                                         <div className="flex-col  ">
                                             <div className="flex w-60 justify-center space-x-0 ">
-                                                <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-l-full hover:bg-[#005691] hover:text-white  text-[#005691] font-semibold  hover:flex-grow hover: will-change-contents transition-all duration-200 ease-in-out ">
+                                                <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-l-full hover:bg-blue-500  hover:text-white  text-blue-500  font-semibold  hover:flex-grow hover: will-change-contents transition-all duration-200 ease-in-out ">
                                                     <div className='flex flex-row'>
                                                         <div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -48,7 +48,7 @@ const menuOpen = () => {
                                                         </div>
                                                     </div>
                                                 </button>
-                                                <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-none hover:hover:bg-[#005691] hover:text-white  text-[#005691]  font-semibold  hover:flex-grow transition-all duration-200 ease-in-out">
+                                                <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-none hover:hover:bg-blue-500 hover:text-white  text-blue-500  font-semibold  hover:flex-grow transition-all duration-200 ease-in-out">
                                                     <div className='flex flex-row'>
                                                         <div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -64,7 +64,7 @@ const menuOpen = () => {
                                                 </button>
                                                 <div class="relative inline-block text-left z-10">
                                                     <div>
-                                                        <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-[#005691] hover:text-white  text-[#005691]  font-semibold hover:flex-grow transition-all duration-200 ease-in-out inline-flex "  id="menu-button" aria-expanded="true" aria-haspopup="true" type='button' onClick={menuOpen}>
+                                                        <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-blue-500  hover:text-white   text-blue-500   font-semibold hover:flex-grow transition-all duration-200 ease-in-out inline-flex "  id="menu-button" aria-expanded="true" aria-haspopup="true" type='button' onClick={menuOpen}>
                                                             <div className='flex flex-row'>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 ml-1" viewBox="0 0 20 20" fill="currentColor">
                                                                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
