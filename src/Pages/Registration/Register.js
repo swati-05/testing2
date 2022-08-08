@@ -13,19 +13,21 @@ import RegistrationSidebar from './RegistrationSidebar'
 // import LandingNav from '../../Pages/Landing/L'
 // import LandingNav from '../../components/testDelete/LandingNav'
 import LandingNav from '../Landing/LandingNav'
-
 import Stepper from './Components/Stepper'
 import DocumentUploadForm from './DocumentUploadForm'
 import RegistrationVerify from './RegistrationVerify'
+import axios from "axios";
 
 function Register() {
   const [registrationForm, setRegistrationForm] = useState(true)
   const [docUploadForm, setDocUploadForm] = useState("hidden")
   const [regVerifyForm, setRegVerifyForm] = useState("hidden")
   const [colorCode, setcolorCode] = useState(false)
-  const [regFormSavedData, setRegFormSavedData] = useState()
-  const [finalDocSavedList, setFinalDocSavedList] = useState()
   const [pageTitle, setPageTitle] = useState("Step 1 : Personal Details")
+  const [finalDocSavedList, setFinalDocSavedList] = useState()
+  const [regFormSavedData, setRegFormSavedData] = useState()  //Registration Form Data
+
+  const [regMsg, setRegMsg] = useState(" ")
 
   const regFormNxtBtn = (e) => {
     setRegVerifyForm("hidden")
@@ -55,16 +57,49 @@ function Register() {
     setPageTitle("Step 2 : Upload Documents")
   }
 
-  const verifyNextBtn = (e) => {
-    setcolorCode(3)
-  }
   const regFormSaveData = (e) => {
     console.log("Data in Next Page", e)
     setRegFormSavedData(e)
   }
 
-  const finalDocList = (e) =>{
+  const finalDocList = (e) => {
     setFinalDocSavedList(e)
+  }
+
+  const verifyFinalSubmitBtn = (e) => {
+    setcolorCode(3)
+    console.log("Form Data:- ", regFormSavedData.ulb)
+
+    //Registration Data using AXIOS POST
+    axios({
+      method: "post",
+      url: "http://192.168.0.166/api/register",
+      data: {
+        "name": regFormSavedData.full_name,
+        "mobile": regFormSavedData.mobile_no,
+        "email": regFormSavedData.email,
+        "password": regFormSavedData.password,
+        // "userType": "Citizeh",
+        "ulb": regFormSavedData.ulb,
+        "role": "1",
+        "description": "asdf",
+        "workflowParticipant": "false"
+
+      },
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        console.log("Sussuss", response);
+        // console.log("Message", response.data);
+        setRegMsg(response.data);        
+
+      })
+      .catch(function (response) {
+        console.log("Failed", response);
+        // console.log("Message", response.message);
+        setRegMsg(response.message);
+      });
+
   }
 
   return (
@@ -86,12 +121,12 @@ function Register() {
             {/* {registrationForm && <RegistrationForm fun={regFormNxtBtn} regFormData={regFormSaveData} />} */}
             {/* {docUploadForm && <DocumentUploadForm fun1={docFormBackBtn} fun2={docsNextBtn} formData={regFormSavedData} updatedDocList={finalDocList}/>} */}
             {/* {regVerifyForm && <RegistrationVerify backBtn={verifyBackBtn} nxtBtn={verifyNextBtn} formData={regFormSavedData} docList={finalDocSavedList} />} */}
-           
-             {<div className={registrationForm}> <RegistrationForm fun={regFormNxtBtn} regFormData={regFormSaveData} /> </div>}
-            { <div className={docUploadForm}> <DocumentUploadForm fun1={docFormBackBtn} fun2={docsNextBtn} formData={regFormSavedData} updatedDocList={finalDocList}/> </div>}
-            { <div className={regVerifyForm}> <RegistrationVerify backBtn={verifyBackBtn} nxtBtn={verifyNextBtn} formData={regFormSavedData} docList={finalDocSavedList} />  </div>}
-        
-          
+
+            {<div className={registrationForm}> <RegistrationForm fun={regFormNxtBtn} regFormData={regFormSaveData} /> </div>}
+            {<div className={docUploadForm}> <DocumentUploadForm fun1={docFormBackBtn} fun2={docsNextBtn} formData={regFormSavedData} updatedDocList={finalDocList} /> </div>}
+            {<div className={regVerifyForm}> <RegistrationVerify backBtn={verifyBackBtn} regMsg={regMsg} nxtBtn={verifyFinalSubmitBtn} formData={regFormSavedData} docList={finalDocSavedList} />  </div>}
+
+
           </div>
         </div>
       </div>

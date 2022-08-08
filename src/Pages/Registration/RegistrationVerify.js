@@ -40,7 +40,7 @@ function RegistrationVerify(props) {
                                     <dt className="text-sm font-medium text-gray-500">Full name</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.full_name}</dd>
                                 </div>
-                                
+
                                 <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Guardian Name</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.guardian_name}</dd>
@@ -104,13 +104,13 @@ function RegistrationVerify(props) {
                                         </ul>
 
                                     </dd>
-
+                                </div>
+                                <div className='text-center mb-3'>
+                                    {props.regMsg && props.regMsg}
                                 </div>
                             </dl>
                         </div>
                     </div>
-
-
                     <div className='grid grid-cols-2 my-5 mx-10'>
                         <div className='col-span-1'><button onClick={handleBacktBtn} className='bg-blue-600 hover:bg-blue-700 px-5 py-2 shadow-xl rounded-md text-white text-base'>Back</button></div>
                         <div className='col-span-1'><button onClick={handleNxtBtn} className='bg-green-600 hover:bg-green-700 px-5 py-2 shadow-xl rounded-md text-white text-base float-right'>Final Submit</button></div>

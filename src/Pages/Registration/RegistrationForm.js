@@ -28,6 +28,26 @@ const SignupSchema = Yup.object().shape({
         .max(50, 'Too Long!')
         .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
+
+    password: Yup.string()
+        .min(6, 'Minimum six character !')
+        .max(50, 'Too Long!')
+        .required('Required'),
+    // .matches(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'Password can only contain Latin letters.')
+    // password: Yup.string().required("This field is required"),
+
+    confirmPassword: Yup.string()
+        .min(3, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required')
+        .when("password", {
+            is: val => (val && val.length > 0 ? true : false),
+            then: Yup.string().oneOf(
+                [Yup.ref("password")],
+                "Both password need to be the same"
+            )
+        })
+
     // mobile_no: Yup.string()
     //     .required('Required')
     //     .phone("IN"),
@@ -41,31 +61,26 @@ const SignupSchema = Yup.object().shape({
     //     .required('Required')
     //     .matches(panRegEx, "Enter Valid PAN No"),
 
-    entity_address: Yup.string()
-        .min(10, 'Too Short')
-        .max(100, "Too Long")
-        .required('Required'),
+
 });
 
 const RegistrationForm = (props) => {
 
-    const [submitedFormData, setSubmitedFormData] = useState()
 
     const handleFormNextbtn = (values) => {
         props.fun(1)
         props.regFormData(values)
-        
     }
 
     return (
         <div>
 
             <Formik
-                initialValues={{ full_name:'', guardian_name: '', mobile_no: '',dob:'', email: '', }}
-                // validationSchema={SignupSchema}
+                initialValues={{ ulb: '', full_name: '', guardian_name: '', mobile_no: '', dob: '', email: '', password: '', confirmPassword: '' }}
+                validationSchema={SignupSchema}
                 // validate={values => {
                 //     const errors = {};
-                //     if (!values.email) {
+                //     if (!values.mobile_no) {
                 //         errors.email = 'Required';
                 //     } else if (
                 //         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
@@ -97,6 +112,27 @@ const RegistrationForm = (props) => {
                             <div className='grid grid-cols-2 bg-white px-10'>
                                 <div className='col-span-1 ml-5'>
                                     <div className='my-5 relative'>
+                                        <div className='text-gray-600 static mb-1 font-semibold'>Select ULB<span className='text-red-500 font-bold'>*</span></div>
+                                        <select
+                                            // type="select"
+                                            name="ulb"
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.ulb}
+                                        >
+                                            <option >Select..</option>
+                                            <option value="1">Ranchi</option>
+                                            <option value="2">Dhanbad</option>
+                                            <option value="3">Bokaro</option>
+                                            <option value="4">Jamsedpur</option>
+                                            <option value="99">Other</option>
+                                        </select>
+                                        {errors.ulb && touched.ulb ? (
+                                            <div className='text-red-600 text-sm absolute'>{errors.ulb}</div>
+                                        ) : null}
+                                    </div>
+                                    <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>Full Name <span className='text-red-500 font-bold'>*</span></div>
                                         <input
                                             type="text"
@@ -117,7 +153,7 @@ const RegistrationForm = (props) => {
                                             type="text"
                                             name="guardian_name"
                                             placeholder='Guardian Name'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.guardian_name}
@@ -132,7 +168,7 @@ const RegistrationForm = (props) => {
                                             type="number"
                                             name="mobile_no"
                                             placeholder='Mobile No'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.mobile_no}
@@ -147,13 +183,28 @@ const RegistrationForm = (props) => {
                                             type="date"
                                             name="dob"
                                             placeholder='PAN No'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.dob}
                                         />
                                         {errors.dob && touched.dob ? (
                                             <div className='text-red-600 text-sm absolute'>{errors.dob}</div>
+                                        ) : null}
+                                    </div>
+                                    <div className='my-5 relative'>
+                                        <div className='text-gray-600 static mb-1 font-semibold'>Password <span className='text-red-500 font-bold'>*</span></div>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            placeholder='*******'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.password}
+                                        />
+                                        {errors.password && touched.password ? (
+                                            <div className='text-red-600 text-sm absolute'>{errors.password}</div>
                                         ) : null}
                                     </div>
                                     <div className='my-5 relative'>
@@ -174,7 +225,7 @@ const RegistrationForm = (props) => {
                                             type="text"
                                             name="email"
                                             placeholder='Email Address'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.email}
@@ -189,7 +240,7 @@ const RegistrationForm = (props) => {
                                             type="number"
                                             name="aadhar"
                                             placeholder='Aadhar No'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.aadhar}
@@ -204,7 +255,7 @@ const RegistrationForm = (props) => {
                                             type="text"
                                             name="pan_no"
                                             placeholder='PAN No'
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.pan_no}
@@ -219,7 +270,7 @@ const RegistrationForm = (props) => {
                                         <select
                                             // type="select"
                                             name="gender"
-                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.gender}
@@ -231,6 +282,21 @@ const RegistrationForm = (props) => {
                                         </select>
                                         {errors.gender && touched.gender ? (
                                             <div className='text-red-600 text-sm absolute'>{errors.gender}</div>
+                                        ) : null}
+                                    </div>
+                                    <div className='my-5 relative'>
+                                        <div className='text-gray-600 static mb-1 font-semibold'>Confirm Password <span className='text-red-500 font-bold'>*</span></div>
+                                        <input
+                                            type="password"
+                                            name="confirmPassword"
+                                            placeholder='*******'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.confirmPassword}
+                                        />
+                                        {errors.confirmPassword && touched.confirmPassword ? (
+                                            <div className='text-red-600 text-sm absolute'>{errors.confirmPassword}</div>
                                         ) : null}
                                     </div>
                                     <div className='my-5 relative'>
