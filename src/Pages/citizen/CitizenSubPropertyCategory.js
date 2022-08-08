@@ -6,13 +6,13 @@ import SideNav from './SideNav'
 function CitizenSubPropertyCategory() {
     return (
         <>
-       
+
             <div className='flex flex-row'>
                 <div>
                     <SideNav />
                 </div>
                 <div>
-                <LandingNav />
+                    <LandingNav />
                     <div className='flex flex-row bg-white'>
                         <div>
                             <div class=" flex-wrap justify-center mt-4">
@@ -29,15 +29,15 @@ function CitizenSubPropertyCategory() {
                                                     <img src="https://img.freepik.com/free-vector/giant-check-list_23-2148087771.jpg?w=740&t=st=1659778834~exp=1659779434~hmac=5198b204d78b6707eafcb79c86b615dcc2619319896b1ea90f14ebcad1c8e81d" class="" />
                                                 </div>
                                             </div>
-                                            <Link to = "citizenSafApply">
-                                            <div class="flex flex-col space-y-2 md:space-y-4">
-                                                <label class="absolute font-semibold text-gray-500 text-sm text-start top-3 left-9 sm:left-10">
-                                                    NEW-ASSIGNMENT
-                                                </label>
-                                                <p class="absolute text-gray-500 text-sm mt-1 leading-relaxed left-10  sm:left-10">
-                                                    Apply
-                                                </p>
-                                            </div>
+                                            <Link to="citizenSafApply">
+                                                <div class="flex flex-col space-y-2 md:space-y-4">
+                                                    <label class="absolute font-semibold text-gray-500 text-sm text-start top-3 left-9 sm:left-10">
+                                                        NEW-ASSIGNMENT
+                                                    </label>
+                                                    <p class="absolute text-gray-500 text-sm mt-1 leading-relaxed left-10  sm:left-10">
+                                                        Apply
+                                                    </p>
+                                                </div>
                                             </Link>
                                         </div>
                                     </div>
@@ -127,15 +127,15 @@ function CitizenSubPropertyCategory() {
                                             </h1>
                                         </div>
                                         <button
-                                                class="h-8 w-12 bg-red-400 rounded-full drop-shadow-lg text-sm text-white duration-300 hover:bg-green-500  ">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
-                                                </svg>
+                                            class="h-8 w-12 bg-red-400 rounded-full drop-shadow-lg text-sm text-white duration-300 hover:bg-green-500  ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                                            </svg>
 
-                                            </button>
+                                        </button>
                                         <div className='flex-1 ml-96 -mt-3' >
                                             <img src='https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?w=826&t=st=1659784290~exp=1659784890~hmac=ebdaac857732a1bae2aa343b76514f5a34cd662dc447907ccdade20efbfe5bab'></img>
-                                           
+
                                         </div>
                                         <div>
 

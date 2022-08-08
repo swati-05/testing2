@@ -77,8 +77,17 @@ function TopNavbar() {
                         <div class="relative   ">
                             <div class="md:flex   float-right w-96 ">
                                 <div className='mr-6  w-60  rounded-full text-center h-6  opacity-95 hover:scale-105 transition-all transform duration-500 '>
+                                <div className='flex-1 '>
+                                        <Link to='/login'>
+                                            <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">CitizenLogin</h2>
+                                        </Link>
+                                    </div>
                                     <div >
-                                        <Button onClick={handleOpen} >Complain & Grevances</Button>
+                                        {/* <span class="flex h-2 w-3"> */}
+                                        <span class="animate-ping absolute inline-flex h-4 w-20 mt-2 ml-3 bg-red-700 opacity-75"></span>
+                                        {/* <span class="relative inline-flex rounded-full h-2 w-2  bg-red-400"></span> */}
+                                        {/* </span> */}
+                                        <Button onClick={handleOpen} > Grevances</Button>
                                         <Modal
 
                                             open={open}
@@ -153,6 +162,7 @@ function TopNavbar() {
                                             <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">Register</h2>
                                         </Link>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

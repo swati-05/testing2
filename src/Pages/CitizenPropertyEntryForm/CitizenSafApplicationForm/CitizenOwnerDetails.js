@@ -42,7 +42,7 @@ function CitizenOwnerDetails(props) {
         emailId: yup.string(),
         armedForce: yup.string().required('Select armed force status'),
         speciallayAbled: yup.string().required('Select specially-abled status'),
-        ownerimage: yup.mixed().required('A file is required')
+        // ownerimage: yup.mixed().required('A file is required')
 
     })
     const formik = useFormik({
@@ -58,7 +58,7 @@ function CitizenOwnerDetails(props) {
             emailId: '',
             armedForce: 'no',
             speciallayAbled: 'no',
-            ownerimage:''
+            // ownerimage:''
         },
 
         onSubmit: (values, resetForm) => {
@@ -125,7 +125,7 @@ function CitizenOwnerDetails(props) {
         formik.initialValues.emailId = tempOwnerlist[index].emailId
         formik.initialValues.armedForce = tempOwnerlist[index].armedForce
         formik.initialValues.speciallayAbled = tempOwnerlist[index].speciallayAbled
-        formik.initialValues.ownerimage = tempOwnerlist[index].ownerimage
+        // formik.initialValues.ownerimage = tempOwnerlist[index].ownerimage
 
         toggleForm()
     }
@@ -236,12 +236,12 @@ function CitizenOwnerDetails(props) {
                                     </select>
                                     <span className="text-red-600 absolute text-xs">{formik.touched.speciallayAbled && formik.errors.speciallayAbled ? formik.errors.speciallayAbled : null}</span>
                                 </div>
-                                <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
+                                {/* <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
                                     <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Owner Image</label>
                                     <input {...formik.getFieldProps('ownerimage')} type="file" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none shadow-md"
                                        onChange={handleChange} />
                                     <span className="text-red-600 absolute text-xs">{formik.touched.ownerimage && formik.errors.ownerimage ? formik.errors.ownerimage : null}</span>
-                                </div>
+                                </div> */}
                                 
                                 <div className=" flex justify-center items-end">
                                     <div className='md:px-10'>

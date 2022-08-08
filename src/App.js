@@ -25,6 +25,7 @@ import Register from './Pages/Registration/Register';
 import About from './components/About';
 import CitizenSubPropertyCategory from './Pages/citizen/CitizenSubPropertyCategory';
 import CitizenSafEntryScreen from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafEntryScreen';
+import Login from './Pages/CitizenLogin/Login';
 
 
 function App() {
@@ -147,7 +148,7 @@ function App() {
     <>
       <contextVar.Provider value={{ ulbdatafun: setulbData, ulbdata: ulbData }}>
         <div className={`sm:w-full transition-all  `}>
-          
+          {/* <CitizenSafEntryScreen  /> */}
           <Routes>
             <Route path="/" element={<LandingMainPage />} />
             <Route path="/about" element={<About />} /> 
@@ -161,10 +162,12 @@ function App() {
             <Route path="/test" element={<TestComponent />} />
             <Route path="/citizenDashboard/citizenAccountSetting" element={<CitizenDetailPage />} />
             <Route path="/download" element={<DownloadPage />} />
-            <Route path="/citizenProperty" element={<CitizenSubPropertyCategory />} />
+            <Route path="/citizenProperty" element={<CitizenSafEntryScreen />} />
             <Route path="/citizenProperty/citizenSafApply" element={<CitizenSafEntryScreen />} />
             <Route path="/citizenselfdetailform" element={<CitizenSelfAdvtDetailForm />} />
+            <Route path='/safform/:assType' element={<CitizenSafApplicationFormIndex />} />
             <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
