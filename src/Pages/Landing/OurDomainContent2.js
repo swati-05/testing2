@@ -1,3 +1,14 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - OurDomainContent2
+//    DESCRIPTION - OurDomainContent2 Component containing domains in landingPage
+//////////////////////////////////////////////////////////////////////////////////////
+
+
 import { useState } from 'react'
 import prop_img from './prop.jpg'
 import bm from './bm.jpg'

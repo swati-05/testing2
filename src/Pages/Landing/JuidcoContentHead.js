@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - JuidcoContentHead
+//    DESCRIPTION - JuidcoContentHead is a section in landingPage containing  nformation about jharkhand
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 // import style from '../index.css'
 

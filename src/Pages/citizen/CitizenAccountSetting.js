@@ -1,4 +1,14 @@
-import React, { useState,useEffect } from 'react'
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenAccountSetting
+//    DESCRIPTION - CitizenAccountSetting Component is for citizen Profile detail
+//////////////////////////////////////////////////////////////////////////////////////
+
+import React, { useState, useEffect } from 'react'
 
 function CitizenAccountSetting() {
 
@@ -7,7 +17,7 @@ function CitizenAccountSetting() {
     // const [basic_dtl_height, setbasic_dtl_height] = useState('h-screen')
 
     let basic_dtl_height = 'h-screen';
-    
+
     const handleShowProperty = () => {
         (prop_dtl == 'hidden') ? setprop_dtl('') : setprop_dtl('hidden');
     }
@@ -16,15 +26,15 @@ function CitizenAccountSetting() {
 
         // (basic_dtl=='hidden')?{setbasic_dtl('')}:setbasic_dtl('hidden');
 
-        
-            if (basic_dtl == 'hidden') {
-                setbasic_dtl('');
-                basic_dtl_height ='h-36';
-            } else {
-                setbasic_dtl('hidden');
-                basic_dtl_height ='h-screen';
-            }
-        
+
+        if (basic_dtl == 'hidden') {
+            setbasic_dtl('');
+            basic_dtl_height = 'h-36';
+        } else {
+            setbasic_dtl('hidden');
+            basic_dtl_height = 'h-screen';
+        }
+
 
 
     }
@@ -33,6 +43,10 @@ function CitizenAccountSetting() {
     }, [])
     return (
         <>
+
+        {/* citizen profile detail */}
+
+        
             <div className={`w-full ${basic_dtl_height} bg-white`}>
                 <div class="bg-white  overflow-hidden sm:rounded-lg">
                     <div class="px-4 py-5 sm:px-6">

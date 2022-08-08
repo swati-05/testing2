@@ -1,4 +1,14 @@
-import React from 'react'
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - About
+//    DESCRIPTION - About Component is for juidco information
+//////////////////////////////////////////////////////////////////////////////////////
+ 
+ import React from 'react'
 import LandingNav from '../Pages/Landing/LandingNav'
 import Footer from './Footer'
 

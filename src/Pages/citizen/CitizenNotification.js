@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenNotification
+//    DESCRIPTION - CitizenNotification Component is for showing notification on citizen 
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 
 function CitizenNotification() {

@@ -1,18 +1,23 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - ComplainGrivanceMainPage
+//    DESCRIPTION - ComplainGrivanceMainPage Component is a parent component of Complain and Grivances
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 import GrevanshesPage from '../Pages/Landing/GrevanshesPage'
 import complain from '../assets/complain.png'
 import LandingNav from '../Pages/Landing/LandingNav'
 import TimeLine from './TimeLine'
 
-
-function Complain_Grivance() {
+function ComplainGrivanceMainPage() {
   return (
     <>
-
-
       <LandingNav />
-
-
       <div class="grid grid-cols-10 ">
         <div class=" bg-white   col-span-2  ">
           <div class=" py-12 mb-8 ">
@@ -30,4 +35,4 @@ function Complain_Grivance() {
   )
 }
 
-export default Complain_Grivance
+export default ComplainGrivanceMainPage

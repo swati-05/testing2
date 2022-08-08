@@ -1,10 +1,18 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenLicenseFullDetail
+//    DESCRIPTION - CitizenLicenseFullDetail Component is displaying particular selected license full detail table
+//////////////////////////////////////////////////////////////////////////////////////
+
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
 import LandingNav from '../Landing/LandingNav';
 import TimeLine from '../../components/TimeLine';
-
-
 
 function CitizenLicenseFullDetail() {
     const [dastaList, setDastaList] = useState()
@@ -29,6 +37,7 @@ function CitizenLicenseFullDetail() {
         <>
             <LandingNav />
 
+            {/* displaying particular selected license full detail table */}
 
             <div class="grid grid-cols-5 gap-5 bg-white">
                 <div class=" bg-white mt-2 ml-2 col-span-1">

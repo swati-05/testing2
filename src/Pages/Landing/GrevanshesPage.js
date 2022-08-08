@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - GrevanshesPage
+//    DESCRIPTION - GrevanshesPage Component is for grivance landing containing tabs in which components are {GrevanceComplainForm, GrevanceStatusTable}
+//////////////////////////////////////////////////////////////////////////////////////
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -50,6 +60,10 @@ export default function GrevanshesPage() {
   };
 
   return (
+
+    // complain and grivance landing page which contain component in tabs
+
+    
     <div className=' w-full h- full m-auto bg-white '>
       <Box >
         <Box sx={{ borderColor: 'divider', backgroundColor: 'white' }} >

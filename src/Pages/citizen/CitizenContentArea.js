@@ -1,8 +1,22 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenContentArea
+//    DESCRIPTION - CitizenContentArea Component is for conating content on dashboard
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 
 function CitizenContentArea() {
     return (
         <>
+
+        {/* containg contain  on dashboard */}
+
+        
             <section class="bg-white ">
                 <div class="container px-5 py-8 mx-auto flex flex-wrap">
                     <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">

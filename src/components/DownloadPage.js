@@ -1,3 +1,12 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  -DownloadPage
+//    DESCRIPTION - DownloadPage Component is for download section
+//////////////////////////////////////////////////////////////////////////////////////
 import React from 'react'
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import DownloadButton from './DownloadButton';

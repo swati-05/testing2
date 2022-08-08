@@ -1,5 +1,15 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - LandingMainPage
+//    DESCRIPTION - LandingMainPage  is a parent component of all Landing component
+//////////////////////////////////////////////////////////////////////////////////////
+
+
 import React,{useState} from 'react'
-import Leaders from '../Pages/Landing/Leaders'
 import SectionOurDomain from '../Pages/Landing/SectionOurDomain'
 import SliderImage from '../Pages/Landing/SliderImage'
 import TopNavbar from '../Pages/Landing/TopNavbar'

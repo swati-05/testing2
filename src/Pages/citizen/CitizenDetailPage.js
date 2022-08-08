@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenDetailPage
+//    DESCRIPTION - CitizenDetailPage Component is contaning citizen account detail tabs which has included components     {CitizenAccountSetting, CitizenAppliedLicenseDetail, CitizenNotification }
+//////////////////////////////////////////////////////////////////////////////////////
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -60,26 +70,30 @@ export default function CitizenDetailPage() {
         <div className='flex-1'>
           <SideNav />
         </div>
-          <div className='flex-4 border bg-white w-full'>
-            <Box sx={{ }}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider',width:'100%' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{backgroundColor:'#eee'}}>
-                  <Tab label="Account" {...a11yProps(0)} />
-                  <Tab label="Applied Licenses" {...a11yProps(1)} />
-                  <Tab label="Notification" {...a11yProps(2)} />
-                </Tabs>
-              </Box>
-              <TabPanel value={value} index={0}>
-                <CitizenAccountSetting />
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <CitizenAppliedLicenseDetail />
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                <CitizenNotification />
-              </TabPanel>
+
+        {/* citizen Account tabs  */}
+
+
+        <div className='flex-4 border bg-white w-full'>
+          <Box sx={{}}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '100%' }}>
+              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ backgroundColor: '#eee' }}>
+                <Tab label="Account" {...a11yProps(0)} />
+                <Tab label="Applied Licenses" {...a11yProps(1)} />
+                <Tab label="Notification" {...a11yProps(2)} />
+              </Tabs>
             </Box>
-          </div>
+            <TabPanel value={value} index={0}>
+              <CitizenAccountSetting />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <CitizenAppliedLicenseDetail />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <CitizenNotification />
+            </TabPanel>
+          </Box>
+        </div>
       </div>
     </>
   );

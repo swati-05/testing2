@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - GrevanceStatusTable
+//    DESCRIPTION - GrevanceStatusTable Component is for showing complain list by particular citizen
+//////////////////////////////////////////////////////////////////////////////////////
+
 import { Link, Outlet, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -28,11 +38,11 @@ function GrevanceStatusTable() {
 
     return (
         <>
-            {/* <div class="w-full max-w-6xl rounded bg-red-100 drop-shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left"> */}
+           
 
+             {/* this is for showing complain list in a table of grivance page */}
 
-
-            <div className= {closeTable}>
+            <div className={closeTable}>
                 <div className=' flex justify-between bg-slate-500 w-full'>
                     <div>
 

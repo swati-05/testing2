@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - KnowledageTab
+//    DESCRIPTION - KnowledageTab Component containing  components in tab in landingPage section in which components are {NewsComponent,EventComponent,DownloadPage  }
+//////////////////////////////////////////////////////////////////////////////////////
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -44,8 +54,8 @@ function a11yProps(index) {
 
 export default function KnowledageTab() {
 
-//    let newsData = props.newsData
-// console.log('data at knowledge tab ',props.newsData)
+  //    let newsData = props.newsData
+  // console.log('data at knowledge tab ',props.newsData)
 
   const [value, setValue] = React.useState(0);
 
@@ -55,14 +65,14 @@ export default function KnowledageTab() {
 
   return (
     <>
-      <div  className='flex flex-row'>
+      <div className='flex flex-row'>
         <div>
-  
+
         </div>
         <div>
           <div className=' w-80 h-[29rem] mt-2  bg-white drop-shadow-md rounded-lg'>
-            <Box sx={{ width: '100%',height: '100%' }}>
-              <Box sx={{   }}>
+            <Box sx={{ width: '100%', height: '100%' }}>
+              <Box sx={{}}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                   <Tab label="NEWS" {...a11yProps(0)} />
                   <Tab label="EVENTS" {...a11yProps(1)} />
@@ -70,13 +80,13 @@ export default function KnowledageTab() {
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
-              <NewsComponent />
+                <NewsComponent />
               </TabPanel>
               <TabPanel value={value} index={1}>
-          <EventComponent />
+                <EventComponent />
               </TabPanel>
               <TabPanel value={value} index={2}>
-              <DownloadPage />
+                <DownloadPage />
               </TabPanel>
             </Box>
           </div>

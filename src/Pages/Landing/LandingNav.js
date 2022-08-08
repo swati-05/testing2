@@ -1,14 +1,24 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - LandingNav
+//    DESCRIPTION - LandingNav Component is for NavBar
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchBox from './SearchBox'
 
 function LandingNav() {
 
-const [menuDropdown, setmenuDropdown] = useState('hidden')
+    const [menuDropdown, setmenuDropdown] = useState('hidden')
 
-const menuOpen = () => {
-    menuDropdown == 'hidden' ? setmenuDropdown('') : setmenuDropdown('hidden')
-}
+    const menuOpen = () => {
+        menuDropdown == 'hidden' ? setmenuDropdown('') : setmenuDropdown('hidden')
+    }
 
     return (
         <>
@@ -42,9 +52,9 @@ const menuOpen = () => {
                                                             </svg>
                                                         </div>
                                                         <div>
-                                                          <Link to = "/">
-                                                             <p className='ml-4 text-sm mt-1'>HOME</p>
-                                                          </Link> 
+                                                            <Link to="/">
+                                                                <p className='ml-4 text-sm mt-1'>HOME</p>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 </button>
@@ -56,7 +66,7 @@ const menuOpen = () => {
                                                             </svg>
                                                         </div>
                                                         <div>
-                                                            <Link to = "/about">
+                                                            <Link to="/about">
                                                                 <p className='ml-4 text-sm mt-1'>ABOUT</p>
                                                             </Link>
                                                         </div>
@@ -64,18 +74,18 @@ const menuOpen = () => {
                                                 </button>
                                                 <div class="relative inline-block text-left z-10">
                                                     <div>
-                                                        <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-blue-500  hover:text-white   text-blue-500   font-semibold hover:flex-grow transition-all duration-200 ease-in-out inline-flex "  id="menu-button" aria-expanded="true" aria-haspopup="true" type='button' onClick={menuOpen}>
+                                                        <button className="min-w-auto w-12 h-10 bg-white p-2 rounded-r-full hover:bg-blue-500  hover:text-white   text-blue-500   font-semibold hover:flex-grow transition-all duration-200 ease-in-out inline-flex " id="menu-button" aria-expanded="true" aria-haspopup="true" type='button' onClick={menuOpen}>
                                                             <div className='flex flex-row'>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 ml-1" viewBox="0 0 20 20" fill="currentColor">
                                                                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                                                                 </svg>
                                                             </div>
                                                         </button>
-                                                        <div class={`${menuDropdown} origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none`}  role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                                        <div class={`${menuDropdown} origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                                                             <div class="py-1" role="none">
                                                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                                                                <Link to = "/logout">
-                                                                <p class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Logout</p>
+                                                                <Link to="/logout">
+                                                                    <p class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Logout</p>
                                                                 </Link>
                                                                 <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">About</a>
                                                             </div>

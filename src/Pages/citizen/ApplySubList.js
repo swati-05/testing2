@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - ApplySubList
+//    DESCRIPTION - ApplySubList Component is for our domain category list in citizen dashboard
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CitizenDashboardPage from '../../components/CitizenMainPage'
@@ -15,7 +25,10 @@ function ApplySubList() {
                 </div>
                 <div>
 
-            <LandingNav />
+                    <LandingNav />
+
+                    {/* Apply category  in  citizen dashboard    */}
+                    
                     <section class="text-gray-600 bg-white">
                         <div class="container grid grid-cols-1 col-span-2 -mb-28 mx-auto  p-4  ">
                             {/* <div class="flex flex-col text-center w-full mb-20">

@@ -1,10 +1,15 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - App
+//    DESCRIPTION - App Component
+//////////////////////////////////////////////////////////////////////////////////////
+
 import React, { useState } from 'react';
-import {
-  Routes,
-  Route,
-  Link,
-  Outlet,
-} from "react-router-dom";
+import { Routes, Route, Link, Outlet,} from "react-router-dom";
 import './App.css';
 import NotFound from './components/NotFound';
 import CitizenDetailPage from './Pages/citizen/CitizenDetailPage';
@@ -23,11 +28,11 @@ import {newsData} from './StaticData'
 import CitizenRegistrationForm from './components/CitizenRegistrationForm';
 import Register from './Pages/Registration/Register';
 import About from './components/About';
-import CitizenSubPropertyCategory from './Pages/citizen/CitizenSubPropertyCategory';
 import CitizenSafEntryScreen from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafEntryScreen';
 import Login from './Pages/CitizenLogin/Login';
 import Logout from './Pages/CitizenLogin/Logout';
 import Demo from './Pages/CitizenLogin/Demo'
+import Protected from './Pages/CitizenLogin/Protected';
 
 function App() {
   // const [ulbId, setulbId] = useState(0);
@@ -170,8 +175,9 @@ function App() {
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/logout" element={<Logout/>} />
-            <Route path="/demo" element={<Demo/>} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/demo" element={ <Protected Component={Demo} />} />
+            <Route path="*" element={<NotFound />} /> 
+            {/* <Route path="*" element={<Protected />} />  */}
           </Routes>
         </div>
       </contextVar.Provider >
