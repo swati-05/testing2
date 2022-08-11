@@ -159,25 +159,25 @@ function App() {
             <Route path="/" element={<LandingMainPage />} />
             <Route path="/about" element={<About />} /> 
             {/* <Route path="/downloads" element={<Downloads />} /> */}
-            <Route path="/apply" element={<CitizenWelcome />} />
-            <Route path="/signup" element={<CitizenRegistrationForm />} />
-            <Route path="/grivancePage" element={<ComplainGrivanceMainPage />} />
-            <Route path="appliedLicenseDetail" element={<CitizenAppliedLicenseDetail />} />
+            <Route path="/apply" element={<Protected Component={CitizenWelcome}/>} />
+            <Route path="/signup"  element={<Protected Component={CitizenRegistrationForm}/>} />
+            <Route path="/grivancePage" element={<Protected Component={ComplainGrivanceMainPage}/>} />
+            <Route path="appliedLicenseDetail" element={<Protected Component={CitizenAppliedLicenseDetail}/>} /> 
             <Route path="/test/:userId" element={<CitizenLicenseFullDetail />} />
-            <Route path="/citizenDashboard" element={<CitizenMainPage />} />
+            <Route path="/citizenDashboard" element={<Protected Component={CitizenMainPage}/>} />
             <Route path="/test" element={<TestComponent />} />
             <Route path="/citizenDashboard/citizenAccountSetting" element={<CitizenDetailPage />} />
             <Route path="/download" element={<DownloadPage />} />
-            <Route path="/citizenProperty" element={<CitizenSafEntryScreen />} />
+            <Route path="/citizenProperty" element={<Protected Component={CitizenSafEntryScreen}/>} /> 
             <Route path="/citizenProperty/citizenSafApply" element={<CitizenSafEntryScreen />} />
-            <Route path="/citizenselfdetailform" element={<CitizenSelfAdvtDetailForm />} />
-            <Route path='/safform/:assType' element={<CitizenSafApplicationFormIndex />} />
+            <Route path="/citizenselfdetailform" element={<Protected Component={CitizenSelfAdvtDetailForm}/>} /> 
+            <Route path='/safform/:assType' element={<Protected Component={CitizenSafApplicationFormIndex}/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/logout" element={<Logout/>} />
-            <Route path="/demo" element={ <Protected Component={Demo} />} />
-            <Route path="*" element={<NotFound />} /> 
-            {/* <Route path="*" element={<Protected />} />  */}
+            <Route path="/demo" element={<Protected Component={Demo}/>} />
+            <Route path="*" element={<NotFound />} />
+            {/* <Route path="*" element={<Protected />} /> */}
           </Routes>
         </div>
       </contextVar.Provider >
