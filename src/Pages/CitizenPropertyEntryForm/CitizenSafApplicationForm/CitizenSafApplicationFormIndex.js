@@ -1,3 +1,10 @@
+//////////////////////////////
+//
+//
+//
+// API Integration By : Dipu Singh
+//////////////////////////////
+
 import { useState, useEffect } from 'react'
 import CitizenBasicDetails from './CitizenBasicDetails'
 import CitizenFormStatusTimeline from './CitizenFormStatusTimeline'
@@ -12,6 +19,7 @@ import FormSubmitResponse from '../CitizenFormSubmitResponse'
 import { TbWebhook } from 'react-icons/tb'
 import { useParams } from 'react-router-dom'
 import LandingNav from '../../Landing/LandingNav'
+import axios from "axios";
 
 
 function CitizenSafApplicationFormIndex() {
@@ -27,6 +35,8 @@ function CitizenSafApplicationFormIndex() {
     //assessment type
     const [assTypeText, setAssTypeText] = useState()
 
+    const [bearerToken, setBearerToken] = useState()
+
     //useEffect to extract assessment type from url and set in state
     let { assType } = useParams()
     useEffect(() => {
@@ -34,6 +44,12 @@ function CitizenSafApplicationFormIndex() {
         { assType == 're' && (setAssTypeText('Re-Assessment')) }
         { assType == 'mu' && (setAssTypeText('Mutation')) }
         // setAssTypeText(assType)
+    }, [])
+
+    useEffect(() => {
+        const bearerTokenInit = localStorage.getItem('token');
+        setBearerToken(bearerTokenInit)
+        console.log("Token is : ", bearerToken)
     }, [])
 
 
@@ -101,21 +117,148 @@ function CitizenSafApplicationFormIndex() {
         setSubmitStatus(true)
     }
 
+    // const header = {
+    //     headers:
+    //     {
+    //         Authorization: `Bearer 146|2Q3eNCD6I5gUy4rSnWtJfNjjXsTcFVSFZVV7Z5Oe`,
+    //         Accept: 'application/json',
+    //     }
+    // }
+
+    const handleFinalSubmiBtn = () => {
+        console.log("Dipu FUll Data === ", allFormData)
+        console.log("Basic Details === ", allFormData.basicDetails)
+        console.log("PropertyAddressDetails === ", allFormData.propertyAddressDetails)
+        console.log("OwnerDetails === ", allFormData.ownerDetails)
+        console.log("floorDetails === ", allFormData.floorDetails)
+        console.log("bearerToken === ", bearerToken)
+
+        // const ownerDataArr = allFormData.ownerDetails.map((e,i=0)=>{
+        //     <li>{i}</li>,
+        //     "ownerName" : e.ownerName
+        // })
+
+        //SAF Appply Data using AXIOS POST
+
+        let formDataToSubmit = {
+            "hasPreviousHoldingNo": "0",
+            "previousHoldingId": "0123456789",
+            "previousWard": "1",
+            "isOwnerChanged": "0",
+            "transferMode": "2",
+            "safNo": "SAF00001",
+            "holdingNo": "0123456789",
+            "ward": "5",
+            "ownershipType": "2",
+            "propertyType": "5",
+            "apartmentName": "lorem ipsem",
+            "flatRegistryDate": "2022-06-06",
+            "zone": "2",
+            "electricityConnection": "0",
+            "electricityCustNo": "JH0326587",
+            "electricityAccNo": "JH0563987",
+            "electricityBindBookNo": "012345679",
+            "electricityConsCategory": "A",
+            "buildingPlanApprovalNo": "0123456789",
+            "buildingPlanApprovalDate": "2022-07-06",
+            "waterConnNo": "05236",
+            "waterConnDate": "2022-06-06",
+            "khataNo": "123456789",
+            "plotNo": "546123587",
+            "villageMaujaName": "lorem Ipsem",
+            "roadType": "5",
+            "areaOfPlot": "12.21",
+            "propAddress": "lorem Ipsem",
+            "propCity": "Ranchi",
+            "propDist": "Ranchi",
+            "propPinCode": "834005",
+            "isCorrAddDiffer": "0",
+            "corrAddress": "Lorem Ipsem",
+            "corrCity": "Ranchi",
+            "corrDist": "Ranchi",
+            "corrPinCode": "834005",
+            "isMobileTower": "0",
+            "towerArea": "653.66",
+            "towerInstallationDate": "2022-06-06",
+            "isHoardingBoard": "1",
+            "hoardingArea": "500.62",
+            "hoardingInstallationDate": "2022-02-01",
+            "isPetrolPump": "1",
+            "undergroundArea": "200.12",
+            "petrolPumpCompletionDate": "2022-06-01",
+            "isWaterHarvesting": "0",
+            "landOccupationDate": "2022-05-12",
+            "paymentStatus": "5",
+            "docVerifyStatus": "2",
+            "docVerifyDate": "2022-05-02",
+            "docVerifyEmpDetail": "21",
+            "docVerifyCancelRemark": "good",
+            "fieldVerifyStatus": "5",
+            "fieldVerifyDate": "2022-03-04",
+            "fieldVerifyEmpDetail": "5",
+            "empDetails": "5",
+            "applyDate": "2022-06-02",
+            "safPendingStatus": "0",
+            "assessmentType": "lorem Ipsem",
+            "docUploadStatus": "0",
+            "safDistributedDtl": "5",
+            "propDtl": "1",
+            "propState": "Jharkhand",
+            "corrState": "Jharkhand",
+            "holdingType": "asd",
+            "ipAddress": "192.168.0.166",
+            "propertyAssessment": "4",
+            "newWard": "6",
+            "percOfPropertyTransfer": "66",
+            "apartmentDetail": "4",
+            "owner": allFormData.ownerDetails,            
+            "floor": allFormData.floorDetails,
+
+        }
+
+
+        // console.log('data to submit ', formDataToSubmit)
+        // return
+        axios({
+            method: "post",
+            url: "http://192.168.0.166/api/apply-for-saf",
+            data: formDataToSubmit,
+            headers: {
+                Authorization: `Bearer ${bearerToken}`,
+                Accept: 'application/json',
+            }
+        })
+            .then(function (response) {
+                console.log("SAF uploaded......", response);
+                // console.log("Message", response.data);
+                // setRegMsg(response.data);
+                // regComplated()
+            })
+            .catch(function (response) {
+                // console.log("Failed", response.response.data.ulb[0]);
+                console.log("Failed", response);
+                // console.log("Message", response.message);
+                // setRegMsg(response.message);
+                // setRegMsg(response.response.data.ulb[0]);
+            });
+
+    }
+
     const collectAllFormData = (key, formData) => {
         console.log('prev Data', allFormData)
         // setAllFormData({...allFormData,formData}) //this is going to replace upcoming data since has same formData key all the time
         setAllFormData({ ...allFormData, [key]: formData })
     }
-    if (responseScreenStatus == 'success') {
-        return (
-            <>
-                <FormSubmitResponse />
-            </>
-        )
-    }
+    // if (responseScreenStatus == 'success') {
+    //     return (
+    //         <>
+    //             <FormSubmitResponse />
+    //         </>
+    //     )
+    // }
     return (
         <>
-        <LandingNav />
+            <LandingNav />
             <div className='w-10/12 ml-48 overflow-x-hidden h-screen '>
                 <ToastContainer position="top-right"
                     autoClose={2000} />
@@ -149,7 +292,8 @@ function CitizenSafApplicationFormIndex() {
                 <div className={`${animateform4} transition-all relative`}><CitizenOwnerDetails assType={assTypeText} collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
                 <div className={`${animateform5} transition-all relative`}><CitizenFloorDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
 
-                {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button>
+                {/* {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button> */}
+                {submitStatus && <div onClick={() => handleFinalSubmiBtn()} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button>
                 </div>}
 
 
@@ -160,3 +304,5 @@ function CitizenSafApplicationFormIndex() {
 }
 
 export default CitizenSafApplicationFormIndex
+
+

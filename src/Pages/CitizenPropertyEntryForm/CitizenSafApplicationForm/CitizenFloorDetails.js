@@ -1,3 +1,10 @@
+//////////////////////////////
+//
+//
+//
+// Form Changed By : Dipu Singh
+// Naming changed according to api
+//////////////////////////////
 import { useState } from 'react'
 import { FaUserNurse } from 'react-icons/fa'
 import { BiAddToQueue } from 'react-icons/bi'
@@ -30,9 +37,9 @@ function FloorDetails(props) {
         useType: yup.string().required('Select use type'),
         occupancyType: yup.string().required('Select occupancy type'),
         constructionType: yup.string().required('Select construction type'),
-        builtupArea: yup.string().required('Enter builtup Area'),
-        fromDate: yup.date().required('Select from date'),
-        uptoDate: yup.date()
+        buildupArea: yup.string().required('Enter builtup Area'),
+        dateFrom: yup.date().required('Select from date'),
+        dateUpto: yup.date()
 
     })
     const formik = useFormik({
@@ -41,9 +48,10 @@ function FloorDetails(props) {
             useType: '',
             occupancyType: '',
             constructionType: '',
-            builtupArea: '',
-            fromDate: '',
-            uptoDate: ''
+            buildupArea: '',
+            dateFrom: '',
+            dateUpto: '',
+            propFloorDetail : '300'
         },
 
         onSubmit: (values, resetForm) => {
@@ -104,9 +112,9 @@ function FloorDetails(props) {
         formik.initialValues.useType = tempfloorList[index].useType
         formik.initialValues.occupancyType = tempfloorList[index].occupancyType
         formik.initialValues.constructionType = tempfloorList[index].constructionType
-        formik.initialValues.builtupArea = tempfloorList[index].builtupArea
-        formik.initialValues.fromDate = tempfloorList[index].fromDate
-        formik.initialValues.uptoDate = tempfloorList[index].uptoDate
+        formik.initialValues.buildupArea = tempfloorList[index].buildupArea
+        formik.initialValues.dateFrom = tempfloorList[index].dateFrom
+        formik.initialValues.dateUpto = tempfloorList[index].dateUpto
 
         toggleForm()
     }
@@ -183,19 +191,19 @@ function FloorDetails(props) {
                                 </div>
                                 <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
                                     <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Built Up Area (in Sq. Ft)</label>
-                                    <input {...formik.getFieldProps('builtupArea')} type="text" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none shadow-md" />
-                                    <span className="text-red-600 absolute text-xs">{formik.touched.builtupArea && formik.errors.builtupArea ? formik.errors.builtupArea : null}</span>
+                                    <input {...formik.getFieldProps('buildupArea')} type="number" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none shadow-md" />
+                                    <span className="text-red-600 absolute text-xs">{formik.touched.buildupArea && formik.errors.buildupArea ? formik.errors.buildupArea : null}</span>
                                 </div>
                                 <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
                                     <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>From Date</label>
-                                    <input {...formik.getFieldProps('fromDate')} type="date" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md" placeholder='Enter fromDate no' />
-                                    <span className="text-red-600 absolute text-xs">{formik.touched.fromDate && formik.errors.fromDate ? formik.errors.fromDate : null}</span>
+                                    <input {...formik.getFieldProps('dateFrom')} type="date" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md" placeholder='Enter dateFrom no' />
+                                    <span className="text-red-600 absolute text-xs">{formik.touched.dateFrom && formik.errors.dateFrom ? formik.errors.dateFrom : null}</span>
                                 </div>
                                 <div className="form-group col-span-4 md:col-span-1 mb-2 md:px-4">
                                     <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">Upto Date (Leave blank for current date)</label>
-                                    <input {...formik.getFieldProps('uptoDate')} type="date" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md"
-                                        placeholder="Enter uptoDate no." />
-                                    <span className="text-red-600 absolute text-xs">{formik.touched.uptoDate && formik.errors.uptoDate ? formik.errors.uptoDate : null}</span>
+                                    <input {...formik.getFieldProps('dateUpto')} type="date" className="form-control block w-full px-3 py-1.5 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md"
+                                        placeholder="Enter dateUpto no." />
+                                    <span className="text-red-600 absolute text-xs">{formik.touched.dateUpto && formik.errors.dateUpto ? formik.errors.dateUpto : null}</span>
                                 </div>
 
                                 <div className=" flex justify-center items-end">
@@ -255,9 +263,9 @@ function FloorDetails(props) {
                                             <td className="px-2 py-2 text-sm text-left">{data.useType}</td>
                                             <td className="px-2 py-2 text-sm text-left">{data.occupancyType}</td>
                                             <td className="px-2 py-2 text-sm text-left">{data.constructionType}</td>
-                                            <td className="px-2 py-2 text-sm text-left">{data.builtupArea}</td>
-                                            <td className="px-2 py-2 text-sm text-left">{data.fromDate}</td>
-                                            <td className="px-2 py-2 text-sm text-left">{data.uptoDate}</td>
+                                            <td className="px-2 py-2 text-sm text-left">{data.buildupArea}</td>
+                                            <td className="px-2 py-2 text-sm text-left">{data.dateFrom}</td>
+                                            <td className="px-2 py-2 text-sm text-left">{data.dateUpto}</td>
                                             <td className="px-2 py-2 text-sm text-left"><TbEdit onClick={() => editFloor(index)} className='inline text-green-500 font-semibold text-lg cursor-pointer hover:text-green-700 relative hover:scale-150' /><RiDeleteBack2Line onClick={() => removeFloor(index)} className='inline ml-2 text-red-400 font-semibold text-lg cursor-pointer hover:text-red-700 relative hover:scale-150' /></td>
                                         </tr>
                                     </>
