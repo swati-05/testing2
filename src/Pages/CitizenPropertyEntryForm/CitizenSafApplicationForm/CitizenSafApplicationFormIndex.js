@@ -133,7 +133,6 @@ function CitizenSafApplicationFormIndex() {
         console.log("floorDetails === ", allFormData.floorDetails)
         console.log("bearerToken === ", bearerToken)
 
-        setResponseScreenStatus('success')
 
         // const ownerDataArr = allFormData.ownerDetails.map((e,i=0)=>{
         //     <li>{i}</li>,
@@ -213,7 +212,7 @@ function CitizenSafApplicationFormIndex() {
             "newWard": "6",
             "percOfPropertyTransfer": "66",
             "apartmentDetail": "4",
-            "owner": allFormData.ownerDetails,            
+            "owner": allFormData.ownerDetails,
             "floor": allFormData.floorDetails,
 
         }
@@ -232,6 +231,8 @@ function CitizenSafApplicationFormIndex() {
         })
             .then(function (response) {
                 console.log("SAF uploaded......", response);
+                setResponseScreenStatus('success')
+
                 // console.log("Message", response.data);
                 // setRegMsg(response.data);
                 // regComplated()
