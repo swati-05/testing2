@@ -2,7 +2,7 @@
 //
 //
 //
-// API Integration By : Dipu Singh
+// API Integration By : Dipu Singh on 08-11-2022
 //////////////////////////////
 
 import { useState, useEffect } from 'react'
@@ -133,6 +133,8 @@ function CitizenSafApplicationFormIndex() {
         console.log("floorDetails === ", allFormData.floorDetails)
         console.log("bearerToken === ", bearerToken)
 
+        setResponseScreenStatus('success')
+
         // const ownerDataArr = allFormData.ownerDetails.map((e,i=0)=>{
         //     <li>{i}</li>,
         //     "ownerName" : e.ownerName
@@ -249,13 +251,13 @@ function CitizenSafApplicationFormIndex() {
         // setAllFormData({...allFormData,formData}) //this is going to replace upcoming data since has same formData key all the time
         setAllFormData({ ...allFormData, [key]: formData })
     }
-    // if (responseScreenStatus == 'success') {
-    //     return (
-    //         <>
-    //             <FormSubmitResponse />
-    //         </>
-    //     )
-    // }
+    if (responseScreenStatus == 'success') {
+        return (
+            <>
+                <FormSubmitResponse />
+            </>
+        )
+    }
     return (
         <>
             <LandingNav />
