@@ -14,18 +14,31 @@ import { useNavigate } from "react-router-dom";
 function Logout() {
     const navigate = useNavigate();
 
-    localStorage.removeItem('token');
+    const handleLogoutBtn = () => {
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            navigate("/login")
-        }, 2000);
-        return () => clearTimeout(timer);
-    }, []);
-    
+        localStorage.removeItem('token');
+        navigate("/login")
+
+
+        // useEffect(() => {
+        //     const timer = setTimeout(() => {
+        //         navigate("/login")
+        //     }, 2000);
+        //     return () => clearTimeout(timer);
+        // }, []);
+    }
+    if (window.confirm("Are you sure you want to Log Out ?")){
+        localStorage.removeItem('token');
+        return  navigate("/login")
+            
+    }
+
+
     return (
         <div>
-            Logout Done
+
+    
+
         </div>
     )
 }

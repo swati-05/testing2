@@ -67,7 +67,7 @@ const LoginForm = (props) => {
                         // alert(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                         handleLogin(values)
-                        console.log("Login Data", values)
+                        // console.log("Login Data", values)
                     }, 400);
                 }}
             >
@@ -115,10 +115,9 @@ const LoginForm = (props) => {
                                     ) : null}
                                 </div>
                                 <div className='relative justify-center'>
-                                    <div className='text-red-600 text-sm font-semibold absolute -mt-4'> {showMsg}</div>
+                                    <div className='text-red-600 text-sm font-semibold absolute '> <span className=''> {showMsg}</span></div>
                                 </div>
-                                <div className='text-center'>
-                                    
+                                <div className='text-center mt-5'>                                    
                                         Don't have Account ? <Link to="/register" className='text-blue-600 font-semibold'> Create New </Link>
                                 </div>
                                 <div className='my-5 self-center justify-self-center'>

@@ -29,6 +29,11 @@ const SignupSchema = Yup.object().shape({
         .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
 
+    ulb: Yup.string()
+        // .matches([``], 'Please Select ULB')
+        .required('Required'),
+    gender: Yup.string()
+        .required('Required'),
     password: Yup.string()
         .min(6, 'Minimum six character !')
         .max(50, 'Too Long!')
@@ -109,8 +114,8 @@ const RegistrationForm = (props) => {
                 }) => (
                     <div className='border border-t-0 shadow-md bg-blue-50'>
                         <form onSubmit={handleSubmit}>
-                            <div className='grid grid-cols-2 bg-white px-10'>
-                                <div className='col-span-1 ml-5'>
+                            <div className='grid md:grid-cols-2 grid-cols-1 bg-white px-10'>
+                                <div className='col-span-1 md:ml-5'>
                                     <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>Select ULB<span className='text-red-500 font-bold'>*</span></div>
                                         <select
@@ -121,7 +126,7 @@ const RegistrationForm = (props) => {
                                             onBlur={handleBlur}
                                             value={values.ulb}
                                         >
-                                            <option >Select..</option>
+                                            <option value="" >Select Your ULB</option>
                                             <option value="1">Ranchi</option>
                                             <option value="2">Dhanbad</option>
                                             <option value="3">Bokaro</option>
@@ -132,21 +137,7 @@ const RegistrationForm = (props) => {
                                             <div className='text-red-600 text-sm absolute'>{errors.ulb}</div>
                                         ) : null}
                                     </div>
-                                    <div className='my-5 relative'>
-                                        <div className='text-gray-600 static mb-1 font-semibold'>Full Name <span className='text-red-500 font-bold'>*</span></div>
-                                        <input
-                                            type="text"
-                                            name="full_name"
-                                            placeholder='Applicant Name'
-                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.full_name}
-                                        />
-                                        {errors.full_name && touched.full_name ? (
-                                            <div className='text-red-600 text-sm absolute'>{errors.full_name}</div>
-                                        ) : null}
-                                    </div>
+
                                     <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>Guardian Name<span className='text-red-500 font-bold'>*</span></div>
                                         <input
@@ -182,7 +173,6 @@ const RegistrationForm = (props) => {
                                         <input
                                             type="date"
                                             name="dob"
-                                            placeholder='PAN No'
                                             className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -220,6 +210,21 @@ const RegistrationForm = (props) => {
                                 </div>
                                 <div className='col-span-1'>
                                     <div className='my-5 relative'>
+                                        <div className='text-gray-600 static mb-1 font-semibold'>Full Name <span className='text-red-500 font-bold'>*</span></div>
+                                        <input
+                                            type="text"
+                                            name="full_name"
+                                            placeholder='Applicant Name'
+                                            className='border border-gray-400 outline-blue-500 text-base rounded-sm pl-2 h-10 w-72 shadow-sm'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.full_name}
+                                        />
+                                        {errors.full_name && touched.full_name ? (
+                                            <div className='text-red-600 text-sm absolute'>{errors.full_name}</div>
+                                        ) : null}
+                                    </div>
+                                    <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>Email Address <span className='text-red-500 font-bold'>*</span></div>
                                         <input
                                             type="text"
@@ -249,7 +254,7 @@ const RegistrationForm = (props) => {
                                             <div className='text-red-600 text-sm absolute'>{errors.aadhar}</div>
                                         ) : null}
                                     </div>
-                                    <div className='my-5 relative'>
+                                    {/* <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>PAN No</div>
                                         <input
                                             type="text"
@@ -263,7 +268,7 @@ const RegistrationForm = (props) => {
                                         {errors.pan_no && touched.pan_no ? (
                                             <div className='text-red-600 text-sm absolute'>{errors.pan_no}</div>
                                         ) : null}
-                                    </div>
+                                    </div> */}
 
                                     <div className='my-5 relative'>
                                         <div className='text-gray-600 static mb-1 font-semibold'>Gender<span className='text-red-500 font-bold'>*</span></div>
@@ -275,7 +280,7 @@ const RegistrationForm = (props) => {
                                             onBlur={handleBlur}
                                             value={values.gender}
                                         >
-                                            <option >Select..</option>
+                                            <option value="" >Select Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                             <option value="other">Other</option>
@@ -314,8 +319,8 @@ const RegistrationForm = (props) => {
                             </div>
 
                             <div className='grid grid-cols-2 my-5 mx-10'>
-                                <div className='col-span-1'><button className='bg-blue-600 cursor-not-allowed px-5 py-2 shadow-xl rounded-md text-white text-base opacity-50'>Back</button></div>
-                                <div className='col-span-1'>
+                                {/* <div className='col-span-1'><button className='bg-blue-600 cursor-not-allowed px-5 py-2 shadow-xl rounded-md text-white text-base opacity-50'>Back</button></div> */}
+                                <div className='col-span-2'>
                                     <button
                                         type="submit"
                                         // onClick={handleFormNextbtn}

@@ -53,19 +53,19 @@ function RegistrationVerify(props) {
                                     <dt className="text-sm font-medium text-gray-500">Phone</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.mobile_no}</dd>
                                 </div>
-                                <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Aadhar No</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.aadhar}</dd>
                                 </div>
-                                <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                {/* <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">PAN No</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.pan_no}</dd>
-                                </div>
+                                </div> */}
                                 <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Date of Birth</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.dob}</dd>
                                 </div>
-                                <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Gender</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.gender}</dd>
                                 </div>
@@ -73,15 +73,15 @@ function RegistrationVerify(props) {
                                     <dt className="text-sm font-medium text-gray-500">Is Armed forces ?</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.isArmed}</dd>
                                 </div>
-                                <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Is Specially Abled ?</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{props.formData && props.formData.isSpecially}</dd>
                                 </div>
-                                <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Address</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Ranchi Jakhaed India</dd>
                                 </div>
-                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">Documents</dt>
                                     <dd className="mt-1 w-96 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                         <ul role="list" className="border border-gray-200 rounded-md divide-y divide-gray-200">
@@ -100,9 +100,7 @@ function RegistrationVerify(props) {
                                                     </li>
                                                 ))
                                             }
-
                                         </ul>
-
                                     </dd>
                                 </div>
                                 <div className='text-center mb-3'>
@@ -113,7 +111,7 @@ function RegistrationVerify(props) {
                     </div>
                     <div className='grid grid-cols-2 my-5 mx-10'>
                         <div className='col-span-1'><button onClick={handleBacktBtn} className='bg-blue-600 hover:bg-blue-700 px-5 py-2 shadow-xl rounded-md text-white text-base'>Back</button></div>
-                        <div className='col-span-1'><button onClick={handleNxtBtn} className='bg-green-600 hover:bg-green-700 px-5 py-2 shadow-xl rounded-md text-white text-base float-right'>Final Submit</button></div>
+                        <div className='col-span-1'><button onClick={handleNxtBtn} className='bg-green-600 hover:bg-green-700 px-5 py-2 shadow-xl rounded-md text-white text-base float-right'>Submit</button></div>
                     </div>
                 </div>
             </div>
