@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { FaHome } from 'react-icons/fa'
 import { useFormik, Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
-import { getCurrentDate,allowFloatInput } from '../CitizenPowerupFunctions'
-import {inputContainerStyle, commonInputStyle,inputErrorStyle, inputLabelStyle} from '../CitizenCommonTailwind'
+import { getCurrentDate, allowFloatInput } from '../CitizenPowerupFunctions'
+import { inputContainerStyle, commonInputStyle, inputErrorStyle, inputLabelStyle } from '../CitizenCommonTailwind'
 
 function CitizenBasicDetails(props) {
 
@@ -90,8 +90,8 @@ function CitizenBasicDetails(props) {
         { name === 'mobileTowerStatus' && (value === 'yes' ? setMobileTowerStatusToggle(true) : setMobileTowerStatusToggle(false)) }
         { name === 'hoardingStatus' && (value === 'yes' ? setHoardingStatusToggle(true) : setHoardingStatusToggle(false)) }
         { name === 'petrolPumpStatus' && (value === 'yes' ? setPetrolPumpStatusToggle(true) : setPetrolPumpStatusToggle(false)) }
-        
-        
+
+
     };
     return (
         <>
@@ -106,7 +106,7 @@ function CitizenBasicDetails(props) {
                                     <label className={`${inputLabelStyle}`}><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Ward No</label>
                                     <Field as="select" name="wardNo" className={`${commonInputStyle} cursor-pointer `}>
                                         <option value="" disabled selected>select ward</option>
-                                      
+
                                         {
                                             seleOptions.map((data) => (
                                                 <option value={data.value}>{data.option}</option>

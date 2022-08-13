@@ -1,4 +1,4 @@
- //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 //    Author - Swati Sharma
 //    Version - 1.0
 //    Date - 8 Aug 2022
@@ -16,14 +16,14 @@ function SideNav() {
 
     // this function is for opening drawer
 
-    const toggleNav = () => {            
+    const toggleNav = () => {
         navWidth == 'w-0' ? setNavWidth('w-56') : setNavWidth('w-0')
     }
     return (
         <>
-          <div> 
+            <div>
 
-            {/* static sidenav */}
+                {/* static sidenav */}
 
                 <aside class="w-48 h-screen shadow-lg  absolute bg-white" >
                     <div>
@@ -41,31 +41,43 @@ function SideNav() {
                                     <h1 className='ml-3 text-gray-700 text-sm'>citizen@gmail.com</h1>
                                 </li>
                                 <li class="relative">
-                                    <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900 ' onClick={toggleNav}>
-                                        <div class="rounded-full  flex flex-col items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-white" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                            </svg>
+                                    <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900 ' onClick={toggleNav}>
+                                        <div class="rounded-full flex items-center  " >
+                                            <div className='flex-1'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div className='flex-1 mr-4 text-white'>Menu</div>
                                         </div>
 
                                     </button>
                                 </li>
                                 <li class="relative">
                                     <Link to="/download">
-                                        <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900  '>
-                                            <div class="rounded-full  flex flex-col items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900  '>
+                                            <div class="rounded-full  flex  items-center">
+                                            <div className='flex-1'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
+                                                </div>
+                                                <div className='flex-1 mr-4 text-white'>Links</div>
                                             </div>
                                         </button>
                                     </Link>
                                 </li>
                                 <li class="relative">
-                                    <button className='bg-gray-400 ml-10 mt-6 w-14 h-12 rounded-lg shadow-md shadow-gray-900  '>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                        </svg>
+                                <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900 ' onClick={toggleNav}>
+                                        <div class="rounded-full flex items-center  " >
+                                            <div className='flex-1'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2  text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div className='flex-1 mr-1  text-white'>Grivance</div>
+                                        </div>
+
                                     </button>
                                 </li>
                             </ul>
@@ -73,7 +85,7 @@ function SideNav() {
                     </div>
                 </aside>
 
-             {/* opening drawer */}
+                {/* opening drawer */}
 
                 <aside>
                     <div className={`${navWidth} h-screen bg-slate-50 transition-all duration-1000 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
