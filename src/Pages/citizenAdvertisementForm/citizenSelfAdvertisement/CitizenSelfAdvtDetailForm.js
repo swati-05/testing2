@@ -1,3 +1,12 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//    Author - Dipu Singh
+//    Version - 1.0
+//    Date - 13 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenSelfAdvtDetailForm.js
+//    DESCRIPTION - Citizen Self Advt DetailForm  Component
+//////////////////////////////////////////////////////////////////////////////////////
 import React, { useEffect, useState } from 'react'
 import SelfAdvtApplicatioForm from './Components/SelfAdvtApplicatioForm'
 import axios from 'axios'
@@ -5,6 +14,8 @@ import SuccessfullMessage from './Components/SuccessfullMessage'
 
 function CitizenSelfAdvtDetailForm() {
   const [bearerToken, setBearerToken] = useState()
+  const [appliedSuccessus, setAppliedSuccessus] = useState(false)
+  const [selfAdvtApplicationForm, setSelfAdvtApplicationForm] = useState(true)
 
   useEffect(() => {
     const bearerTokenInit = localStorage.getItem('token');
@@ -16,17 +27,17 @@ function CitizenSelfAdvtDetailForm() {
     console.log("Data in Main form", e)
 
     let formDataToSubmit = {
-      "licenseYear" : "2018-2019",
-      "applicant" : "Dipu",
-      "father" : "H P Singh",
-      "email" : "testdipu@gmail.com",
+      "licenseYear" : e.licence_year,
+      "applicant" : e.applicant_name,
+      "father" : e.father_name,
+      "email" : e.email,
       "residenceAddress" : "Ranchi",
-      "wardNo" : 1,
+      "wardNo" : e.entity_ward,
       "permanentAddress" : "Patna",
-      "mobile" : 32645454,
-      "aadharNo" : "1020304050",
-      "entityName" : "Dipu George Enterprises",
-      "entityAddress" : "Calurfirania"
+      "mobile" : e.mobile_no,
+      "aadharNo" : e.aadhar,
+      "entityName" : e.entity_name,
+      "entityAddress" : e.entity_address
 
     }
     axios({
@@ -41,6 +52,8 @@ function CitizenSelfAdvtDetailForm() {
       .then(function (response) {
         console.log("Form Submitted......", response);
         // console.log("Message", response.data);        
+        setSelfAdvtApplicationForm(false)
+        setAppliedSuccessus(true)
       })
       .catch(function (response) {
         // console.log("Failed", response.response.data.ulb[0]);
@@ -53,8 +66,8 @@ function CitizenSelfAdvtDetailForm() {
 
   return (
     <>
-      {/* <SuccessfullMessage /> */}
-      <SelfAdvtApplicatioForm selfAdvtApplicationData={selfAdvtApplicationData} />
+      {appliedSuccessus && <SuccessfullMessage /> }
+      {selfAdvtApplicationForm && <SelfAdvtApplicatioForm selfAdvtApplicationData={selfAdvtApplicationData} /> }
     </>
   )
 }
