@@ -41,15 +41,17 @@ const LoginForm = (props) => {
                 password: values.password
             })
             .then((res) => {
-                localStorage.setItem("token", res.data.token)
+                localStorage.setItem("token", res.data.data)
 
                 navigate("/citizenDashboard")
                 // changeLogin(1)
                 // console.log(res.data.status)
-                // console.log(res)
+                console.log(res)
                 setShowMsg(res.data.status)
+                
             })
             .catch(err => {
+                console.log(err)
                 // console.log("MessGe", err.response.data.message)
                 // console.log("---", err.response.data)
                 setShowMsg(err.response.data.message)
