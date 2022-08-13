@@ -149,12 +149,12 @@ function CitizenSafApplicationFormIndex() {
             "transferMode": "2",
             "safNo": "SAF00001",
             "holdingNo": "0123456789",
-            "ward": "5",
-            "ownershipType": "2",
-            "propertyType": "5",
+            "ward":  allFormData.basicDetails.wardNo ,
+            "ownershipType": allFormData.basicDetails.ownerShiptype,
+            "propertyType": allFormData.basicDetails.propertyType,
             "apartmentName": "lorem ipsem",
             "flatRegistryDate": "2022-06-06",
-            "zone": "2",
+            "zone":  allFormData.basicDetails.zone,
             "electricityConnection": "0",
             "electricityCustNo": "JH0326587",
             "electricityAccNo": "JH0563987",
@@ -164,29 +164,29 @@ function CitizenSafApplicationFormIndex() {
             "buildingPlanApprovalDate": "2022-07-06",
             "waterConnNo": "05236",
             "waterConnDate": "2022-06-06",
-            "khataNo": "123456789",
-            "plotNo": "546123587",
-            "villageMaujaName": "lorem Ipsem",
+            "khataNo": allFormData.propertyAddressDetails.khataNo,
+            "plotNo":  allFormData.propertyAddressDetails.plotNo,
+            "villageMaujaName": allFormData.propertyAddressDetails.village_mauja ,
             "roadType": "5",
-            "areaOfPlot": "12.21",
-            "propAddress": "lorem Ipsem",
-            "propCity": "Ranchi",
-            "propDist": "Ranchi",
-            "propPinCode": "834005",
+            "areaOfPlot":  allFormData.propertyAddressDetails.plotArea,
+            "propAddress": allFormData.propertyAddressDetails.locality,
+            "propCity":  allFormData.propertyAddressDetails.city,
+            "propDist":  allFormData.propertyAddressDetails.district,
+            "propPinCode": allFormData.propertyAddressDetails.pin,
             "isCorrAddDiffer": "0",
-            "corrAddress": "Lorem Ipsem",
-            "corrCity": "Ranchi",
-            "corrDist": "Ranchi",
-            "corrPinCode": "834005",
+            "corrAddress":allFormData.propertyAddressDetails.c_locality ,
+            "corrCity": allFormData.propertyAddressDetails.c_city,
+            "corrDist": allFormData.propertyAddressDetails.c_district ,
+            "corrPinCode": allFormData.propertyAddressDetails.c_pin,
             "isMobileTower": "0",
             "towerArea": "653.66",
-            "towerInstallationDate": "2022-06-06",
+            "towerInstallationDate": allFormData.basicDetails.mobileTowerDate,
             "isHoardingBoard": "1",
             "hoardingArea": "500.62",
             "hoardingInstallationDate": "2022-02-01",
             "isPetrolPump": "1",
             "undergroundArea": "200.12",
-            "petrolPumpCompletionDate": "2022-06-01",
+            "petrolPumpCompletionDate": allFormData.basicDetails.petrolPumpDate ,
             "isWaterHarvesting": "0",
             "landOccupationDate": "2022-05-12",
             "paymentStatus": "5",
@@ -204,12 +204,12 @@ function CitizenSafApplicationFormIndex() {
             "docUploadStatus": "0",
             "safDistributedDtl": "5",
             "propDtl": "1",
-            "propState": "Jharkhand",
-            "corrState": "Jharkhand",
+            "propState":  allFormData.propertyAddressDetails.state ,
+            "corrState":  allFormData.propertyAddressDetails.c_state ,
             "holdingType": "asd",
             "ipAddress": "192.168.0.166",
             "propertyAssessment": "4",
-            "newWard": "6",
+            "newWard":  allFormData.basicDetails.newWardNo,
             "percOfPropertyTransfer": "66",
             "apartmentDetail": "4",
             "owner": allFormData.ownerDetails,
@@ -246,6 +246,23 @@ function CitizenSafApplicationFormIndex() {
             });
 
     }
+
+
+    // let data = formDataToSubmit
+
+    // axios.post('http://192.168.0.166/api/apply-for-saf',data, {
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': 'Bearer ' + bearerToken
+    //     },
+    // })
+    //     .then(function (response)  {
+    //         console.log("SAF uploaded......", response)
+    //         setResponseScreenStatus('success')
+    //     })
+    //     .catch(function (response)  {
+    //         console.log("Failed", response.response.data.ulb[0]);
+    //     })
 
     const collectAllFormData = (key, formData) => {
         console.log('prev Data', allFormData)
