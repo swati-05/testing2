@@ -98,8 +98,7 @@ function Register() {
         "email": regFormSavedData.email,
         "password": regFormSavedData.password,
         // "userType": "Citizeh",
-        "ulb": "",
-        // "ulb": regFormSavedData.ulb,
+        "ulb": regFormSavedData.ulb,
         "role": "1",
         "description": "asdf",
         "workflowParticipant": "false"
