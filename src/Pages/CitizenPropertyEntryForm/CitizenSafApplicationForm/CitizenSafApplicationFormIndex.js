@@ -247,23 +247,6 @@ function CitizenSafApplicationFormIndex() {
 
     }
 
-
-    // let data = formDataToSubmit
-
-    // axios.post('http://192.168.0.166/api/apply-for-saf',data, {
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': 'Bearer ' + bearerToken
-    //     },
-    // })
-    //     .then(function (response)  {
-    //         console.log("SAF uploaded......", response)
-    //         setResponseScreenStatus('success')
-    //     })
-    //     .catch(function (response)  {
-    //         console.log("Failed", response.response.data.ulb[0]);
-    //     })
-
     const collectAllFormData = (key, formData) => {
         console.log('prev Data', allFormData)
         // setAllFormData({...allFormData,formData}) //this is going to replace upcoming data since has same formData key all the time
