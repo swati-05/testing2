@@ -11,6 +11,8 @@ import React, { useEffect, useState } from 'react'
 import SelfAdvtApplicatioForm from './Components/SelfAdvtApplicatioForm'
 import axios from 'axios'
 import SuccessfullMessage from './Components/SuccessfullMessage'
+import SideNav from '../../citizen/SideNav'
+import LandingNav from '../../Landing/LandingNav'
 
 function CitizenSelfAdvtDetailForm() {
   const [bearerToken, setBearerToken] = useState()
@@ -27,17 +29,17 @@ function CitizenSelfAdvtDetailForm() {
     console.log("Data in Main form", e)
 
     let formDataToSubmit = {
-      "licenseYear" : e.licence_year,
-      "applicant" : e.applicant_name,
-      "father" : e.father_name,
-      "email" : e.email,
-      "residenceAddress" : "Ranchi",
-      "wardNo" : e.entity_ward,
-      "permanentAddress" : "Patna",
-      "mobile" : e.mobile_no,
-      "aadharNo" : e.aadhar,
-      "entityName" : e.entity_name,
-      "entityAddress" : e.entity_address
+      "licenseYear": e.licence_year,
+      "applicant": e.applicant_name,
+      "father": e.father_name,
+      "email": e.email,
+      "residenceAddress": "Ranchi",
+      "wardNo": e.entity_ward,
+      "permanentAddress": "Patna",
+      "mobile": e.mobile_no,
+      "aadharNo": e.aadhar,
+      "entityName": e.entity_name,
+      "entityAddress": e.entity_address
 
     }
     axios({
@@ -51,9 +53,12 @@ function CitizenSelfAdvtDetailForm() {
     })
       .then(function (response) {
         console.log("Form Submitted......", response);
-        // console.log("Message", response.data);        
-        setSelfAdvtApplicationForm(false)
-        setAppliedSuccessus(true)
+        // console.log("Message", response.data);  
+        if (response.data.status) {
+          setSelfAdvtApplicationForm(false)
+          setAppliedSuccessus(true)
+        }
+        // console.log("+++++++",response.data.status)
       })
       .catch(function (response) {
         // console.log("Failed", response.response.data.ulb[0]);
@@ -66,8 +71,9 @@ function CitizenSelfAdvtDetailForm() {
 
   return (
     <>
-      {appliedSuccessus && <SuccessfullMessage /> }
-      {selfAdvtApplicationForm && <SelfAdvtApplicatioForm selfAdvtApplicationData={selfAdvtApplicationData} /> }
+      <LandingNav />
+      {appliedSuccessus && <SuccessfullMessage />}
+      {selfAdvtApplicationForm && <SelfAdvtApplicatioForm selfAdvtApplicationData={selfAdvtApplicationData} />}
     </>
   )
 }

@@ -68,7 +68,7 @@ const SelfAdvtApplicatioForm = (props) => {
         <div className='w-9/12 h-screen ml-44 p-10'>
             {/* <Test /> */}
             <Formik
-                initialValues={{ applicant_name: '', father_name: '', mobile_no: '', email: '', aadhar: '', pan_no: '', unique_id: '', licence_year: '', entity_name: '', entity_ward: '', trade_licence_no: '', entity_address: '' }}
+                initialValues={{ file1: '', applicant_name: '', father_name: '', mobile_no: '', email: '', aadhar: '', pan_no: '', unique_id: '', licence_year: '', entity_name: '', entity_ward: '', trade_licence_no: '', entity_address: '' }}
                 //   validate={values => {
                 //     const errors = {};
                 //     if (!values.email) {
@@ -102,7 +102,7 @@ const SelfAdvtApplicatioForm = (props) => {
                 }) => (
                     <div className='shadow-lg rounded-lg'>
                         <form onSubmit={handleSubmit}>
-                            <div className="text-center p-2 font-bold leading-5 bg-sky-100 rounded-t-lg">
+                            <div className="text-center p-2 font-bold leading-5 bg-green-500 rounded-t-lg">
                                 <p className="tracking-wide">Personal Details</p>
                                 {/* <hr className='pt-2' /> */}
                             </div>
@@ -291,7 +291,7 @@ const SelfAdvtApplicatioForm = (props) => {
                                         onBlur={handleBlur}
                                         value={values.any_field}
                                     />
-                                </div>                        
+                                </div>
 
                             </div>
                             <div className='relative grid px-6 md:col-span-3 md:px-4 '>
@@ -311,18 +311,37 @@ const SelfAdvtApplicatioForm = (props) => {
                                 ) : null}
                             </div>
 
+                            {/* File Upload */}
+                            {/* <div className='mx-20 w-52'>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="file_input">Upload file</label>
+                                <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" />
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+                            </div> */}
+
+                            {/* <input name="file" type="file" onChange={(event) => {
+                                setFieldValue("file", event.currentTarget.files[0]);
+                            }} /> */}
+
+                            <input
+                                type="file"
+                                name="file1"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.file1}
+                            />
+
                             {/* {errors.email && touched.email && errors.email} */}
                             <div className='grid place-items-center'>
-                                
-                                    <Tooltip title="Check All Fields before update." placement="right" arrow>
-                                        <button
-                                            type="submit"
-                                            className='my-5 px-5 py-2 hover:img-src font-bold bg-green-600 hover:bg-blue-500 text-white rounded-md'
-                                            disabled={isSubmitting}>
-                                            Apply
-                                        </button>
-                                    </Tooltip>
-                                
+
+                                <Tooltip title="Check All Fields before update." placement="right" arrow>
+                                    <button
+                                        type="submit"
+                                        className='my-5 px-5 py-2 hover:img-src font-bold bg-green-600 hover:bg-blue-500 text-white rounded-md'
+                                        disabled={isSubmitting}>
+                                        Apply
+                                    </button>
+                                </Tooltip>
+
                             </div>
                         </form>
                     </div>
