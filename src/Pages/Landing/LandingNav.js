@@ -95,7 +95,8 @@ function LandingNav() {
                                                             </div>
                                                             <div class="py-1" role="none">
                                                                 <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Water</a>
-                                                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
+                                                               <Link to ="/citizenDashboard"> <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-5">Dashboard</a>
+                                                               </Link>
                                                             </div>
                                                             <div class="py-1" role="none">
                                                                 <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
