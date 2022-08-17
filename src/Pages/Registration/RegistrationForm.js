@@ -7,7 +7,7 @@
 //    Component  - register.js
 //    DESCRIPTION - Citizen Registration Form
 //////////////////////////////////////////////////////////////////////////////////////
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Field } from 'formik';
 // import rightImg from './tick-tick-verified.gif'
 // import rightImg from './checkmark-transparent.gif'
@@ -15,6 +15,8 @@ import { MdVerified } from 'react-icons/md';
 import * as Yup from 'yup';
 import "yup-phone";
 import Tooltip from "@material-ui/core/Tooltip";
+import axios from 'axios';
+import { useQuery } from 'react-query'
 
 // const panRegEx = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
 
@@ -70,6 +72,42 @@ const SignupSchema = Yup.object().shape({
 });
 
 const RegistrationForm = (props) => {
+
+    
+    const { isLoading, data, isError, error } = useQuery("registrationULBLIstFromAPI", () => {
+        return axios.get('http://192.168.0.166/api/get-all-ulb');
+    });
+
+
+    // console.log("List of UBS", data)
+
+    // useEffect(() => {
+    //     axios({
+    //         method: 'get',
+    //         url: 'http://192.168.0.166/api/get-all-ulb',
+    //     })
+    //         .then(function (res) {
+    //             setUlbList(res)
+    //             console.log("Messgae ULB Test", ulbList)
+    //         })
+    //         .catch(function (error) {
+    //             console.log("Error =>>", error)
+    //         })
+    // }, [])
+
+    // console.log("Axios Respinse---", ulbList)
+
+
+    // setTimeout(() => {
+    //     ulbList.data.map((e) => (
+    //         console.log("===", e.id, e.ulb_name)
+    //     ))
+    // }, 100);
+
+
+    // ulbList.data.map((e)=>(
+    //    console.log("===",e.id)
+    // ))
 
 
     const handleFormNextbtn = (values) => {
@@ -127,11 +165,16 @@ const RegistrationForm = (props) => {
                                             value={values.ulb}
                                         >
                                             <option value="" >Select Your ULB</option>
-                                            <option value="1">Ranchi</option>
+                                            {!isLoading ?
+                                                data.data.map((data) => (
+                                                    <option value={data.id}>{data.ulb_name}</option>
+                                                )) : ''
+                                            }
+                                            {/* <option value="1">Ranchi</option>
                                             <option value="2">Dhanbad</option>
                                             <option value="3">Bokaro</option>
                                             <option value="4">Jamsedpur</option>
-                                            <option value="99">Other</option>
+                                            <option value="99">Other</option> */}
                                         </select>
                                         {errors.ulb && touched.ulb ? (
                                             <div className='text-red-600 text-sm absolute'>{errors.ulb}</div>
