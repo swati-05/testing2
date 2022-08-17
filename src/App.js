@@ -26,7 +26,6 @@ import LandingMainPage from './components/LandingMainPage';
 import CitizenMainPage from './components/CitizenMainPage'
 import CitizenSelfAdvtDetailForm from './Pages/citizenAdvertisementForm/citizenSelfAdvertisement/CitizenSelfAdvtDetailForm';
 import { newsData } from './StaticData'
-import CitizenRegistrationForm from './components/CitizenRegistrationForm';
 import Register from './Pages/Registration/Register';
 import About from './components/About';
 import CitizenSafEntryScreen from './Pages/CitizenPropertyEntryForm/CitizenSafApplicationForm/CitizenSafEntryScreen';
@@ -163,7 +162,7 @@ function App() {
             <Route path="/about" element={<About />} />
             {/* <Route path="/downloads" element={<Downloads />} /> */}
             <Route path="/apply" element={<Protected Component={CitizenWelcome} />} />
-            <Route path="/signup" element={<Protected Component={CitizenRegistrationForm} />} />
+            {/* <Route path="/signup" element={<Protected Component={CitizenRegistrationForm} />} /> */}
             <Route path="/grivancePage" element={<Protected Component={ComplainGrivanceMainPage} />} />
             <Route path="appliedLicenseDetail" element={<Protected Component={CitizenAppliedLicenseDetailTbl} />} />
             <Route path="/test/:userId" element={<CitizenLicenseFullDetail />} />
