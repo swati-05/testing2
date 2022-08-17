@@ -78,16 +78,14 @@ function TopNavbar() {
                             <div class="md:flex   float-right w-96 ">
                                 <div className='mr-6  w-60  rounded-full text-center h-6  opacity-95 hover:scale-105 transition-all transform duration-500 '>
                                 <div className='flex-1 '>
-                                        <Link to='/login'>
-                                            <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">CitizenLogin</h2>
-                                        </Link>
+                                       
                                     </div>
                                     <div >
                                         {/* <span class="flex h-2 w-3"> */}
-                                        <span class="animate-ping absolute inline-flex h-4 w-20 mt-2 ml-3 bg-red-700 opacity-75"></span>
+                                        <span class="animate-ping absolute inline-flex h-4 w-36 mt-2 ml-3 bg-red-700 opacity-75"></span>
                                         {/* <span class="relative inline-flex rounded-full h-2 w-2  bg-red-400"></span> */}
                                         {/* </span> */}
-                                        <Button onClick={handleOpen} > Grevances</Button>
+                                        <Button onClick={handleOpen} >Complain & Grevances</Button>
                                         <Modal
 
                                             open={open}
@@ -129,7 +127,7 @@ function TopNavbar() {
                                         </svg>
                                     </div>
                                     <div className='flex-1'>
-                                        <Link to="/citizenDashboard">
+                                        <Link to="/login">
                                             <h2 class="   hover:cursor-pointer px-1 hover:text-[#004A7C] text-[#004A7C] text-sm">Login</h2>
                                         </Link>
                                     </div>
@@ -144,26 +142,14 @@ function TopNavbar() {
                                         </svg>
                                     </div>
                                     <div className='flex-1'>
-                                        <Link to='/signup'>
+                                        <Link to='/register'>
                                             <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">Signup</h2>
                                         </Link>
                                     </div>
                                 </div>
 
 
-                                <div className=' flex mt-2 w-18 px-2'>
-                                    <div className='flex-1'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#004A7C]" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div className='flex-1'>
-                                        <Link to='/register'>
-                                            <h2 class=" hover:cursor-pointer px-1  hover:text-[#004A7C] text-[#004A7C]  text-sm ">Register</h2>
-                                        </Link>
-                                    </div>
-
-                                </div>
+                                
                             </div>
                         </div>
 

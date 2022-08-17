@@ -14,8 +14,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import CitizenAccountDetail from './CitizenAccountDetail';
-import CitizenAppliedLicenseDetail from './CitizenAppliedLicenseDetail';
+import CitizenAppliedLicenseDetailTbl from './CitizenAppliedLicenseDetailTbl';
 import CitizenViewDetail from './CitizenLicenseFullDetail';
 import CitizenNotification from './CitizenNotification';
 import SideNav from './SideNav';
@@ -80,18 +79,18 @@ export default function CitizenDetailPage() {
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ backgroundColor: '#eee' }}>
                 <Tab label="Account" {...a11yProps(0)} />
                 <Tab label="Applied Licenses" {...a11yProps(1)} />
-                <Tab label="Notification" {...a11yProps(2)} />
+                {/* <Tab label="Notification" {...a11yProps(2)} /> */}
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
               <CitizenAccountSetting />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <CitizenAppliedLicenseDetail />
+              <CitizenAppliedLicenseDetailTbl />
             </TabPanel>
-            <TabPanel value={value} index={2}>
+            {/* <TabPanel value={value} index={2}>
               <CitizenNotification />
-            </TabPanel>
+            </TabPanel> */}
           </Box>
         </div>
       </div>

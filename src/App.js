@@ -14,7 +14,7 @@ import { Routes, Route, Link, Outlet, } from "react-router-dom";
 import './App.css';
 import NotFound from './components/NotFound';
 import CitizenDetailPage from './Pages/citizen/CitizenDetailPage';
-import CitizenAppliedLicenseDetail from './Pages/citizen/CitizenAppliedLicenseDetail';
+import CitizenAppliedLicenseDetailTbl from './Pages/citizen/CitizenAppliedLicenseDetailTbl';
 import TestComponent from './components/testDelete/TestComponent';
 import ComplainGrivanceMainPage from './components/ComplainGrivanceMainPage'
 import CitizenWelcome from './Pages/citizen/CitizenWelcome';
@@ -165,12 +165,13 @@ function App() {
             <Route path="/apply" element={<Protected Component={CitizenWelcome} />} />
             <Route path="/signup" element={<Protected Component={CitizenRegistrationForm} />} />
             <Route path="/grivancePage" element={<Protected Component={ComplainGrivanceMainPage} />} />
-            <Route path="appliedLicenseDetail" element={<Protected Component={CitizenAppliedLicenseDetail} />} />
+            <Route path="appliedLicenseDetail" element={<Protected Component={CitizenAppliedLicenseDetailTbl} />} />
             <Route path="/test/:userId" element={<CitizenLicenseFullDetail />} />
             <Route path="/citizenDashboard" element={<Protected Component={CitizenMainPage} />} />
             <Route path="/test" element={<TestComponent />} />
             <Route path="/citizenDashboard/citizenAccountSetting" element={<CitizenDetailPage />} />
             <Route path="/download" element={<DownloadPage />} />
+            <Route path="/appliedLicenseTbl" element={<CitizenAppliedLicenseDetailTbl />} />
             <Route path="/citizenProperty" element={<Protected Component={CitizenSafEntryScreen} />} />
             <Route path="/citizenProperty/citizenSafApply" element={<CitizenSafEntryScreen />} />
             <Route path="/citizenselfdetailform" element={<Protected Component={CitizenSelfAdvtDetailForm} />} />

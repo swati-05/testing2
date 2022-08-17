@@ -1,207 +1,224 @@
 //////////////////////////////////////////////////////////////////////////////////////
 //    Author - Swati Sharma
 //    Version - 1.0
-//    Date - 8 Aug 2022
+//    Date - 17 Aug 2022
 //    Revision - 1
 //    Project - JUIDCO
 //    Component  - CitizenAccountSetting
 //    DESCRIPTION - CitizenAccountSetting Component is for citizen Profile detail
 //////////////////////////////////////////////////////////////////////////////////////
 
+
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function CitizenAccountSetting() {
 
-    const [prop_dtl, setprop_dtl] = useState('hidden');
-    const [basic_dtl, setbasic_dtl] = useState('')
+    const [bearerToken, setBearerToken] = useState()
+   const [citizenProfileData, setcitizenProfileData] = useState()
+
+
+   // state where update input field is hidden  
     const [updateLbl, setupdateLbl] = useState('hidden')
-    // const [basic_dtl_height, setbasic_dtl_height] = useState('h-screen')
 
-    let basic_dtl_height = 'h-screen';
-
-    const handleShowProperty = () => {
-        (prop_dtl == 'hidden') ? setprop_dtl('') : setprop_dtl('hidden');
-    }
-
+   //onclick it shows the input field for updation 
     const handleShowLabel = () => {
         (updateLbl == 'hidden') ? setupdateLbl('') : setupdateLbl('hidden');
     }
-    // const handleShowBasic = () => {
 
-    //     // (basic_dtl=='hidden')?{setbasic_dtl('')}:setbasic_dtl('hidden');
-
-
-    //     if (basic_dtl == 'hidden') {
-    //         setbasic_dtl('');
-    //         basic_dtl_height = 'h-36';
-    //     } else {
-    //         setbasic_dtl('hidden');
-    //         basic_dtl_height = 'h-screen';
-    //     }
+    useEffect(() => {
+        const bearerTokenInit = localStorage.getItem('token');
+        setBearerToken(bearerTokenInit)
+        console.log("Token is : ", bearerToken)
+      }, [])
 
 
-
-    // }
-    // useEffect(() => {
-    //     handleShowBasic();
-    // }, [])
+      
     return (
         <>
 
             {/* citizen profile detail */}
 
 
-            <div className={`w-full ${basic_dtl_height} bg-white`}>
-                <div class="bg-white  overflow-hidden sm:rounded-lg">
-                    <div class="px-4 py-5 sm:px-6">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Applicant Information
-                            {/* <button onClick={handleShowBasic} className='float-right border mb-20 '><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
-                            </svg>
-                            </button> */}
-                            <button onClick={handleShowLabel} class="flex p-1 -mt-1  float-right bg-green-400 rounded-xl hover:rounded-3xl hover:bg-green-600 transition-all duration-300 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <div classNameName='w-full  bg-white'>
+                <div className="bg-white  overflow-hidden ">
+                    <Link to="/appliedLicenseTbl">
+                        <div className='float-right p-4'>
+                            <span className="text-center inline-block animate-pulse drop-shadow-lg p-1.5 bg-red-400 text-black text-sm">view your applied licenses
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 float-right" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </Link>
+                    <div className="px-4 py-5 sm:px-6">
+                        <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information
+                            <button onClick={handleShowLabel} className="flex p-1 -mt-1  float-right bg-cyan-500 rounded-xl hover:rounded-3xl hover:bg-cyan-600 transition-all duration-300 text-white drop-shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                 </svg>
                             </button>
                         </h3>
-                        <span class="mt-1 max-w-2xl text-sm text-gray-500 ">Basic details of the applicant. </span>
-
+                        <span className="mt-1 max-w-2xl text-sm text-gray-500 ">Basic details of the applicant. </span>
                     </div>
-                    <div class={`${basic_dtl} border-t border-gray-200 m`}>
-                        <dl>
-                            <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-11 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Full name -</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    <div class={`${updateLbl} relative z-0 mb-1`}>
-                                        <input type="text" id="small_standard" class="block py-1.5 -mt-4 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                                        <label for="small_standard" class="absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-5 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
-                                      
-                                    </div>
+                    <hr />
 
-                                </dd>
-                            </div>
-                            <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-11 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Application for</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>
-                                <div class={`${updateLbl} relative z-0 mb-1`}>
-                                        <input type="text" id="small_standard" class="block py-1.5 -mt-4 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                                        <label for="small_standard" class="absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-5 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
-                                      
+                    <div className="px-4  mr-6 bg-white mt-7  m-auto ">
+
+                        <div className="grid grid-cols-6 gap-6 px-4 mt-4">
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">ULB :-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
                                     </div>
+                                </label>
                             </div>
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Email address</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">MOBILE NO :-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">GUARDIAN NAME :-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">About</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">EMAIL :-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Attachments</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">
-                                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                                            <div class="w-0 flex-1 flex items-center">
-                                                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                                                </svg>
-                                                <span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
-                                            </div>
-                                            <div class="ml-4 flex-shrink-0">
-                                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                                            </div>
-                                        </li>
-                                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                                            <div class="w-0 flex-1 flex items-center">
-                                                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                                                </svg>
-                                                <span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
-                                            </div>
-                                            <div class="ml-4 flex-shrink-0">
-                                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </dd>
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">FULL NAME:-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
-                        </dl>
+                            <div className="flex col-span-6 sm:col-span-3">
+                                <div className='flex-1'>
+                                    <img src='https://assets-global.website-files.com/5f689f82910c6b4f1ffb855b/613b1f91b195318100f7d27e_aadhar%20card%402x-min.jpg' className='h-24 w-24' />
+                                </div>
+                                <div className='flex-1 mt-7 mr-9'>
+                                    <label for="file-upload" className={`${updateLbl} relative cursor-pointer bg-white font-medium text-indigo-600 hover:text-indigo-500  `}>
+                                        <input type="file" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">DATE-OF-BIRTH :-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div className="flex col-span-6 sm:col-span-3">
+                                <div className='flex-1'>
+                                    <img src='https://www.am22tech.com/wp-content/uploads/2020/09/nabc-assam-guwahati-sample.jpg' className='h-24 w-24' />
+                                </div>
+                                <div className='flex-1 mt-7 mr-9'>
+                                    <label for="file-upload" className={`${updateLbl} relative cursor-pointer bg-white font-medium text-indigo-600 hover:text-indigo-500  `}>
+                                        <input type="file" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">ARMED-FORCE:-
+                                    <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div className="flex col-span-6 sm:col-span-3">
+                                <div className='flex-1'>
+                                    <img src='https://data.unhcr.org/images/documents/big_4cda85d892a5c0b5dd63b510a9c83e9c9d06e739.jpg' className='h-24 w-24' />
+                                </div>
+                                <div className='flex-1 mt-7 mr-9'>
+                                    <label for="file-upload" className={`${updateLbl} relative cursor-pointer bg-white font-medium text-indigo-600 hover:text-indigo-500  `}>
+                                        <input type="file" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div className="col-span-6 sm:col-span-3">
+                                <label for="" className="block text-sm font-medium text-gray-700">SPECIALLY- ABLED :-
+                                    <span classNameName="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                    <div className="mt-2">
+                                        <div className={`${updateLbl} relative z-0 mb-1`}>
+                                            <input type="text" id="" className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" placeholder=" " />
+                                            <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div className="flex col-span-6 sm:col-span-3">
+                                <div className='flex-1'>
+                                    <img src='https://data.unhcr.org/images/documents/big_4cda85d892a5c0b5dd63b510a9c83e9c9d06e739.jpg' className='h-24 w-24' />
+                                </div>
+                                <div className='flex-1 mt-7 mr-9'>
+                                    <label for="file-upload" className={`${updateLbl} relative cursor-pointer bg-white font-medium text-indigo-600 hover:text-indigo-500  `}>
+                                        <input type="file" />
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div className=''>
+                                <button className={` ${updateLbl} min-w-auto w-32 h-10 bg-green-500  -mt-2 ml-2 rounded-xl hover:bg-green-600 text-white font-semibold transition-transform hover:-translate-y-2 ease-in-out`}>
+                                    submit
+                                </button>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr />
-            {/* <div className={`w-full h-screen bg-white`}>
-                <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-                    <div class="px-4 py-5 sm:px-6 ">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Property Information <button onClick={handleShowProperty} className='float-right border mb-20 '><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
-                        </svg> </button></h3>
-                        <span class="mt-1 max-w-2xl text-sm text-gray-500  ">Property details of the applicant. </span>
 
-                    </div>
-                    <div class={`${prop_dtl} border-t border-gray-200`}>
-                        <dl>
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Full name</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>
-                            </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Application for</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>
-                            </div>
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Email address</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>
-                            </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>
-                            </div>
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">About</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
-                            </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">Attachments</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">
-                                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                                            <div class="w-0 flex-1 flex items-center">
-                                                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                                                </svg>
-                                                <span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
-                                            </div>
-                                            <div class="ml-4 flex-shrink-0">
-                                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                                            </div>
-                                        </li>
-                                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                                            <div class="w-0 flex-1 flex items-center">
-                                                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                                                </svg>
-                                                <span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
-                                            </div>
-                                            <div class="ml-4 flex-shrink-0">
-                                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <hr /> */}
         </>
     )
 }

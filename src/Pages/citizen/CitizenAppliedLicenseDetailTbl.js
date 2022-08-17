@@ -4,15 +4,15 @@
 //    Date - 8 Aug 2022
 //    Revision - 1
 //    Project - JUIDCO
-//    Component  - CitizenAppliedLicenseDetail
-//    DESCRIPTION - CitizenAppliedLicenseDetail Component is for showing detail table of citizen applied licenses
+//    Component  - CitizenAppliedLicenseDetailTbl
+//    DESCRIPTION - CitizenAppliedLicenseDetailTbl Component is for showing detail table of citizen applied licenses
 //////////////////////////////////////////////////////////////////////////////////////
 
 import { Link, Outlet, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-function CitizenAppliedLicenseDetail() {
+function CitizenAppliedLicenseDetailTbl() {
 
     const [appliedLicenseTable, setappliedLicenseTable] = useState([])
 
@@ -38,7 +38,10 @@ function CitizenAppliedLicenseDetail() {
         {/* citizen applied licenses detail table */}
 
         
-            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8 border-2">
+                <div>
+                    <h1 class='text-center font-serif text-lg'>APPLIED LICENSES</h1>
+                </div>
                 <div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
                     <table class="min-w-full">
                         <thead>
@@ -87,4 +90,4 @@ function CitizenAppliedLicenseDetail() {
     )
 }
 
-export default CitizenAppliedLicenseDetail
+export default CitizenAppliedLicenseDetailTbl
