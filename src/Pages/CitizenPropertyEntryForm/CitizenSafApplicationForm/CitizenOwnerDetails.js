@@ -1,6 +1,14 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 17 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenOwnerDetails
+//    DESCRIPTION - CitizenOwnerDetails Component is for Owner Details of citizenSafApplication
+//////////////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////////
-//
-//
 //
 // Form Changed Naming By : Dipu Singh
 // Naming changed according to api on 11-08-22

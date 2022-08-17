@@ -1,6 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 17 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenFloorDetails
+//    DESCRIPTION - CitizenFloorDetails Component is for Floor Details of citizenSafApplication
+//////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////
-//
-//
 //
 // Form Changed By : Dipu Singh
 // Naming changed according to api on 08-11-22
@@ -16,7 +23,7 @@ import {getCurrentDate} from '../CitizenPowerupFunctions'
 
 
 
-function FloorDetails(props) {
+function CitizenFloorDetails(props) {
     const [ownerCount, setOwnerCount] = useState([1])
     const [floorList, setfloorList] = useState([])
     const [editStatus, setEditStatus] = useState(false) //to check edit or add of form
@@ -279,4 +286,4 @@ function FloorDetails(props) {
     )
 }
 
-export default FloorDetails
+export default CitizenFloorDetails

@@ -1,3 +1,14 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 17 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenElectricityWaterDetails
+//    DESCRIPTION - CitizenElectricityWaterDetails Component is for Electricity Water Details of citizenSafApplication
+//////////////////////////////////////////////////////////////////////////////////////
+
+
 import { useState } from 'react'
 import { RiBuilding2Fill } from 'react-icons/ri'
 import { GiWaterTank } from 'react-icons/gi'

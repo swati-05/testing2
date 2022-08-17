@@ -231,7 +231,13 @@ function CitizenSafApplicationFormIndex() {
         })
             .then(function (response) {
                 console.log("SAF uploaded......", response);
-                setResponseScreenStatus('success')
+                console.log("Check ==== ", response.data.status)
+                if(response.data.status == 'true'){
+                    setResponseScreenStatus('success')
+                }else{
+                    console.log("form Not submitted ==== ", response.data.status)
+                    alert("form Not Submiteed..")
+                }
 
                 // console.log("Message", response.data);
                 // setRegMsg(response.data);

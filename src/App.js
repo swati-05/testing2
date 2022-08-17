@@ -35,6 +35,7 @@ import Demo from './Pages/CitizenLogin/Demo'
 import Protected from './Pages/CitizenLogin/Protected';
 
 import CitizenChatBot from './components/CitizenChatBot';
+import ResetPassword from './Pages/CitizenLogin/ResetPassword';
 
 function App() {
   // const [ulbId, setulbId] = useState(0);
@@ -177,6 +178,7 @@ function App() {
             <Route path='/safform/:assType' element={<Protected Component={CitizenSafApplicationFormIndex} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/demo" element={<Protected Component={Demo} />} />
             <Route path="*" element={<NotFound />} />

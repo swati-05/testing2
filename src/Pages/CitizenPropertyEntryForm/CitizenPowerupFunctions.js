@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 17 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenPowerupFunctions
+//    DESCRIPTION - CitizenPowerupFunctions Component for citizenSafApplication
+//////////////////////////////////////////////////////////////////////////////////////
+
 
 //function to get current date
 export const getCurrentDate = () => {

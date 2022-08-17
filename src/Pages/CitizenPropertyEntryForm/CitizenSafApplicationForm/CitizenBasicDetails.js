@@ -1,3 +1,13 @@
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 17 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - CitizenBasicDetails
+//    DESCRIPTION - CitizenBasicDetails Component is for basic detail of citizenSafApplication
+//////////////////////////////////////////////////////////////////////////////////////
+
 import { useState } from 'react'
 import { FaHome } from 'react-icons/fa'
 import { useFormik, Formik, Form, Field, ErrorMessage } from 'formik'

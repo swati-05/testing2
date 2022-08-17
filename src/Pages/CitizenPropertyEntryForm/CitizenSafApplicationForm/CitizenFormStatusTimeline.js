@@ -1,11 +1,11 @@
-//////////////////////////////////////////////////////////////////////////////////////
-//    Author - Talib Hussain
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
 //    Version - 1.0
-//    Date - 20 july 2022
+//    Date - 17 Aug 2022
 //    Revision - 1
 //    Project - JUIDCO
-//    Component  - FormStatusTimeline
-//    DESCRIPTION - FormStatusTimeline Component
+//    Component  - CitizenFormStatusTimeline
+//    DESCRIPTION - CitizenFormStatusTimeline Component is for Form Status Timeline of citizenSafApplication
 //////////////////////////////////////////////////////////////////////////////////////
 import React from 'react'
 import { GiCheckMark } from 'react-icons/gi'

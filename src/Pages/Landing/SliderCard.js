@@ -1,3 +1,14 @@
+
+ //////////////////////////////////////////////////////////////////////////////////////
+//    Author - Swati Sharma
+//    Version - 1.0
+//    Date - 8 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - SliderCard
+//    DESCRIPTION - SliderCard Component is in landingpage where important information is displayed 
+//////////////////////////////////////////////////////////////////////////////////////
+
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
