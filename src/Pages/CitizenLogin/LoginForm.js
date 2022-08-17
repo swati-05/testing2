@@ -120,8 +120,10 @@ const LoginForm = (props) => {
                                     <div className='text-red-600 text-sm font-semibold absolute '> <span className=''> {showMsg}</span></div>
                                 </div>
                                 <div className='text-center mt-5'>                                    
-                                        Don't have Account ? <Link to="/register" className='text-blue-600 font-semibold'> Create New </Link>
+                                       <p> Don't have Account ? <Link to="/register" className='text-blue-600 font-semibold'> Create New </Link></p>
+                                       <p><Link to="/reset-password" className='text-blue-600 font-semibold'>Reset Password </Link></p>
                                 </div>
+                             
                                 <div className='my-5 self-center justify-self-center'>
                                     <button
                                         type="submit"
