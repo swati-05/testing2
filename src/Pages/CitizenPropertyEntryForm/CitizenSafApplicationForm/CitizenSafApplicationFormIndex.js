@@ -232,13 +232,11 @@ function CitizenSafApplicationFormIndex() {
             .then(function (response) {
                 console.log("SAF uploaded......", response);
                 console.log("Check ==== ", response.data.status)
-                if(response.data.status){
+                if(response.data.status == 'true'){
                     setResponseScreenStatus('success')
-                }else if(!response.data.status) {
+                }else{
                     console.log("form Not submitted ==== ", response.data.status)
                     alert("form Not Submiteed..")
-                }else{
-                    alert("Somethig Went Wrong.")
                 }
 
                 // console.log("Message", response.data);
