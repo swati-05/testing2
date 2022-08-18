@@ -12,6 +12,7 @@ import LandingNav from '../Landing/LandingNav'
 import RegistrationSidebar from '../Registration/RegistrationSidebar'
 import LoginForm from './LoginForm'
 import { Link, useNavigate } from 'react-router-dom';
+import RzpTestPayment from '../Payment/RzpTestPayment';
 
 function ResetPassword() {
 
@@ -19,16 +20,22 @@ function ResetPassword() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    let login = localStorage.getItem('token');
-    if (login) {
-      return navigate('/citizenDashboard')
-    }
-  });
+  //   let login = localStorage.getItem('token');
+  //   if (login) {
+  //     return navigate('/citizenDashboard')
+  //   }
+  // });
 
   const handleResetBtn = () =>{
     console.log("Reset Email is -", resetEmail)
+  }
+  const payData = {
+    name : "Dipu Kumar",
+    phone : 9658745874,
+    email : "dsingh197@gmail.com",
+    amount : 99,
   }
 
   return (
@@ -67,6 +74,10 @@ function ResetPassword() {
                   className='bg-green-600 hover:bg-green-700 px-5 py-2 shadow-xl rounded-md text-white text-lg font-semibold'>
                   Reset Password
                 </button>
+
+<RzpTestPayment data={payData} />
+
+
               </div>
             </div>
           </div>
