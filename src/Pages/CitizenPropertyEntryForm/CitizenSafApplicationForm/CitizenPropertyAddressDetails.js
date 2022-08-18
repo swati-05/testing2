@@ -13,7 +13,7 @@ import { RiBuilding2Fill } from 'react-icons/ri'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { commonInputStyle } from '../CitizenCommonTailwind'
-import { allowCharacterCommaInput, allowCharacterNumberInput,allowCharacterInput } from '../CitizenPowerupFunctions'
+import { allowCharacterCommaInput, allowCharacterNumberInput,allowCharacterInput, allowNumberCharacterInput, allowNumberCommaInput, allowCharacterSpaceCommaInput, allowFloatInput, allowNumberInput, allowCharacterNumberSpaceCommaInput } from '../CitizenPowerupFunctions'
 
 
 function CitizenPropertyAddressDetails(props) {
@@ -90,21 +90,21 @@ function CitizenPropertyAddressDetails(props) {
         { name == 'addressCheckbox' && setformOpen(e.target.checked) }
 
         //input restrict validation
-        //{ name == 'khataNo' && formik.setFieldValue("khataNo", allowCharacterInput(value, formik.values.khataNo, 10)) }
-        // { name == 'plotNo' && formik.setFieldValue("plotNo", allowCharacterInput(value, formik.values.plotNo, 10)) }
-        // { name == 'village_mauja' && formik.setFieldValue("village_mauja", allowCharacterInput(value, formik.values.village_mauja, 10)) }
-        // { name == 'plotArea' && formik.setFieldValue("plotArea", allowCharacterInput(value, formik.values.plotArea, 10)) }
-        // { name == 'roadWidth' && formik.setFieldValue("roadWidth", allowCharacterInput(value, formik.values.roadWidth, 10)) }
-        // { name == 'city' && formik.setFieldValue("city", allowCharacterInput(value, formik.values.city, 10)) }
-        // { name == 'district' && formik.setFieldValue("district", allowCharacterInput(value, formik.values.district, 10)) }
-        // { name == 'state' && formik.setFieldValue("state", allowCharacterInput(value, formik.values.state, 10)) }
-        // { name == 'pin' && formik.setFieldValue("pin", allowCharacterInput(value, formik.values.pin, 10)) }
-        // { name == 'locality' && formik.setFieldValue("locality", allowCharacterInput(value, formik.values.locality, 10)) }
-        // { name == 'c_city' && formik.setFieldValue("c_city", allowCharacterInput(value, formik.values.c_city, 10)) }
-        // { name == 'c_district' && formik.setFieldValue("c_district", allowCharacterInput(value, formik.values.c_district, 10)) }
-        // { name == 'c_state' && formik.setFieldValue("c_state", allowCharacterInput(value, formik.values.c_state, 10)) }
-        // { name == 'c_pin' && formik.setFieldValue("c_pin", allowCharacterInput(value, formik.values.c_pin, 10)) }
-        // { name == 'c_locality' && formik.setFieldValue("c_locality", allowCharacterInput(value, formik.values.c_locality, 10)) }
+        { name == 'khataNo' && formik.setFieldValue("khataNo", allowNumberCommaInput(value, formik.values.khataNo, 100)) }
+        { name == 'plotNo' && formik.setFieldValue("plotNo", allowNumberCommaInput(value, formik.values.plotNo, 100)) }
+        { name == 'village_mauja' && formik.setFieldValue("village_mauja", allowCharacterSpaceCommaInput(value, formik.values.village_mauja, 100)) }
+        { name == 'plotArea' && formik.setFieldValue("plotArea", allowFloatInput(value, formik.values.plotArea, 20)) }
+        { name == 'roadWidth' && formik.setFieldValue("roadWidth", allowFloatInput(value, formik.values.roadWidth, 20)) }
+        { name == 'city' && formik.setFieldValue("city", allowCharacterInput(value, formik.values.city, 100)) }
+        { name == 'district' && formik.setFieldValue("district", allowCharacterInput(value, formik.values.district, 100)) }
+        { name == 'state' && formik.setFieldValue("state", allowCharacterInput(value, formik.values.state, 100)) }
+        { name == 'pin' && formik.setFieldValue("pin", allowNumberInput(value, formik.values.pin, 10)) }
+        { name == 'locality' && formik.setFieldValue("locality", allowCharacterNumberSpaceCommaInput(value, formik.values.locality, 200)) }
+        { name == 'c_city' && formik.setFieldValue("c_city", allowCharacterInput(value, formik.values.c_city, 100)) }
+        { name == 'c_district' && formik.setFieldValue("c_district", allowCharacterInput(value, formik.values.c_district, 100)) }
+        { name == 'c_state' && formik.setFieldValue("c_state", allowCharacterInput(value, formik.values.c_state, 100)) }
+        { name == 'c_pin' && formik.setFieldValue("c_pin", allowNumberInput(value, formik.values.c_pin, 10)) }
+        { name == 'c_locality' && formik.setFieldValue("c_locality", allowCharacterNumberSpaceCommaInput(value, formik.values.c_locality, 200)) }
     }
     return (
         <>

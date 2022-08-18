@@ -518,5 +518,17 @@
       "complainedFor":"puddle on road",
       "complainedDate":"22/07/2022"
     }
+  ],
+  "citizenProfile": [
+    {
+      "id": "1",
+     "ulb":"2",
+     "mobile_no":"9876543210",
+     "full_name":"benten",
+     "guardian_name":"mark",
+     "email":"ben@gmail.com",
+     "armed_force":"no",
+     "specially_abled":"no"
+    }
   ]
 }

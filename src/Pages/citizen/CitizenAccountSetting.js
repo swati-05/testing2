@@ -6,6 +6,7 @@
 //    Project - JUIDCO
 //    Component  - CitizenAccountSetting
 //    DESCRIPTION - CitizenAccountSetting Component is for citizen Profile detail
+//    Api    - Api integrated on 18 Aug 2022
 //////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -13,15 +14,16 @@ import React, { useState, useEffect } from 'react'
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom'
 import * as Yup from 'yup';
+import axios from 'axios';
 
 function CitizenAccountSetting() {
 
     const updateDataSchema = Yup.object().shape({
-        applicant_name: Yup.string()
+        full_name: Yup.string()
             .min(3, 'Too Short!')
             .max(50, 'Too Long!')
             .required('Required'),
-        father_name: Yup.string()
+        guardian_name: Yup.string()
             .min(3, 'Too Short!')
             .max(50, 'Too Long!')
             .required('Required'),
@@ -29,65 +31,85 @@ function CitizenAccountSetting() {
         // mobile_no: Yup.string()
         //     .required('Required')
         //     .phone("IN"),
-        // aadhar: Yup.string()
-        //     .min(12, 'Too Short')
-        //     .max(12, "Too Long")
-        //     .required('Required'),
-        // pan_no: Yup.string()      
-        //     .required('Required')
-        //     .matches(panRegEx, "Enter Valid PAN No"),
-        unique_id: Yup.string()
-            .min(1, 'Too Short')
-            .max(40, "Too Long")
-            .required('Required'),
-        licence_year: Yup.string()
-            .required('Required'),
-        entity_name: Yup.string()
-            .min(3, 'Too Short')
-            .max(40, "Too Long")
-            .required('Required'),
-        entity_ward: Yup.string()
-            .max(20, "Too Long")
-            .required('Required'),
-        trade_licence_no: Yup.string()
-            .min(5, 'Too Short')
-            .max(40, "Too Long")
-            .required('Required'),
-        entity_address: Yup.string()
-            .min(10, 'Too Short')
-            .max(100, "Too Long")
-            .required('Required'),
+
+
     });
-    
-const [setUpdateData, setSetUpdateData] = useState()
+
+    const [fetchData, setfetchData] = useState()
 
     // state where update input field is hidden  
     const [updateLbl, setupdateLbl] = useState('hidden')
+
 
     //onclick it shows the input field for updation 
     const handleShowLabel = () => {
         (updateLbl == 'hidden') ? setupdateLbl('') : setupdateLbl('hidden');
     }
+    const bearerTokenInit = localStorage.getItem('token');
+
+
+    //method  to get loged citizen data
+    const getData = () => {
+       
+        axios({
+            method: "GET",
+            url: "http://192.168.0.166/api/my-profile-details",
+            headers: {
+                Authorization: `Bearer ${bearerTokenInit}`,
+                Accept: 'application/json',
+            }
+        })
+            .then(function (response) {
+                console.log("getdata DIRECT......", response.data);
+                setfetchData(response.data.data)
+
+            });
+    }
+
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+
+    //method  to update  citizen data
+    const modifyData = (values) => {
+        axios({
+            method: "PUT",
+            url: "http://192.168.0.166/api/edit-my-profile",
+            data: values ,
+            headers: {
+                Authorization: `Bearer ${bearerTokenInit}`,
+                Accept: 'application/json',
+            }
+        })
+            .then(function (response) {
+                console.log(" Submitted......", response);
+              
+            })
+            .catch(function (response) {
+
+                console.log("Failed", response);
+
+            });
+    }
+
 
 
 
     return (
         <>
-            <Formik 
-             initialValues={{ ulb: '', mobile_no: '', full_name: '', guardian_name: '', email: '', armed_force: '', specially_abled: '' }}
-           
-             validationSchema={updateDataSchema}
-             onSubmit={(values, { setSubmitting }) => {
-                 setTimeout(() => {
-                     // alert(JSON.stringify(values, null, 2));
-                     setSetUpdateData(values)
-                     setSubmitting(false);
-                     // console.log("Data values :- ",values)
-                    
-                 }, 100);
-             }}
-            
-            
+            <Formik
+                initialValues={{ ulb_name: '', mobile: '', name: '', guardian_name: '', email: '', armed_force: '', specially_abled: '' }}
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        // alert(JSON.stringify(values, null, 2));
+                        modifyData(values)
+                        setSubmitting(false);
+                        // console.log("Data values :- ",values)
+
+                    }, 100);
+                }}
             >
                 {/* citizen profile detail */}
                 {({
@@ -129,18 +151,18 @@ const [setUpdateData, setSetUpdateData] = useState()
                                     <div className="grid grid-cols-6 gap-6 px-4 mt-4">
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">ULB :-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1"> {fetchData?.ulb_name}</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input  
-                                                        className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                        type="text"
-                                                        name="ulb"
-                                                        placeholder=''
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        // value={values.applicant_name}
-                                                          />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="ulb_name"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.ulb_name}
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -149,19 +171,19 @@ const [setUpdateData, setSetUpdateData] = useState()
                                         </div>
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">MOBILE NO :-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1"> {fetchData?.mobile} </span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="mobile_no"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="mobile"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.mobile}
 
-                                                         />
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -170,19 +192,19 @@ const [setUpdateData, setSetUpdateData] = useState()
                                         </div>
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">GUARDIAN NAME :-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1">{fetchData?.name}</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="guardian_name"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="name"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.name}
+
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -191,19 +213,19 @@ const [setUpdateData, setSetUpdateData] = useState()
                                         </div>
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">EMAIL :-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1">{fetchData?.email}</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="email"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="email"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.email}
+
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -212,19 +234,19 @@ const [setUpdateData, setSetUpdateData] = useState()
                                         </div>
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">FULL NAME:-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1">{fetchData?.name}</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="full_name"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="name"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.name}
+
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -244,18 +266,18 @@ const [setUpdateData, setSetUpdateData] = useState()
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">DATE-OF-BIRTH :-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1">16-08-2022</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="dob"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="dob"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.dob}
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -275,18 +297,18 @@ const [setUpdateData, setSetUpdateData] = useState()
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">ARMED-FORCE:-
-                                                <span className="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span className="text-gray-600 font-normal text-md leading-4 my-1">YES</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="armed_force"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="armed_force"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.armed_force}
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -306,18 +328,18 @@ const [setUpdateData, setSetUpdateData] = useState()
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label for="" className="block text-sm font-medium text-gray-700">SPECIALLY- ABLED :-
-                                                <span classNameName="text-gray-400 font-bold text-xs leading-4 my-1"> 52364984</span>
+                                                <span classNameName="text-gray-600 font-normal text-md leading-4 my-1">YES</span>
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
-                                                        <input 
-                                                         className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold" 
-                                                         type="text"
-                                                         name="specially_abled"
-                                                         placeholder=''
-                                                         onChange={handleChange}
-                                                         onBlur={handleBlur}
-                                                         // value={values.applicant_name}
-                                                         />
+                                                        <input
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            type="text"
+                                                            name="specially_abled"
+                                                            placeholder=''
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.specially_abled}
+                                                        />
                                                         <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
@@ -337,7 +359,7 @@ const [setUpdateData, setSetUpdateData] = useState()
 
 
                                         <div className=''>
-                                            <button className={` ${updateLbl} min-w-auto w-32 h-10 bg-green-500  -mt-2 ml-2 rounded-xl hover:bg-green-600 text-white font-semibold transition-transform hover:-translate-y-2 ease-in-out`}>
+                                            <button type='submit' className={` ${updateLbl} min-w-auto w-32 h-10 bg-green-500  -mt-2 ml-2 rounded-xl hover:bg-green-600 text-white font-semibold transition-transform hover:-translate-y-2 ease-in-out`}>
                                                 submit
                                             </button>
                                         </div>
