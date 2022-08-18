@@ -90,7 +90,7 @@ function CitizenPropertyAddressDetails(props) {
         { name == 'addressCheckbox' && setformOpen(e.target.checked) }
 
         //input restrict validation
-        // { name == 'khataNo' && formik.setFieldValue("khataNo", allowCharacterInput(value, formik.values.khataNo, 10)) }
+        //{ name == 'khataNo' && formik.setFieldValue("khataNo", allowCharacterInput(value, formik.values.khataNo, 10)) }
         // { name == 'plotNo' && formik.setFieldValue("plotNo", allowCharacterInput(value, formik.values.plotNo, 10)) }
         // { name == 'village_mauja' && formik.setFieldValue("village_mauja", allowCharacterInput(value, formik.values.village_mauja, 10)) }
         // { name == 'plotArea' && formik.setFieldValue("plotArea", allowCharacterInput(value, formik.values.plotArea, 10)) }
