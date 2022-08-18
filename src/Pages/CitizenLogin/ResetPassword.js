@@ -35,7 +35,8 @@ function ResetPassword() {
     name : "Dipu Kumar",
     phone : 9658745874,
     email : "dsingh197@gmail.com",
-    amount : 99,
+    amount : 101,
+    module : "property"
   }
 
   return (

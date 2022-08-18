@@ -1,8 +1,19 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//    Author - Dipu Singh
+//    Version - 1.0
+//    Date - 18 Aug 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - RzpTestPayment.js
+//    DESCRIPTION - RzpTestPayment Component
+//////////////////////////////////////////////////////////////////////////////////////
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { format } from 'date-fns'
 
 function RzpTestPayment({ data }) {
     const [bearerToken, setBearerToken] = useState()
+    const [paymentId, setPaymentId] = useState()
     // console.log("Prop data", data)
 
     //Bearer Tocken 
@@ -12,8 +23,12 @@ function RzpTestPayment({ data }) {
         console.log("RZP  Token is : ", bearerToken)
     }, [data])
 
-    // const amount = 100;
 
+    // console.log("date is",format ( new Date(), 'dd-MM-yyyy hh:mm:ss'))
+    const dateNow = format(new Date(), 'dd-MM-yyyy hh:mm:ss')
+
+    // const amount = 100;
+   
     const payNow = () => {
         var options = {
             key: "rzp_test_1qUbsrxFZinD7l",
@@ -22,12 +37,13 @@ function RzpTestPayment({ data }) {
             amount: data.amount * 100,
             currency: "INR",
             name: "JUDCO Corp.",
-            description: "Property Tax",
+            description: data.module,
             handler: function (response) {
                 console.log("All response", response)
                 alert("Payment Susscess", response.razorpay_payment_id);
-                console.log("Payment ID", response.razorpay_payment_id);
-                saveData(response.razorpay_payment_id, data.name, data.email, data.phone, data.amount)
+                setPaymentId(response.razorpay_payment_id)
+                // console.log("Payment ID", response.razorpay_payment_id);
+                saveData(response.razorpay_payment_id, "Complated")
             },
             prefill: {
                 // name: "Dipu",
@@ -41,9 +57,11 @@ function RzpTestPayment({ data }) {
                 "ondismiss": function (response) {
                     //  window.location.replace("//put your redirect URL");
                     console.log("Payment Cancel BY user", response);
+                    saveData("Cancel by User", "Cancel")
                 },
                 "onfailed": function (response) {
                     console.log("Payment Failed Response", response);
+                    saveData(response.razorpay_payment_id, "Failed")
                 }
             },
             notes: {
@@ -60,20 +78,22 @@ function RzpTestPayment({ data }) {
 
 
     //Registration Data using AXIOS POST
-    const saveData = (payment_id, name, email, phone, amount) => {
+    const saveData = (id, staus) => {
+        console.log("id is= and status", id, staus)
         axios({
             method: "post",
             url: "http://192.168.0.166/api/store-payment",
             data: {
-                "payment_id": payment_id,
-                "order_id": "",
-                "amount": amount,
-                "payment_method": "",
-                "payment_date": "",
-                "name": name,
-                "email": email,
-                "phone": phone,
-                "module": ""
+                "paymentID": id,
+                "orderID": "",
+                "amount": data.amount,
+                "name": data.name,
+                "email": data.email,
+                "phone": data.phone,
+                "module": data.module,
+                "paymentStatus": staus,
+                // "paymentDate":"2022-08-08 06:55:58", 
+                "paymentDate": dateNow,
             },
             headers: {
                 // Authorization: `Bearer ${bearerToken}`,
@@ -82,16 +102,16 @@ function RzpTestPayment({ data }) {
             }
         })
             .then(function (response) {
-                console.log("Payment Data Stores Sussussfull", response);
-                //   setRegMsg(response.data);          
+                if (response.data.status) {
+                    console.log("Payment Data Stores Sussussfull", response);
+                } else {
+                    console.log("Data Not Saved..")
+                }
             })
             .catch(function (response) {
                 console.log("Failed to Store Data", response);
-                //   setRegMsg(response.message);          
             });
     }
-
-
 
     return (
         <>
@@ -107,3 +127,8 @@ function RzpTestPayment({ data }) {
 }
 
 export default RzpTestPayment
+
+/*
+Exported to
+1. Many files where needed
+*/
