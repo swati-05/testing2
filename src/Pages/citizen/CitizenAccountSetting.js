@@ -155,7 +155,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="ulb_name"
                                                             placeholder=''
@@ -163,7 +163,7 @@ function CitizenAccountSetting() {
                                                             onBlur={handleBlur}
                                                             value={values.ulb_name}
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for="" className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -175,7 +175,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="mobile"
                                                             placeholder=''
@@ -184,7 +184,7 @@ function CitizenAccountSetting() {
                                                             value={values.mobile}
 
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -196,7 +196,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="name"
                                                             placeholder=''
@@ -205,7 +205,7 @@ function CitizenAccountSetting() {
                                                             value={values.name}
 
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -217,7 +217,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="email"
                                                             placeholder=''
@@ -226,7 +226,7 @@ function CitizenAccountSetting() {
                                                             value={values.email}
 
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -238,7 +238,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="name"
                                                             placeholder=''
@@ -247,7 +247,7 @@ function CitizenAccountSetting() {
                                                             value={values.name}
 
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for="" className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -270,7 +270,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="dob"
                                                             placeholder=''
@@ -278,7 +278,7 @@ function CitizenAccountSetting() {
                                                             onBlur={handleBlur}
                                                             value={values.dob}
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -301,7 +301,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="armed_force"
                                                             placeholder=''
@@ -309,7 +309,7 @@ function CitizenAccountSetting() {
                                                             onBlur={handleBlur}
                                                             value={values.armed_force}
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>
@@ -332,7 +332,7 @@ function CitizenAccountSetting() {
                                                 <div className="mt-2">
                                                     <div className={`${updateLbl} relative z-0 mb-1`}>
                                                         <input
-                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
+                                                            className="block py-1.5 -mt-4 w-full text-md text-green-700 bg-transparent border-0 border-b-2 border-blue-500 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer font-semibold"
                                                             type="text"
                                                             name="specially_abled"
                                                             placeholder=''
@@ -340,7 +340,7 @@ function CitizenAccountSetting() {
                                                             onBlur={handleBlur}
                                                             value={values.specially_abled}
                                                         />
-                                                        <label for="" className="absolute text-xs text-red-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
+                                                        <label for=""  className="absolute text-xs text-blue-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Update</label>
 
                                                     </div>
                                                 </div>

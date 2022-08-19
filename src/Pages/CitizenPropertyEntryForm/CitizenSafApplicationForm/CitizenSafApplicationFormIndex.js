@@ -43,6 +43,7 @@ function CitizenSafApplicationFormIndex() {
         { assType == 'new' && (setAssTypeText('New-Assessment')) }
         { assType == 're' && (setAssTypeText('Re-Assessment')) }
         { assType == 'mu' && (setAssTypeText('Mutation')) }
+        { assType == 'obj' && (setAssTypeText('Objection')) }
         // setAssTypeText(assType)
     }, [])
 

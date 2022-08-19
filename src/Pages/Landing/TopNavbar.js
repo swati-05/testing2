@@ -82,7 +82,7 @@ function TopNavbar() {
                                     </div>
                                     <div >
                                         {/* <span class="flex h-2 w-3"> */}
-                                        <span class="animate-ping absolute inline-flex h-4 w-36 mt-2 ml-3 bg-red-700 opacity-75"></span>
+                                        {/* <span class="animate-ping absolute inline-flex h-4 w-36 mt-2 ml-3 bg-red-700 opacity-75"></span> */}
                                         {/* <span class="relative inline-flex rounded-full h-2 w-2  bg-red-400"></span> */}
                                         {/* </span> */}
                                         <Button onClick={handleOpen} >Complain & Grevances</Button>

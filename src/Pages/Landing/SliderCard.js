@@ -1,5 +1,5 @@
 
- //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 //    Author - Swati Sharma
 //    Version - 1.0
 //    Date - 8 Aug 2022
@@ -102,10 +102,15 @@ function SliderCard() {
         >
           <div className='pb-2 px-8 ml-16 mb-2 '>
             <span class="flex h-2 w-3">
-              <span class="animate-ping absolute inline-flex h-6 w-32 mt-2 rounded-xl bg-red-500 opacity-75"></span>
+              {/* <span class="animate-ping absolute inline-flex h-6 w-32 mt-2 rounded-xl bg-red-500 opacity-75"></span> */}
               {/* <span class="relative inline-flex rounded-full h-2 w-2  bg-red-400"></span> */}
+              
+                
+          
             </span>
+            <span className="text-center inline-block animate-pulse drop-shadow-lg p-1.5 px-2 rounded-lg text-black text-sm">
             <Typography style={{ color: 'red', fontSize: 18, }}>{notice[activeStep].heading}</Typography>
+            </span>
           </div>
         </Paper>
 

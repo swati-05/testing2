@@ -8,10 +8,13 @@
 //    DESCRIPTION - SideNav Component is for citizen dashboard side
 //////////////////////////////////////////////////////////////////////////////////////
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function SideNav() {
+
+
+function SideNav(props) {
     const [navWidth, setNavWidth] = useState('w-0')
 
     // this function is for opening drawer
@@ -19,6 +22,13 @@ function SideNav() {
     const toggleNav = () => {
         navWidth == 'w-0' ? setNavWidth('w-56') : setNavWidth('w-0')
     }
+
+    const [citizenNameEmail, setcitizenNameEmail] = useState();
+    useEffect(() => {
+        setcitizenNameEmail(props.citizenNameEmail)
+
+    }, [props.citizenNameEmail])
+
     return (
         <>
             <div>
@@ -35,16 +45,16 @@ function SideNav() {
                                     <img src='https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png' className='h-24 ml-6 mt-6 ' />
                                 </li>
                                 <li class="relative">
-                                    <h1 className='ml-6 mt-4 text-gray-700'>Citizen Name</h1>
+                                    <h1 className='ml-9 mt-4 text-gray-700'>{citizenNameEmail?.name}</h1>
                                 </li>
                                 <li class="relative">
-                                    <h1 className='ml-3 text-gray-700 text-sm'>citizen@gmail.com</h1>
+                                    <h1 className=' text-gray-700 text-sm'>{citizenNameEmail?.email}</h1>
                                 </li>
                                 <li class="relative">
                                     <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900 ' onClick={toggleNav}>
                                         <div class="rounded-full flex items-center  " >
                                             <div className='flex-1'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white " viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
@@ -58,7 +68,7 @@ function SideNav() {
                                         <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900  '>
                                             <div class="rounded-full  flex  items-center">
                                             <div className='flex-1'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 text-white " viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
                                                 </div>
@@ -68,10 +78,11 @@ function SideNav() {
                                     </Link>
                                 </li>
                                 <li class="relative">
+                                <Link to = "/grivancePage">
                                 <button className='bg-gray-400 ml-5 mt-6 w-24 h-8 shadow-md shadow-gray-900 ' onClick={toggleNav}>
                                         <div class="rounded-full flex items-center  " >
                                             <div className='flex-1'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2  text-white animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2  text-white " viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
@@ -79,6 +90,7 @@ function SideNav() {
                                         </div>
 
                                     </button>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -88,7 +100,7 @@ function SideNav() {
                 {/* opening drawer */}
 
                 <aside>
-                    <div className={`${navWidth} h-screen bg-slate-50 transition-all duration-1000 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
+                    <div className={`${navWidth} h-screen bg-slate-50 transition-all duration-700 ml-48 drop-shadow-md rounded-md overflow-hidden`}>
                         <div>
                             <div className=' mt-10'>
                                 <h1 className='font-normal ml-3'>Setting</h1>

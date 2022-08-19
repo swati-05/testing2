@@ -1,4 +1,4 @@
- //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 //    Author - Swati Sharma
 //    Version - 1.0
 //    Date - 8 Aug 2022
@@ -14,38 +14,67 @@ function CitizenContentArea() {
     return (
         <>
 
-        {/* containg contain  on dashboard */}
+            {/* containg contain  on dashboard */}
 
-        
-            <section class="bg-white ">
-                <div class="container px-5 py-8 mx-auto flex flex-wrap">
-                    <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
-                        <div class="w-full sm:p-4 px-4 mb-6">
-                            <h1 class="title-font font-medium text-xl mb-2 text-gray-700">Moon hashtag pop-up try-hard offal truffaut</h1>
-                            <div class="leading-relaxed text-gray-500">Pour-over craft beer pug drinking vinegar live-edge gastropub, keytar neutra sustainable fingerstache kickstarter.</div>
-                        </div>
-                        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                            <h2 class="title-font font-medium text-3xl text-gray-700">2.7K</h2>
-                            <p class="leading-relaxed">Users</p>
-                        </div>
-                        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                            <h2 class="title-font font-medium text-3xl text-gray-700">1.8K</h2>
-                            <p class="leading-relaxed">Subscribes</p>
-                        </div>
-                        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                            <h2 class="title-font font-medium text-3xl text-gray-700">35</h2>
-                            <p class="leading-relaxed">Downloads</p>
-                        </div>
-                        <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                            <h2 class="title-font font-medium text-3xl text-gray-700">4</h2>
-                            <p class="leading-relaxed">Products</p>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-                        <img class="object-cover object-center w-full h-full" src="https://www.spinonholidays.com/wp-content/uploads/2021/12/jharkhand.jpg" alt="stats" />
+           
+
+            <div class="p-0 flex flex-wrap  bg-white itrem-center justify-center">
+
+                <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-orange-400 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style={{ 'transform': 'scale(1.5)', 'opacity': 0.1 }}>
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <span className="text-center inline-block animate-pulse drop-shadow-lg  rounded-lg text-black text-sm">
+                        <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
+                    </span>
+
+                    <div class="relative text-white px-6 pb-6 -mt-1">
+                        <span class="block  -mb-1">View & update your profile </span>
+
                     </div>
                 </div>
-            </section>
+                <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style={{ 'transform': 'scale(1.5)', 'opacity': 0.1 }}>
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <span className="text-center inline-block animate-pulse drop-shadow-lg  rounded-lg text-black text-sm">
+                        <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
+                    </span>
+                    <div class="relative text-white px-6 pb-6 -mt-1">
+                        <span class="block  -mb-1">View your applied licenses</span>
+
+                    </div>
+                </div>
+                <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style={{ 'transform': 'scale(1.5)', 'opacity': 0.1 }}>
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <span className="text-center inline-block animate-pulse drop-shadow-lg  rounded-lg text-black text-sm">
+                        <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
+                    </span>
+                    <div class="relative text-white px-6 pb-6 -mt-1">
+                        <span class="block  -mb-1">View your applied licenses</span>
+
+                    </div>
+                </div>
+                <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style={{ 'transform': 'scale(1.5)', 'opacity': 0.1 }}>
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <span className="text-center inline-block animate-pulse drop-shadow-lg  rounded-lg text-black text-sm">
+                        <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
+                    </span>
+                    <div class="relative text-white px-6 pb-6 -mt-1">
+                        <span class="block  -mb-1">View your applied licenses</span>
+
+                    </div>
+                </div>
+
+            </div>
         </>
     )
 }
