@@ -16,7 +16,7 @@ function CitizenContentArea() {
 
             {/* containg contain  on dashboard */}
 
-           
+
 
             <div class="p-0 flex flex-wrap  bg-white itrem-center justify-center">
 
@@ -30,8 +30,12 @@ function CitizenContentArea() {
                     </span>
 
                     <div class="relative text-white px-6 pb-6 -mt-1">
-                        <span class="block  -mb-1">View & update your profile </span>
-
+                        <button class="text-white font-semibold  mb-8 group ">
+                            View & update your profile
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-6 w-6 group-hover:translate-x-2 transition delay-100 transition-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
@@ -43,8 +47,12 @@ function CitizenContentArea() {
                         <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
                     </span>
                     <div class="relative text-white px-6 pb-6 -mt-1">
-                        <span class="block  -mb-1">View your applied licenses</span>
-
+                        <button class="text-white font-semibold  mb-8 group ">
+                            View your applied licenses
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-6 w-6 group-hover:translate-x-2 transition delay-100 transition-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
@@ -56,8 +64,12 @@ function CitizenContentArea() {
                         <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
                     </span>
                     <div class="relative text-white px-6 pb-6 -mt-1">
-                        <span class="block  -mb-1">View your applied licenses</span>
-
+                        <button class="text-white font-semibold  mb-8 group ">
+                            View your applied licenses
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-6 w-6 group-hover:translate-x-2 transition delay-100 transition-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="flex-shrink-0 m-3 h-32 w-68 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
@@ -69,8 +81,12 @@ function CitizenContentArea() {
                         <img src='https://www.iconpacks.net/icons/1/free-hand-cursor-icon-1299-thumb.png' className='h-24 w-24' />
                     </span>
                     <div class="relative text-white px-6 pb-6 -mt-1">
-                        <span class="block  -mb-1">View your applied licenses</span>
-
+                        <button class="text-white font-semibold  mb-8 group ">
+                            View your applied licenses
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-6 w-6 group-hover:translate-x-2 transition delay-100 transition-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 

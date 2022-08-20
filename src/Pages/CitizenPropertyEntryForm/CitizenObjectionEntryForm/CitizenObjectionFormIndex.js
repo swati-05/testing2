@@ -15,7 +15,7 @@ function CitizenObjectionFormIndex() {
     const [allFormData, setAllFormData] = useState({})
     const [responseScreenStatus, setResponseScreenStatus] = useState('')
 
-
+console.log("all form data ", allFormData)
     //activating notification if no owner or no floor added
     const notify = (toastData) => {
         toast.dismiss();

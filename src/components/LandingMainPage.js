@@ -18,6 +18,8 @@ import LandingNav from '../Pages/Landing/LandingNav'
 import axios from 'axios'
 import AboutJharkhand from '../Pages/Landing/AboutJharkhand'
 import LeadersGallery from '../Pages/Landing/LeadersGallery'
+import MarqueeComponent from './MarqueeComponent'
+import ImageGallery from '../Pages/Landing/ImageGallery'
 
 function LandingMainPage() {
 
@@ -39,7 +41,9 @@ function LandingMainPage() {
             <div>
                 <div > <TopNavbar /> </div>
                 <div><LandingNav   /></div>
+                <div><MarqueeComponent /></div>
                 <div className=''><SliderImage /></div>
+              <div><ImageGallery /></div>
                 <div><SectionOurDomain /></div>
                 <AboutJharkhand />
                 <div><LeadersGallery /></div>

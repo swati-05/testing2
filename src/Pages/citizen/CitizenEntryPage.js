@@ -1,4 +1,4 @@
- //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 //    Author - Swati Sharma
 //    Version - 1.0
 //    Date - 8 Aug 2022
@@ -8,7 +8,7 @@
 //    DESCRIPTION - CitizenEntryPage Component is for landing in citizen dashboard 
 //////////////////////////////////////////////////////////////////////////////////////
 
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 function CitizenEntryPage(props) {
@@ -25,7 +25,7 @@ function CitizenEntryPage(props) {
     return (
         <>
             <div>
-                <div class="bg-white text-white rounded shadow-xl py-5 px-5 w-full  " >
+          <div class="bg-white text-white rounded shadow-xl py-5 px-5 w-full  " >
                     <div class="flex flex-wrap -mx-3 items-center">
                         <div class="w-1/4 px-3 text-center hidden md:block">
                             <div class="p-5 xl:px-2 md:py-2 ">
@@ -35,7 +35,7 @@ function CitizenEntryPage(props) {
                         <div class="w-full sm:w-1/2 md:w-2/4 px-2 text-left">
                             <div class="p-5 xl:px-8 md:py-2">
                                 <h3 class="text-4xl text-gray-600 font-sans p-4">Welcome, {citizenName?.name}!</h3>
-                                {/* <h5 class="text-xl mb-3 text-black">Lorem ipsum sit amet</h5> */}
+                               
                                 <p class="text-sm text-gray-500 ">This is your dashboard,Find all your information here.</p>
                             </div>
                         </div>
@@ -47,6 +47,7 @@ function CitizenEntryPage(props) {
                     </div>
                 </div>
 
+              
             </div>
 
         </>

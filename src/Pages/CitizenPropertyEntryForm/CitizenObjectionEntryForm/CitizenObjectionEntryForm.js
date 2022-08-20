@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { RiBuilding2Fill } from 'react-icons/ri'
-import { useFormik } from 'formik'
+import { useFormik, Formik, Form, Field, ErrorMessage  } from 'formik'
+import { inputContainerStyle, commonInputStyle, inputErrorStyle, inputLabelStyle } from '../CitizenCommonTailwind'
 import * as yup from 'yup'
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -120,10 +121,10 @@ function CitizenObjectionEntryForm(props) {
         { name == 'builtupArea' && formik.setFieldValue("builtupArea", allowFloatInput(value, formik.values.builtupArea, 20)) }
     }
 
-   
+
     return (
         <>
-   
+
             <h1 className='mt-6 mb-2 font-serif font-semibold absolute text-gray-600'><RiBuilding2Fill className="inline mr-2" />Apply Objection</h1>
 
             <div className="block p-4 w-full md:py-6 rounded-lg shadow-lg bg-white mx-auto absolute top-14 ">
@@ -304,6 +305,25 @@ function CitizenObjectionEntryForm(props) {
                                         <span className="text-red-600 absolute text-xs">{formik.touched.mobileTowerObjValue && formik.errors.mobileTowerObjValue ? formik.errors.mobileTowerObjValue : null}</span>
                                     </div>
 
+                                    <div className={`col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3`}>
+                                        <div className={`${inputContainerStyle}`}>
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Total Area Covered</label>
+                                            <Field disabled={!mobileTowerStatus} name="mobileTowerArea" type="text" className={`${commonInputStyle} ${!mobileTowerStatus && 'bg-gray-300 opacity-30'}`} />
+                                            <span className={`${inputErrorStyle}`}>                                   <ErrorMessage name='mobileTowerArea' />
+                                            </span>
+                                        </div>
+
+                                        <div className={`${inputContainerStyle}`}>
+
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Installation Date</label>
+
+                                            <Field disabled={!mobileTowerStatus} name="mobileTowerDate" type="date" className={`${commonInputStyle} ${!mobileTowerStatus && 'bg-gray-300 opacity-30'}`} placeholder='dd-mm-yyyy' min={'2021-05-20'} max={'2024-05-25'}
+                                            />
+                                            <span className={`${inputErrorStyle}`}>                                   <ErrorMessage name='mobileTowerDate' />
+                                            </span>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 {/* hoarding objection content */}
                                 <div className="col-span-4 grid grid-cols-4">
@@ -478,7 +498,7 @@ function CitizenObjectionEntryForm(props) {
 
                 </form>
             </div>
-            
+
         </>
     )
 }
