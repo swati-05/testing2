@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { RiBuilding2Fill } from 'react-icons/ri'
-import { useFormik, Formik, Form, Field, ErrorMessage  } from 'formik'
-import { inputContainerStyle, commonInputStyle, inputErrorStyle, inputLabelStyle } from '../CitizenCommonTailwind'
+import { useFormik, Field } from 'formik'
 import * as yup from 'yup'
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -16,8 +15,13 @@ function CitizenObjectionEntryForm(props) {
     const [propertyTypeStatus, setpropertyTypeStatus] = useState(false)
     const [plotAreaStatus, setplotAreaStatus] = useState(false)
     const [mobileTowerStatus, setmobileTowerStatus] = useState(false)
+    const [petrolPumpStatus, setpetrolPumpStatus] = useState(false)
     const [hoardingStatus, sethoardingStatus] = useState(false)
     const [floorStatus, setfloorStatus] = useState(false)
+    const [mobileTowerObjValueStatus, setmobileTowerObjValueStatus] = useState(false)
+    const [petrolPumpObjValueStatus, setpetrolPumpObjValueStatus] = useState(false)
+    const [hoardingObjValueStatus, sethoardingObjValueStatus] = useState(false)
+
     const validationSchema = yup.object({
         harvestingToggleStatus: yup.boolean(),
         roadWidthToggleStatus: yup.boolean(),
@@ -28,6 +32,11 @@ function CitizenObjectionEntryForm(props) {
         floorToggleStatus: yup.boolean(),
 
         harvestingObjValue: yup.string().when('harvestingToggleStatus', {
+            is: true,
+            then: yup.string().required('Field is required')
+        }),
+
+        petrolPumpObjValue: yup.string().when('harvestingToggleStatus', {
             is: true,
             then: yup.string().required('Field is required')
         }),
@@ -71,6 +80,7 @@ function CitizenObjectionEntryForm(props) {
             propertyTypeToggleStatus: false,
             plotAreaToggleStatus: false,
             mobileTowerToggleStatus: false,
+            petrolPumpToggleStatus: false,
             hoardingToggleStatus: false,
             floorToggleStatus: false,
 
@@ -116,7 +126,9 @@ function CitizenObjectionEntryForm(props) {
         { name === 'floorToggleStatus' && (checkValue === true ? setfloorStatus(true) : setfloorStatus(false)) }
         { name === 'hoardingToggleStatus' && (checkValue === true ? sethoardingStatus(true) : sethoardingStatus(false)) }
         { name === 'mobileTowerToggleStatus' && (checkValue === true ? setmobileTowerStatus(true) : setmobileTowerStatus(false)) }
-
+        { name === 'petrolPumpToggleStatus' && (checkValue === true ? setpetrolPumpStatus(true) : setpetrolPumpStatus(false)) }
+        { name === 'mobileTowerObjValue' && (value === 'yes' ? setmobileTowerObjValueStatus(true) : setmobileTowerObjValueStatus(false)) }
+        { name === 'petrolPumpObjValue' && (value === 'yes' ? setpetrolPumpObjValueStatus(true) : setpetrolPumpObjValueStatus(false)) }
         //input restrict validation
         { name == 'builtupArea' && formik.setFieldValue("builtupArea", allowFloatInput(value, formik.values.builtupArea, 20)) }
     }
@@ -305,26 +317,64 @@ function CitizenObjectionEntryForm(props) {
                                         <span className="text-red-600 absolute text-xs">{formik.touched.mobileTowerObjValue && formik.errors.mobileTowerObjValue ? formik.errors.mobileTowerObjValue : null}</span>
                                     </div>
 
-                                    <div className={`col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3`}>
-                                        <div className={`${inputContainerStyle}`}>
+                                    <div className={` ${mobileTowerObjValueStatus ? 'grid' : 'hidden '}form-group mb-6 col-span-4 md:col-span-1 px-2 md:px-4`}>
+                                        <div className={` mr-2`}>
                                             <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Total Area Covered</label>
-                                            <Field disabled={!mobileTowerStatus} name="mobileTowerArea" type="text" className={`${commonInputStyle} ${!mobileTowerStatus && 'bg-gray-300 opacity-30'}`} />
-                                            <span className={`${inputErrorStyle}`}>                                   <ErrorMessage name='mobileTowerArea' />
-                                            </span>
+                                            <input type="text" name='mobileTowerArea' className='bg-slate-50 w-full border' />
                                         </div>
-
-                                        <div className={`${inputContainerStyle}`}>
-
+                                        <div className=''>
                                             <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Installation Date</label>
-
-                                            <Field disabled={!mobileTowerStatus} name="mobileTowerDate" type="date" className={`${commonInputStyle} ${!mobileTowerStatus && 'bg-gray-300 opacity-30'}`} placeholder='dd-mm-yyyy' min={'2021-05-20'} max={'2024-05-25'}
-                                            />
-                                            <span className={`${inputErrorStyle}`}>                                   <ErrorMessage name='mobileTowerDate' />
-                                            </span>
+                                            <input type="date" name='mobileTowerArea' className=' w-full border ' />
                                         </div>
                                     </div>
-
                                 </div>
+
+                                <div className="col-span-4 grid grid-cols-4">
+                                    {/* mobile tower objection content */}
+                                    <div className="col-span-4 md:col-span-1  mb-2 px-2 md:px-4 bg-gray-100 shadow-md border border-gray-300">
+                                        <label className=" text-gray-800 pr-2" > <span className='inline text-gray-700 text-sm font-semibold'>Petrol Pump</span></label>
+                                        <FormControlLabel control={<Switch
+                                            // checked={mobileTowerStatus} name="mobileTowerSwitch"
+                                            //     onChange={switchHandleChange}
+                                            {...formik.getFieldProps('petrolPumpToggleStatus')}
+                                            inputProps={{ 'aria-label': 'controlled' }} />} label="" />
+                                    </div>
+                                </div>
+
+                                <div className={`col-span-4 ${petrolPumpStatus ? 'grid' : 'hidden'} grid-cols-1 md:grid-cols-4  mt-2`}>
+                                    <div className="form-group col-span-4 mb-6 px-2 md:px-4 bg-red-100 shadow-md">
+                                        <label className="form-label inline-block mb-1 text-gray-700 text-sm font-semibold">Objection On: Petrol Pump</label>
+
+                                    </div>
+                                    <div className="form-group mb-6 col-span-4 md:col-span-1 px-2 md:px-4">
+                                        <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">As Per Assessment</label>
+                                        <div className='font-bold font-serif'>No</div>
+
+                                    </div>
+
+                                    <div className="form-group mb-6 col-span-4 md:col-span-1 px-2 md:px-4">
+                                        <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>As Per Applicant</label>
+                                        <select {...formik.getFieldProps('petrolPumpObjValue')} type="text" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md"
+                                        >
+                                            <option value="no" selected>No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                        <span className="text-red-600 absolute text-xs">{formik.touched.petrolPumpObjValue && formik.errors.petrolPumpObjValue ? formik.errors.petrolPumpObjValue : null}</span>
+                                    </div>
+
+                                    <div className={` ${petrolPumpObjValueStatus ? 'grid' : 'hidden '}form-group mb-6 col-span-4 md:col-span-1 px-2 md:px-4`}>
+                                        <div className={` mr-2`}>
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Total Area Covered</label>
+                                            <input type="text" name='petrolPumpArea' className='bg-slate-50 w-full border' />
+                                        </div>
+                                        <div className=''>
+                                            <label className="form-label inline-block mb-1 text-gray-600 text-xs font-normal"><small className="block mt-1 text-sm font-semibold text-red-600 inline ">*</small>Installation Date</label>
+                                            <input type="date" name='petrolPumpArea' className=' w-full border ' />
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 {/* hoarding objection content */}
                                 <div className="col-span-4 grid grid-cols-4">
                                     <div className="col-span-4 md:col-span-1  mb-2 px-2 md:px-4 bg-gray-100 shadow-md border border-gray-300">
@@ -356,6 +406,9 @@ function CitizenObjectionEntryForm(props) {
                                             <option value="yes">Yes</option>
                                         </select>
                                         <span className="text-red-600 absolute text-xs">{formik.touched.hoardingObjValue && formik.errors.hoardingObjValue ? formik.errors.hoardingObjValue : null}</span>
+
+                                     
+
                                     </div>
 
                                 </div>
