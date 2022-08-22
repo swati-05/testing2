@@ -150,12 +150,12 @@ function CitizenSafApplicationFormIndex() {
             "transferMode": "2",
             "safNo": "SAF00001",
             "holdingNo": "0123456789",
-            "ward":  allFormData.basicDetails.wardNo ,
+            "ward": allFormData.basicDetails.wardNo,
             "ownershipType": allFormData.basicDetails.ownerShiptype,
             "propertyType": allFormData.basicDetails.propertyType,
             "apartmentName": "lorem ipsem",
             "flatRegistryDate": "2022-06-06",
-            "zone":  allFormData.basicDetails.zone,
+            "zone": allFormData.basicDetails.zone,
             "electricityConnection": "0",
             "electricityCustNo": "JH0326587",
             "electricityAccNo": "JH0563987",
@@ -166,18 +166,18 @@ function CitizenSafApplicationFormIndex() {
             "waterConnNo": "05236",
             "waterConnDate": "2022-06-06",
             "khataNo": allFormData.propertyAddressDetails.khataNo,
-            "plotNo":  allFormData.propertyAddressDetails.plotNo,
-            "villageMaujaName": allFormData.propertyAddressDetails.village_mauja ,
+            "plotNo": allFormData.propertyAddressDetails.plotNo,
+            "villageMaujaName": allFormData.propertyAddressDetails.village_mauja,
             "roadType": "5",
-            "areaOfPlot":  allFormData.propertyAddressDetails.plotArea,
+            "areaOfPlot": allFormData.propertyAddressDetails.plotArea,
             "propAddress": allFormData.propertyAddressDetails.locality,
-            "propCity":  allFormData.propertyAddressDetails.city,
-            "propDist":  allFormData.propertyAddressDetails.district,
+            "propCity": allFormData.propertyAddressDetails.city,
+            "propDist": allFormData.propertyAddressDetails.district,
             "propPinCode": allFormData.propertyAddressDetails.pin,
             "isCorrAddDiffer": "0",
-            "corrAddress":allFormData.propertyAddressDetails.c_locality ,
+            "corrAddress": allFormData.propertyAddressDetails.c_locality,
             "corrCity": allFormData.propertyAddressDetails.c_city,
-            "corrDist": allFormData.propertyAddressDetails.c_district ,
+            "corrDist": allFormData.propertyAddressDetails.c_district,
             "corrPinCode": allFormData.propertyAddressDetails.c_pin,
             "isMobileTower": "0",
             "towerArea": "653.66",
@@ -187,7 +187,7 @@ function CitizenSafApplicationFormIndex() {
             "hoardingInstallationDate": "2022-02-01",
             "isPetrolPump": "1",
             "undergroundArea": "200.12",
-            "petrolPumpCompletionDate": allFormData.basicDetails.petrolPumpDate ,
+            "petrolPumpCompletionDate": allFormData.basicDetails.petrolPumpDate,
             "isWaterHarvesting": "0",
             "landOccupationDate": "2022-05-12",
             "paymentStatus": "5",
@@ -205,12 +205,12 @@ function CitizenSafApplicationFormIndex() {
             "docUploadStatus": "0",
             "safDistributedDtl": "5",
             "propDtl": "1",
-            "propState":  allFormData.propertyAddressDetails.state ,
-            "corrState":  allFormData.propertyAddressDetails.c_state ,
+            "propState": allFormData.propertyAddressDetails.state,
+            "corrState": allFormData.propertyAddressDetails.c_state,
             "holdingType": "asd",
             "ipAddress": "192.168.0.166",
             "propertyAssessment": "4",
-            "newWard":  allFormData.basicDetails.newWardNo,
+            "newWard": allFormData.basicDetails.newWardNo,
             "percOfPropertyTransfer": "66",
             "apartmentDetail": "4",
             "owner": allFormData.ownerDetails,
@@ -233,12 +233,12 @@ function CitizenSafApplicationFormIndex() {
             .then(function (response) {
                 console.log("SAF uploaded......", response);
                 console.log("Check ==== ", response.data.status)
-                if(response.data.status){
+                if (response.data.status) {
                     setResponseScreenStatus('success')
-                }else if(!response.data.status) {
+                } else if (!response.data.status) {
                     console.log("form Not submitted ==== ", response.data.status)
                     alert("form Not Submiteed..")
-                }else{
+                } else {
                     alert("Somethig Went Wrong.")
                 }
 
@@ -271,44 +271,48 @@ function CitizenSafApplicationFormIndex() {
     return (
         <>
             <LandingNav />
-            <div className='w-10/12 ml-48 overflow-x-hidden h-screen '>
-                <ToastContainer position="top-right"
-                    autoClose={2000} />
-                <div className="grid grid-cols-2">
-                    <div>
-                        {/* <div className='text-left relative top-0'>
+            <div className='flex  '>
+                <div className='flex-auto w-2/12 mt-44  ml-8'>
+                    <img src='https://img.freepik.com/free-vector/faceless-man-checking-giant-check-list-background_23-2148089257.jpg?w=740&t=st=1661164383~exp=1661164983~hmac=3e0093a5d88720d2cae158f60e5778c9ce7848b1dd63787701cf5408e33258fd' />
+                </div>
+                <div className='flex-auto w-9/12 mr-6  overflow-x-hidden overflow-y-hidden h-screen '>
+                    <ToastContainer position="top-right"
+                        autoClose={2000} />
+                    <div className="grid grid-cols-2">
+                        <div>
+                            {/* <div className='text-left relative top-0'>
                     <span className='bg-sky-100 border-l border-b border-white text-black col-span-12 sm:col-span-2 sm:col-start-11 pl-4 rounded-l shadow-lg font-semibold pr-4'>prev-holding : A0101010101010101</span>
                 </div> */}
+                        </div>
+                        <div><div className='text-right relative top-0'>
+                            <span className='bg-sky-100 border-l border-b border-white text-black col-span-12 sm:col-span-2 sm:col-start-11 pl-4 rounded-l shadow-lg font-semibold pr-4'><TbWebhook className='inline' /> {assTypeText}</span>
+                        </div></div>
                     </div>
-                    <div><div className='text-right relative top-0'>
-                        <span className='bg-sky-100 border-l border-b border-white text-black col-span-12 sm:col-span-2 sm:col-start-11 pl-4 rounded-l shadow-lg font-semibold pr-4'><TbWebhook className='inline' /> {assTypeText}</span>
-                    </div></div>
+                    <div className="flex mt-0">
+                        <CitizenFormStatusTimeline active={formIndex == 1 && true} index="1" level="Basic Details" verificationStatus={formIndex >= 2 && true} last={false} />
+                        <CitizenFormStatusTimeline active={formIndex == 2 && true} index="2" level="Property Details" verificationStatus={formIndex >= 3 && true} last={false} />
+                        <CitizenFormStatusTimeline active={formIndex == 3 && true} index="3" level="Electricity & Water" verificationStatus={formIndex >= 4 && true} last={false} />
+                        <CitizenFormStatusTimeline active={formIndex == 4 && true} index="4" level="Owner Details" verificationStatus={formIndex >= 5 && true} last={false} />
+                        <CitizenFormStatusTimeline active={formIndex == 5 && true} index="5" level="Floor Details" verificationStatus={formIndex >= 6 && true} last={true} />
+                    </div>
+
+
+                    <div className={`${animateform1} transition-all relative`}><CitizenBasicDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                    {/* collectDataFun to receive form data on every save&next */}
+                    {/* submitFun to activate final submit button when all forms are filled */}
+                    {/* toastFun to activate toast notification via receiving toast message */}
+                    {/* backFun to go back from any specific form level */}
+                    {/* nextFun to go next from any specific form level */}
+                    <div className={`${animateform2} transition-all relative`}><CitizenPropertyAddressDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                    <div className={`${animateform3} transition-all relative`}><CitizenElectricityWaterDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} backFun={backFun} nextFun={nextFun} /></div>
+                    <div className={`${animateform4} transition-all relative`}><CitizenOwnerDetails assType={assTypeText} collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+                    <div className={`${animateform5} transition-all relative`}><CitizenFloorDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
+
+                    {/* {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button> */}
+                    {submitStatus && <div onClick={() => handleFinalSubmiBtn()} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button>
+                    </div>}
+
                 </div>
-                {/* <div className="flex mt-0">
-                    <CitizenFormStatusTimeline active={formIndex == 1 && true} index="1" level="Basic Details" verificationStatus={formIndex >= 2 && true} last={false} />
-                    <CitizenFormStatusTimeline active={formIndex == 2 && true} index="2" level="Property Details" verificationStatus={formIndex >= 3 && true} last={false} />
-                    <CitizenFormStatusTimeline active={formIndex == 3 && true} index="3" level="Electricity & Water" verificationStatus={formIndex >= 4 && true} last={false} />
-                    <CitizenFormStatusTimeline active={formIndex == 4 && true} index="4" level="Owner Details" verificationStatus={formIndex >= 5 && true} last={false} />
-                    <CitizenFormStatusTimeline active={formIndex == 5 && true} index="5" level="Floor Details" verificationStatus={formIndex >= 6 && true} last={true} />
-                </div> */}
-
-
-                <div className={`${animateform1} transition-all relative`}><CitizenBasicDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-                {/* collectDataFun to receive form data on every save&next */}
-                {/* submitFun to activate final submit button when all forms are filled */}
-                {/* toastFun to activate toast notification via receiving toast message */}
-                {/* backFun to go back from any specific form level */}
-                {/* nextFun to go next from any specific form level */}
-                <div className={`${animateform2} transition-all relative`}><CitizenPropertyAddressDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-                <div className={`${animateform3} transition-all relative`}><CitizenElectricityWaterDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} backFun={backFun} nextFun={nextFun} /></div>
-                <div className={`${animateform4} transition-all relative`}><CitizenOwnerDetails assType={assTypeText} collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-                <div className={`${animateform5} transition-all relative`}><CitizenFloorDetails collectFormDataFun={collectAllFormData} submitFun={submitButtonToggle} toastFun={notify} backFun={backFun} nextFun={nextFun} /></div>
-
-                {/* {submitStatus && <div onClick={() => setResponseScreenStatus('success')} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button> */}
-                {submitStatus && <div onClick={() => handleFinalSubmiBtn()} className="flex items-center justify-center"><button type="submit" className="absolute bottom-40 mx-auto px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-xl hover:bg-blue-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit Form <ImUpload2 className='inline text-xl' /></button>
-                </div>}
-
-
             </div>
 
         </>
