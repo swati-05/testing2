@@ -14,15 +14,19 @@ import BuildingPage from './components/BuildingPage';
 import Birth_DeathPage from './components/Birth_DeathPage';
 import AdvertisementPage from './components/AdvertisementPage';
 import SolidWastePage from './components/SolidWastePage';
+import CitizenInfo from './citizen/CitizenInfo';
+import CitizenDashboard from './components/citizendashboard/CitizenDashboard';
 
 function App() {
   return (
     <>
-      <div className='bg-slate-100'>
-        <Navbar /><br/>
+      <div className=''>
+        {/* <Navbar /><br/> */}
         {/* <ContentArea /> */}
         {/* <Sidebar /> */}
-        <UserSidebar />
+        {/* <UserSidebar /> */}
+        {/* <CitizenInfo /> */}
+        <CitizenDashboard/>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/form" element={<About />} />
