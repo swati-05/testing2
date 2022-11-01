@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,4 +14,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#spin {
+  
+}
+#spin:after {
+  content:"";
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  0% { content: "JUIDCO"; }
+  12% {content:"Jharkhand Urban Infrastructure Development Company"; }
+  /* 40% {content:"engineering"; }
+  60% {content:"crypto"; }
+  80% {content:"consulting"; }
+  100% {content:"business"; } */
 }
