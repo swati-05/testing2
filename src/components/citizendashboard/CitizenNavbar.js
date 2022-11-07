@@ -4,7 +4,7 @@ function CitizenNavbar() {
     return (
         <>
             <div className='grid grid-cols-12 md:grid-cols-12 lg:grid-cols-12'>
-                <div className='col-span-12 bg-sky-300 py-28'>
+                <div className='col-span-12 bg-sky-700 py-28'>
                     <nav className='-mt-24 container'>
                         <div className='flex flex-row'>
                             <img src='https://www.mysarkari.in/wp-content/uploads/2020/12/Jharkhand_emblem.png' className='h-12 -mt-2 ml-9 '/>

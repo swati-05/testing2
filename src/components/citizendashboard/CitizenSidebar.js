@@ -3,7 +3,7 @@ import React from 'react'
 function CitizenSidebar() {
     return (
         <>
-            <div className='bg-white rounded-md shadow-[#e6fbfa] shadow-inner p-8 h-screen'>
+            <div className='bg-white rounded-md shadow-[#e6fbfa] shadow-inner p-8 h-screen w-48'>
                 <div className='flex p-2'>
                     <div className='flex-1 -ml-24  opacity-75'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 float-right text-[#294f91]">

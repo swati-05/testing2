@@ -16,7 +16,12 @@ function CitizenDashboard() {
           <Dashboard />
         </div>
       </div>
-      
+      {/* <CitizenSidebar />
+      <div className='w-4/5 bg-blue-200'>
+        <Dashboard />
+      </div> */}
+
+
     </>
   )
 }
